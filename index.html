@@ -127,6 +127,26 @@
       <p>一次情報は英語。検証と再構成は、ぜんぶ日本語で。</p>
     </div>
 
+    <div class="filters">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#9aa5b1" stroke-width="2"/><path d="M20 20l-3.2-3.2" stroke="#9aa5b1" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="articleSearch" placeholder="キーワードで探す（例：カラー、テロップ、書き出し）" aria-label="記事を検索">
+      </div>
+      <div class="filter-cats" id="filterCats">
+        <button type="button" class="filter-cat is-active" data-cat="all">すべて</button>
+        <button type="button" class="filter-cat" data-cat="color">カラー</button>
+        <button type="button" class="filter-cat" data-cat="export">書き出し</button>
+        <button type="button" class="filter-cat" data-cat="audio">オーディオ</button>
+        <button type="button" class="filter-cat" data-cat="trans">トランジション</button>
+        <button type="button" class="filter-cat" data-cat="text">テロップ</button>
+        <button type="button" class="filter-cat" data-cat="motion">モーション</button>
+        <button type="button" class="filter-cat" data-cat="eff">効率化</button>
+        <button type="button" class="filter-cat" data-cat="flow">ワークフロー</button>
+        <button type="button" class="filter-cat" data-cat="expr">エクスプレッション</button>
+        <button type="button" class="filter-cat" data-cat="ai">AI活用</button>
+      </div>
+    </div>
+
     <div class="grid">
 
       <!-- #01 Color -->
@@ -394,6 +414,8 @@
 
     </div>
 
+    <p class="no-results" id="noResults">該当する記事が見つかりませんでした。別のキーワードやカテゴリでお試しください。</p>
+
     <!-- ▼ 広告枠 -->
     <div class="ad-slot">
       <span class="ad-slot__label">スポンサーリンク</span>
@@ -507,6 +529,49 @@
   </div>
   <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
 </footer>
+
+<script>
+(function () {
+  var search = document.getElementById('articleSearch');
+  var cats = document.getElementById('filterCats');
+  var noRes = document.getElementById('noResults');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#articles .grid > .card'));
+  var activeCat = 'all';
+
+  function catOf(card) {
+    var chip = card.querySelector('.chip');
+    if (!chip) return '';
+    var cls = Array.prototype.slice.call(chip.classList).find(function (c) {
+      return c.indexOf('chip--') === 0;
+    });
+    return cls ? cls.replace('chip--', '') : '';
+  }
+
+  function apply() {
+    var q = (search && search.value ? search.value : '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (c) {
+      var okCat = activeCat === 'all' || catOf(c) === activeCat;
+      var okQ = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okQ;
+      c.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    if (noRes) noRes.style.display = shown ? 'none' : 'block';
+  }
+
+  if (search) search.addEventListener('input', apply);
+  if (cats) cats.addEventListener('click', function (e) {
+    var b = e.target.closest('.filter-cat');
+    if (!b) return;
+    activeCat = b.getAttribute('data-cat');
+    cats.querySelectorAll('.filter-cat').forEach(function (x) {
+      x.classList.toggle('is-active', x === b);
+    });
+    apply();
+  });
+})();
+</script>
 
 </body>
 </html>

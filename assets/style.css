@@ -346,3 +346,26 @@ a.card:hover h3 { color: var(--coral); }
 .faq details[open] summary::after { content: "－"; }
 .faq details[open] summary { border-bottom: 1px dashed var(--line); }
 .faq details p { padding: 12px 0 16px; margin: 0; color: var(--ink-soft); }
+
+/* =========================================================
+   Article search & category filter
+   ========================================================= */
+.filters { margin: 0 0 34px; }
+.search { position: relative; max-width: 440px; margin: 0 auto 18px; }
+.search input {
+  width: 100%; padding: 13px 18px 13px 46px; border: 1px solid var(--line);
+  border-radius: 999px; font-size: 15px; font-family: var(--sans);
+  background: var(--surface); box-shadow: 0 3px 0 var(--line); color: var(--ink);
+}
+.search input::placeholder { color: var(--muted); }
+.search input:focus { outline: none; border-color: var(--coral); box-shadow: 0 3px 0 var(--coral-dk); }
+.search svg { position: absolute; left: 17px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; }
+.filter-cats { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.filter-cat {
+  font-family: var(--maru); font-weight: 700; font-size: 13.5px; padding: 8px 16px;
+  border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink-soft);
+  cursor: pointer; box-shadow: 0 3px 0 var(--line); transition: transform .1s ease, color .12s ease;
+}
+.filter-cat:hover { transform: translateY(-2px); color: var(--coral); }
+.filter-cat.is-active { background: var(--coral); color: #fff; border-color: var(--coral); box-shadow: 0 3px 0 var(--coral-dk); }
+.no-results { display: none; text-align: center; color: var(--muted); font-family: var(--maru); padding: 46px 0; }
