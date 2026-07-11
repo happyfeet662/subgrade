@@ -319,6 +319,10 @@ a.card:hover h3 { color: var(--coral); }
 .th-trans { background: #ffe6d2; }
 .chip--text { background: #f3e2f0; color: #b3559f; }
 .th-text { background: #f3e2f0; }
+.chip--edit { background: #e0efd8; color: #5a8a2e; }
+.th-edit { background: #e0efd8; }
+.chip--fx { background: #ffe0dc; color: #d9534f; }
+.th-fx { background: #ffe0dc; }
 
 /* =========================================================
    Prose tables

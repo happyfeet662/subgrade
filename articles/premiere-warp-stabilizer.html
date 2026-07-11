@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-warp-stabilizer.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="ワープスタビライザー：手ブレを自然に消す設定">
+<meta property="og:description" content="手ブレ映像を三脚レベルに——ワープスタビライザーの正しい使い方。滑らかさの数値、結果タイプ、クロップと滑らかさのトレードオフ、失敗しないためのコツを海外の実務ガイドをもとに解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-warp-stabilizer.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ワープスタビライザー：手ブレを自然に消す設定">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"ワープスタビライザー：手ブレを自然に消す設定","description":"手ブレ映像を三脚レベルに——ワープスタビライザーの正しい使い方。滑らかさの数値、結果タイプ、クロップと滑らかさのトレードオフ、失敗しないためのコツを海外の実務ガイドをもとに解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-warp-stabilizer.html"}}
+</script>
+<title>ワープスタビライザー：手ブレを自然に消す設定 | SUBGRADE</title>
+<meta name="description" content="手ブレ映像を三脚レベルに——ワープスタビライザーの正しい使い方。滑らかさの数値、結果タイプ、クロップと滑らかさのトレードオフ、失敗しないためのコツを海外の実務ガイドをもとに解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--fx">エフェクト</span></div>
+    <div class="article__banner th-fx">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="52" y="40" width="96" height="60" rx="10" fill="none" stroke="#e6a6a2" stroke-width="3" stroke-dasharray="6 5"/>
+        <rect x="64" y="50" width="72" height="44" rx="8" fill="#fff" stroke="#d9534f" stroke-width="3"/>
+        <path d="M76 72 l12 -10 8 8 12 -14" fill="none" stroke="#d9534f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M40 54 h-8 M40 86 h-8 M160 54 h8 M160 86 h8" stroke="#e6a6a2" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="72" r="4" fill="#d9534f"/>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>ワープスタビライザー<br>手ブレを自然に消す設定</h1>
+    <p class="article__lead">
+      手持ちのガタガタ映像を、まるで三脚やジンバルで撮ったように——それを1クリックで狙えるのがワープスタビライザーです。
+      ただし<strong>数値を盛りすぎると“ぐにゃっ”と歪む</strong>のが落とし穴。自然に効かせるための設定を、要点だけまとめました。
+    </p>
+    <div class="article__meta">
+      <span>エフェクト / 手ブレ補正</span><span class="dot"></span>
+      <span>読了 約10分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① ワープスタビライザーを正しく適用し、② <strong>滑らかさ</strong>と<strong>結果タイプ</strong>を理解して調整し、
+        ③ クロップ（画角の削れ）とのトレードオフを管理し、④ 歪み・失敗を避けられるようになること。
+      </div>
+
+      <h2>適用のしかた</h2>
+      <p>
+        補正したいクリップを選び、エフェクトパネルの<strong>ビデオエフェクト → ディストーション → ワープスタビライザー</strong>をダブルクリック。
+        適用した瞬間に<strong>解析（バックグラウンド分析）</strong>が始まります。素材が長いほど時間がかかるので、少し待ちます。
+      </p>
+
+      <h2>いちばん大事な「滑らかさ」</h2>
+      <p>
+        効き具合を決める中心の設定が<strong>滑らかさ（Smoothness）</strong>です。ここを盛りすぎるのが最大の失敗。
+      </p>
+      <ul>
+        <li>低い値＝元のカメラの動きに近い（自然）。<strong>5〜10%でも十分</strong>なことが多い。</li>
+        <li>高い値＝より滑らかだが、<strong>画像のクロップ（拡大）が増え</strong>、歪みも出やすい。</li>
+        <li>まず低めから始め、足りなければ少しずつ上げる——が鉄則です。</li>
+      </ul>
+
+      <h2>結果タイプと主要設定</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>設定</th><th>意味</th><th>使い方</th></tr></thead>
+        <tbody>
+          <tr><th>結果：滑らかなモーション</th><td>カメラの動きは残しつつ滑らかに</td><td><strong>基本これ</strong>。歩き撮り・パンを活かす</td></tr>
+          <tr><th>結果：モーションなし</th><td>動きを完全に止める（三脚風）</td><td>固定ショット狙い。素材が動くと破綻しやすい</td></tr>
+          <tr><th>方式：サブスペースワープ</th><td>フレームを部分ごとに補正（既定）</td><td>基本これ。歪めば「位置・スケール・回転」に変更</td></tr>
+          <tr><th>クロップ &lt;-&gt; 滑らかさ</th><td>削る量と滑らかさの綱引き</td><td>画角を残したいなら滑らかさ側を控える</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>クロップと滑らかさのトレードオフ</h2>
+      <p>
+        安定させるほど、画面の端は<strong>拡大してトリミング（クロップ）</strong>されます。つまり<strong>安定 ↔ 画角</strong>は綱引きの関係。
+        「クロップ &lt;-&gt; スムーズ」スライダーで、どちらを優先するか決めます。強く効かせすぎると画質も落ちるので、<strong>“ほどよく”</strong>が正解です。
+      </p>
+      <p>
+        フレーミングを「<strong>安定化のみ</strong>」に変えると、補正でどれだけ動いているか（元フレームのはみ出し）を確認できます。効きすぎ・削れすぎのチェックに便利です。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・映像が“ぐにゃっ”と歪む → 滑らかさを下げる／方式を「位置・スケール・回転」に。<br>
+        ・画角が削れすぎ → 滑らかさを下げる、クロップ側を優先しない。<br>
+        ・効果の順番 → ワープスタビライザーは<strong>エフェクトの一番上</strong>に置く（最初に適用される）。<br>
+        ・激しい動き・強いモーションブラーは苦手 → 撮影段階でブレを減らすのが最善。
+      </div>
+
+      <h2>撮影で9割決まる</h2>
+      <p>
+        スタビライザーは万能ではありません。<strong>元のブレが小さいほど、自然に・少ないクロップで</strong>仕上がります。
+        脇を締める、両手で持つ、歩き方を工夫する、可能ならジンバルを使う——編集の前に撮影で減らすのが、いちばん綺麗な近道です。
+      </p>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>全クリップに掛けても大丈夫？</summary>
+          <p>やめた方が無難です。必要なブレたクリップだけに。全体に掛けると微妙な歪みが積み重なり、かえって不自然になります。三脚固定の素材には不要です。</p>
+        </details>
+        <details>
+          <summary>解析が終わらない・重い。</summary>
+          <p>長尺は時間がかかります。必要な区間だけ分割して掛ける、プロキシで軽くする（<a href="premiere-proxy-workflow.html">プロキシ運用</a>）と快適です。解析後は結果をレンダリングしておくと再生も軽くなります。</p>
+        </details>
+        <details>
+          <summary>スマホのブレも直せる？</summary>
+          <p>直せますが、電子手ブレ補正が既に効いた素材に重ねると“二重補正”で歪むことがあります。撮影時の補正はオフにするか、掛け方を控えめにしましょう。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        ワープスタビライザーは<strong>「適用 → 解析待ち → 滑らかさは低めから → クロップとの綱引きを管理」</strong>。
+        盛りすぎず“ほどよく”が自然に見せるコツです。そして最良の手ブレ補正は、やはり撮影段階でブレを減らすこと。編集は仕上げと心得ましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere/desktop/add-video-effects/commonly-used-effects/stabilize-shaky-footage-using-warp-stabilizer.html" target="_blank" rel="noopener">Adobe公式：Stabilize shaky footage with Warp Stabilizer →</a><br>
+        <a href="https://www.premiumbeat.com/blog/stabilize-footage-premiere-warp-stabilizer/" target="_blank" rel="noopener">PremiumBeat：Fix Shaky Footage with Warp Stabilizer →</a><br>
+        <a href="https://store.hollyland.com/blogs/creator-hub/warp-stabilizer-in-premiere-pro" target="_blank" rel="noopener">Hollyland：Warp Stabilizer — Key Settings and Fixes →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

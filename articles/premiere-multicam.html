@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-multicam.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="マルチカム編集の基本：同期・アングル切り替え・仕上げ">
+<meta property="og:description" content="複数カメラの映像を、再生しながら数字キーで切り替える——マルチカム編集の全手順。音声波形での同期、マルチカメラモニター、仕上げのコツを海外の実務ガイドをもとに解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-multicam.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="マルチカム編集の基本：同期・アングル切り替え・仕上げ">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"マルチカム編集の基本：同期・アングル切り替え・仕上げ","description":"複数カメラの映像を、再生しながら数字キーで切り替える——マルチカム編集の全手順。音声波形での同期、マルチカメラモニター、仕上げのコツを海外の実務ガイドをもとに解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-multicam.html"}}
+</script>
+<title>マルチカム編集の基本：同期・アングル切り替え・仕上げ | SUBGRADE</title>
+<meta name="description" content="複数カメラの映像を、再生しながら数字キーで切り替える——マルチカム編集の全手順。音声波形での同期、マルチカメラモニター、仕上げのコツを海外の実務ガイドをもとに解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--edit">編集</span></div>
+    <div class="article__banner th-edit">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="36" width="52" height="32" rx="8" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+        <path d="M62 46 v12 l10 -6 z" fill="#5a8a2e"/>
+        <rect x="104" y="36" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
+        <rect x="44" y="76" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
+        <rect x="104" y="76" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
+        <circle cx="88" cy="44" r="10" fill="#5a8a2e"/>
+        <text x="88" y="48" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="12" font-weight="700" fill="#fff">1</text>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>マルチカム編集の基本<br>同期・アングル切り替え・仕上げ</h1>
+    <p class="article__lead">
+      2台以上のカメラで撮った映像を、<strong>再生しながら数字キーでアングルを切り替える</strong>——これがマルチカム編集です。
+      対談・ライブ・演奏など“同時に起きたこと”を、スイッチングするように編集できます。手順とつまずきどころを一気に整理します。
+    </p>
+    <div class="article__meta">
+      <span>編集テクニック</span><span class="dot"></span>
+      <span>読了 約11分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① 複数カメラ素材を<strong>音声波形で同期</strong>し、② マルチカメラソースシーケンスを作り、
+        ③ マルチカメラモニターで<strong>数字キーでアングルを切り替え</strong>、④ 後から差し替え・仕上げるまでを理解すること。
+      </div>
+
+      <h2>撮影時の“たった一つ”の準備</h2>
+      <p>
+        マルチカム成功の9割は撮影で決まります。それは<strong>全カメラで同じ音を録っておく</strong>こと。
+        各カメラの内蔵マイクをオンにして<strong>共通の音（会話・拍手など）</strong>を拾っておけば、あとで音声波形でピタッと同期できます。
+        この音は同期用なので、最終的には良いマイクの音に差し替えてOKです。
+      </p>
+
+      <h2>手順：同期からシーケンス作成まで</h2>
+      <ol class="steps">
+        <li>
+          <strong>カメラごとに色ラベルを付ける</strong>
+          プロジェクトパネルでクリップに色ラベルを。後で「どれがどのカメラか」が一目で分かります。
+        </li>
+        <li>
+          <strong>クリップを選んで同期</strong>
+          複数クリップを選択 → 右クリック →「マルチカメラソースシーケンスを作成」。同期方法を選びます。
+        </li>
+        <li>
+          <strong>同期方法は“音声”が基本</strong>
+          タイムコードが揃っていれば「タイムコード」、そうでなければ<strong>「オーディオ（波形）」</strong>で自動同期。個人撮影は音声同期が現実的です。
+        </li>
+        <li>
+          <strong>編集用シーケンスを作る</strong>
+          できたマルチカメラソースクリップを右クリック →「クリップから新規シーケンス」。各カメラがトラックに並びます。
+        </li>
+      </ol>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>数字キーでスイッチング</h2>
+      <p>
+        プログラムモニターの<strong>「マルチカメラ表示」ボタン</strong>をオンにすると、全カメラが分割表示されます。
+        あとは<strong>再生しながら、キーボードの数字キー（1・2・3…）を押すだけ</strong>。押した瞬間にそのカメラへ切り替わり、まるで生放送のスイッチャーのように編集できます。
+      </p>
+      <ul>
+        <li>録画（切り替え記録）してから、後で細部を微調整する流れが基本。</li>
+        <li>切り替えた点はカット編集点として残るので、<strong>後からアングルの差し替えも可能</strong>。</li>
+        <li>切り替えは映像だけ。音声は良いマイクのトラックに固定しておくと安定します。</li>
+      </ul>
+
+      <h2>仕上げのコツ</h2>
+      <ul>
+        <li><strong>切り替えすぎない</strong>：頻繁に切ると目が疲れる。会話の“番”で切るのが自然。</li>
+        <li><strong>J・Lカットと併用</strong>：音を先/後に流すと、アングル切り替えがなめらかに（<a href="premiere-jl-cut.html">J・Lカットの記事</a>）。</li>
+        <li><strong>色を揃える</strong>：カメラごとに色味が違うので、最後にカラーを合わせる（<a href="premiere-lumetri-color-grading.html">Lumetri徹底解説</a>）。</li>
+        <li><strong>重ければプロキシ</strong>：多カメラは重い。<a href="premiere-proxy-workflow.html">プロキシ運用</a>で軽くしましょう。</li>
+      </ul>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・同期がズレる → 共通の音が小さい/無い。撮影時に必ず同じ音を録る。<br>
+        ・どれがどのカメラか分からない → 事前に色ラベル。<br>
+        ・切り替えが効かない → マルチカメラ表示がオンか、シーケンスが正しく作られているか確認。<br>
+        ・カクつく → プロキシ＋再生解像度を下げる。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>カメラは何台まで同期できる？</summary>
+          <p>実用上は数台〜十数台まで可能です。増えるほど処理は重くなるので、プロキシ運用が前提になります。まずは2〜3台で流れを掴むのがおすすめです。</p>
+        </details>
+        <details>
+          <summary>タイムコードと音声、どちらで同期すべき？</summary>
+          <p>業務用機材でタイムコードが揃うならタイムコードが確実。個人撮影で機材がバラバラなら音声波形同期が現実的です。共通の音さえあれば十分な精度で合います。</p>
+        </details>
+        <details>
+          <summary>後からアングルを変えられる？</summary>
+          <p>変えられます。切り替え点を選んで別カメラに差し替え可能。まずラフに切り替え記録し、後から丁寧に直す流れが効率的です。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        マルチカムは<strong>「共通の音を録る → 音声で同期 → マルチカメラ表示 → 数字キーで切り替え → 後から微調整」</strong>。
+        一度流れを覚えれば、対談やライブが驚くほど速く、そして“プロの番組っぽく”編集できます。まずは2カメラから試してみてください。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere/desktop/edit-projects/set-up-multi-camera-sequences-for-editing/create-a-multi-camera-source-sequence.html" target="_blank" rel="noopener">Adobe公式：Create multi-camera source sequences →</a><br>
+        <a href="https://pixflow.net/blog/premiere-pro-multicam-editing-workflow/" target="_blank" rel="noopener">Pixflow：Multicam Editing Complete 2026 Workflow →</a><br>
+        <a href="https://massive.io/tutorials/multicam-editing-in-adobe-premiere/" target="_blank" rel="noopener">MASV：Guide To Multicam Editing →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

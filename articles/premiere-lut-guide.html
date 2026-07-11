@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-lut-guide.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="LUTの正しい使い方と自作：.cubeで“自分の色”を再利用する">
+<meta property="og:description" content="LUTを当てても濁るのは順番のせい。Premiere ProでのLUTの正しい当て方（入力LUTとクリエイティブの違い）と、自分のグレーディングを.cubeとして書き出して使い回す方法を解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-lut-guide.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LUTの正しい使い方と自作：.cubeで“自分の色”を再利用する">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"LUTの正しい使い方と自作：.cubeで“自分の色”を再利用する","description":"LUTを当てても濁るのは順番のせい。Premiere ProでのLUTの正しい当て方（入力LUTとクリエイティブの違い）と、自分のグレーディングを.cubeとして書き出して使い回す方法を解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-lut-guide.html"}}
+</script>
+<title>LUTの正しい使い方と自作：.cubeで“自分の色”を再利用する | SUBGRADE</title>
+<meta name="description" content="LUTを当てても濁るのは順番のせい。Premiere ProでのLUTの正しい当て方（入力LUTとクリエイティブの違い）と、自分のグレーディングを.cubeとして書き出して使い回す方法を解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--color">カラー</span></div>
+    <div class="article__banner th-color">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="42" y="34" width="66" height="72" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+        <rect x="54" y="46" width="42" height="14" rx="4" fill="#ff6f7e"/>
+        <rect x="54" y="66" width="42" height="14" rx="4" fill="#ffc94d"/>
+        <rect x="54" y="86" width="42" height="14" rx="4" fill="#3fca9f"/>
+        <path d="M114 70 h16 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="136" y="54" width="40" height="32" rx="8" fill="#f2effc" stroke="#8b7cf0" stroke-width="2.5"/>
+        <text x="156" y="75" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#8b7cf0">.cube</text>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>LUTの正しい使い方と自作<br>.cubeで“自分の色”を再利用する</h1>
+    <p class="article__lead">
+      「LUTを当てたら濁った」「思った色にならない」——それは<strong>使う場所と順番</strong>を間違えているサインです。
+      LUTの仕組みを理解し、正しく当てる方法と、<strong>自分のグレーディングを.cubeとして書き出して使い回す</strong>方法までまとめました。
+    </p>
+    <div class="article__meta">
+      <span>カラー / LUT</span><span class="dot"></span>
+      <span>読了 約11分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① LUTの種類（入力LUT／クリエイティブLUT）を理解し、② 正しい場所に当て、③ 強度を下げて自然に使い、
+        ④ 自分の色を<strong>.cube</strong>で書き出して次の案件でも再利用できるようになること。
+      </div>
+
+      <h2>LUTとは「色の変換表」</h2>
+      <p>
+        LUT（Look Up Table）は、<strong>ある色を別の色へ置き換える対応表</strong>です。ワンクリックで映像の色をガラッと変えられますが、
+        <strong>“整った素材”に当てて初めて機能する</strong>のがポイント。露出やホワイトバランスが崩れた素材に当てても、崩れたまま色が乗るだけです。
+      </p>
+
+      <h2>2種類のLUTを混同しない</h2>
+      <p>Premiereでは、LUTを当てる場所が2つあり、役割が違います。</p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>種類</th><th>当てる場所</th><th>役割</th></tr></thead>
+        <tbody>
+          <tr><th>入力LUT（テクニカル）</th><td>基本補正 → 入力LUT</td><td>Log素材を“標準の見た目”に戻す（変換）。補正の<strong>前段</strong></td></tr>
+          <tr><th>クリエイティブLUT（Look）</th><td>クリエイティブ → Look</td><td>雰囲気・世界観を乗せる“味付け”。補正の<strong>後段</strong></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        濁る原因の多くは、この2つの取り違えです。<strong>Log素材の現像は入力LUT、雰囲気づくりはクリエイティブLUT</strong>と覚えてください。
+      </p>
+
+      <h2>ファイル形式：.cube と .look</h2>
+      <ul>
+        <li><strong>.cube</strong>：最も一般的。After Effects・DaVinci・Final Cut でも使える<strong>汎用フォーマット</strong>。自作もこれ。</li>
+        <li><strong>.look</strong>：Premiere専用のLumetri Lookプリセット。他ソフトでは使えない。</li>
+      </ul>
+      <p>「他ソフトでも同じ色を使いたい」なら<strong>.cube一択</strong>です。</p>
+
+      <h2>LUTを当てる手順</h2>
+      <ol class="steps">
+        <li>
+          <strong>まず基本補正で土台を整える</strong>
+          露出・WB・コントラストを整える。LUTは仕上げ。順番が命です。
+        </li>
+        <li>
+          <strong>クリエイティブ → Look で選ぶ</strong>
+          ドロップダウンから内蔵Lookを選ぶか、「参照」で自分の.cubeを読み込みます。
+        </li>
+        <li>
+          <strong>強度（Intensity）を下げる</strong>
+          100%は効きすぎ。<strong>50〜80%</strong>に落として自然に。ここがプロっぽさの分かれ目。
+        </li>
+        <li>
+          <strong>スキントーンを最終確認</strong>
+          LUTで肌が転びやすい。ベクトルスコープで確認を（詳しくは<a href="premiere-lumetri-color-grading.html">Lumetri徹底解説</a>）。
+        </li>
+      </ol>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>自分のLUTを.cubeで書き出す</h2>
+      <p>
+        気に入ったグレーディングができたら、それを<strong>資産化</strong>しましょう。次の案件でワンクリックで再現できます。
+      </p>
+      <ol class="steps">
+        <li>
+          <strong>グレーディング済みのクリップを選ぶ</strong>
+          Lumetriで色を作ったクリップをタイムラインで選択。
+        </li>
+        <li>
+          <strong>Lumetriパネルのメニューを開く</strong>
+          パネル上部の「三本線（ハンバーガー）メニュー」をクリック。
+        </li>
+        <li>
+          <strong>「.cube を書き出し」を選ぶ</strong>
+          分かりやすい名前を付けて保存（例：<code>Cinematic_TealOrange.cube</code>、<code>Warm_Skin.cube</code>）。
+        </li>
+        <li>
+          <strong>次の案件で読み込む</strong>
+          クリエイティブ → Look → 参照 で読み込めば、同じ色を一発適用。チームでの共有・配布・販売もできます。
+        </li>
+      </ol>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・当てたら濁る → 入力LUTとクリエイティブLUTを取り違えていないか。<br>
+        ・色が転ぶ → 強度を下げる。まず基本補正で土台を整える。<br>
+        ・他ソフトで色が違う → .look ではなく <strong>.cube</strong> を使う。<br>
+        ・LUTが効かない → 素材の色空間との不一致。<a href="premiere-color-management.html">カラーマネジメントの記事</a>を参照。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>無料LUTを当てるだけで“映画っぽく”なる？</summary>
+          <p>なりません。LUTは整った素材への“味付け”です。露出・WBを整え、強度を下げて使って初めて自然になります。土台づくりが9割です。</p>
+        </details>
+        <details>
+          <summary>入力LUTとクリエイティブLUT、どっちを使えばいい？</summary>
+          <p>Log素材を標準の見た目に戻すなら入力LUT、雰囲気を乗せるならクリエイティブLUTです。用途が違うので、両方を順番に使うこともあります。</p>
+        </details>
+        <details>
+          <summary>自作LUTは売れる？</summary>
+          <p>.cubeはファイル1つで配布でき、素材販売の定番商品です。ただし“万能”ではなく、特定の撮影条件向けに作るのがコツ。汎用性を謳いすぎないのが誠実です。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        LUTは<strong>「土台を整える → クリエイティブLookで味付け → 強度を下げる → 気に入ったら.cubeで書き出し」</strong>。
+        使う場所と順番を守れば濁りません。そして良い色ができたら必ず資産化——次の自分を助けてくれます。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere/desktop/correct-color/add-color-effects/install-custom-look-up-table-files.html" target="_blank" rel="noopener">Adobe公式：Install custom Look-up Table files →</a><br>
+        <a href="https://borisfx.com/blog/how-to-use-luts-in-premiere-pro/" target="_blank" rel="noopener">Boris FX：How to Use LUTs in Premiere Pro →</a><br>
+        <a href="https://massive.io/tutorials/how-to-create-your-own-lut/" target="_blank" rel="noopener">MASV：How To Create Your Own LUT →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
