@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-keyframe-easing.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="キーフレームとイージング：グラフエディターでなめらかに動かす">
+<meta property="og:description" content="動きが“カクカク・機械的”になるのは等速のせい。Premiere Proのイーズイン/アウトとグラフエディター（速度グラフ・ベジェハンドル）で、プロっぽいなめらかな動きを作る手順を解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-keyframe-easing.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="キーフレームとイージング：グラフエディターでなめらかに動かす">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"キーフレームとイージング：グラフエディターでなめらかに動かす","description":"動きが“カクカク・機械的”になるのは等速のせい。Premiere Proのイーズイン/アウトとグラフエディター（速度グラフ・ベジェハンドル）で、プロっぽいなめらかな動きを作る手順を解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-keyframe-easing.html"}}
+</script>
+<title>キーフレームとイージング：グラフエディターでなめらかに動かす | SUBGRADE</title>
+<meta name="description" content="動きが“カクカク・機械的”になるのは等速のせい。Premiere Proのイーズイン/アウトとグラフエディター（速度グラフ・ベジェハンドル）で、プロっぽいなめらかな動きを作る手順を解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--motion">モーション</span></div>
+    <div class="article__banner th-motion">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="30" width="132" height="80" rx="14" fill="#fff" stroke="#f0d692" stroke-width="3"/>
+        <line x1="48" y1="96" x2="152" y2="96" stroke="#f0d692" stroke-width="2"/>
+        <path d="M52 92 C 92 92, 100 46, 148 44" fill="none" stroke="#8b7cf0" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="52" y1="92" x2="72" y2="80" stroke="#ffc94d" stroke-width="2"/>
+        <line x1="148" y1="44" x2="128" y2="52" stroke="#ffc94d" stroke-width="2"/>
+        <rect x="47" y="87" width="10" height="10" rx="2.5" transform="rotate(45 52 92)" fill="#ff6f7e"/>
+        <rect x="143" y="39" width="10" height="10" rx="2.5" transform="rotate(45 148 44)" fill="#3fca9f"/>
+        <path d="M150 20 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>キーフレームとイージング<br>グラフエディターでなめらかに動かす</h1>
+    <p class="article__lead">
+      テキストや画像を動かしたとき、なんだか<strong>カクカクして機械的</strong>——その原因はほぼ「等速（リニア）」です。
+      イージングとグラフエディターを覚えれば、動きに“加速と減速”が生まれ、一気にプロっぽく、気持ちよくなります。
+    </p>
+    <div class="article__meta">
+      <span>モーション／アニメーション</span><span class="dot"></span>
+      <span>読了 約11分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① なぜ等速がダサいのかを理解し、② イーズイン/アウトを付け、③ グラフエディター（速度グラフ・ベジェハンドル）で
+        加速・減速の“効き”を調整して、<strong>ぬるっと気持ちいい動き</strong>を自分で作れるようになること。
+      </div>
+
+      <h2>なぜ等速（リニア）は機械的に見えるのか</h2>
+      <p>
+        現実のものは、いきなり最高速で動き出したりピタッと止まったりしません。<strong>徐々に加速し、徐々に減速</strong>します。
+        ところがキーフレームの初期設定は<strong>等速（リニア）</strong>。始点から終点まで同じ速さで動くため、無機質でカクついて見えるのです。
+        これを直すのが<strong>イージング</strong>です。
+      </p>
+
+      <h2>まずはイーズイン/アウトを付ける</h2>
+      <p>
+        いちばん簡単で効果的な方法。エフェクトコントロールでキーフレームを右クリックし、<strong>時間補間</strong>から選びます。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>種類</th><th>動き</th><th>使いどころ</th></tr></thead>
+        <tbody>
+          <tr><th>リニア（等速）</th><td>一定速度</td><td>基本は避ける（機械的）</td></tr>
+          <tr><th>イーズイン</th><td>終わりに向けて<strong>減速</strong></td><td>止まる動き（スライドして止まる）</td></tr>
+          <tr><th>イーズアウト</th><td>始まりから<strong>加速</strong></td><td>動き出し（すっと出ていく）</td></tr>
+          <tr><th>イーズイン＋アウト</th><td>加速して減速</td><td>登場→停止など大半の動き</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        まずは最初のキーフレームに「イーズアウト」、最後に「イーズイン」を付けるだけ。これだけで動きが見違えます。
+      </p>
+
+      <h2>グラフエディターで“効き”を調整する</h2>
+      <p>
+        イーズイン/アウトはあくまで初期カーブ。<strong>本当の気持ちよさはグラフエディターで作ります</strong>。
+        エフェクトコントロールで、プロパティ名の左の三角を開くと<strong>値グラフ</strong>と<strong>速度グラフ</strong>が出ます。
+      </p>
+      <ol class="steps">
+        <li>
+          <strong>速度グラフを開く</strong>
+          プロパティを展開し、速度（Velocity）グラフを表示します。
+        </li>
+        <li>
+          <strong>ベジェハンドルを引っ張る</strong>
+          キーフレームから伸びるハンドルをドラッグ。カーブが急なほど“キレのある”動き、ゆるいほど“ぬるっと”した動きに。
+        </li>
+        <li>
+          <strong>山を高く・谷を平らに</strong>
+          中盤で速く（山を高く）、両端で遅く（平らに）すると、加速→減速のメリハリが出ます。
+        </li>
+      </ol>
+      <p>
+        <strong>速度グラフの形＝動きの気持ちよさ</strong>。ここを触れるようになると、既製プリセットに頼らず“自分の間”を作れます。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>“気持ちいい動き”を作る3つのコツ</h2>
+      <ul>
+        <li><strong>短く速く</strong>：ダラダラ動かさない。0.3〜0.6秒でキビキビ。</li>
+        <li><strong>両端を必ず殺す</strong>：動き出しと止まりを減速させると、上品に見える。</li>
+        <li><strong>やりすぎない</strong>：オーバーシュート（行き過ぎて戻る）は“ここぞ”だけ。多用は逆効果。</li>
+      </ul>
+      <p>
+        トランジションにイージングをかけると、さらに滑らかになります（<a href="premiere-seamless-transitions.html">シームレストランジションの記事</a>と相性◎）。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・イーズを付けても機械的 → 速度グラフでハンドルを引ききれていない。もっと大胆に。<br>
+        ・動きがモタつく → 尺が長すぎ。短くする。<br>
+        ・キーフレームが四角のまま → まだリニア。右クリックで補間を変える（ベジェは砂時計/丸型の表示）。<br>
+        ・毎回やるのが面倒 → よく使うイージングはプリセット保存やスクリプトで。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>イーズインとイーズアウト、どっちを先に付ける？</summary>
+          <p>動き“出し”にはイーズアウト（加速）、動きが“止まる”所にはイーズイン（減速）です。登場して止まるアニメなら、最初のキーフレームにアウト、最後にインを付けます。名前が直感と逆に感じるので注意。</p>
+        </details>
+        <details>
+          <summary>数値でイージングを揃えたい。</summary>
+          <p>ベジェハンドルの引き具合を一定にするか、イージング用の拡張（Smoothifyなど）を使うと再現性が上がります。まずは手動で感覚を掴むのがおすすめです。</p>
+        </details>
+        <details>
+          <summary>After Effectsのイージングとは違う？</summary>
+          <p>考え方は同じ（時間補間＋速度グラフ＋ベジェ）です。AEの方が制御が細かく、エクスプレッションで自動化もできます。基礎は<a href="expressions-basics.html">エクスプレッションの記事</a>もどうぞ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        なめらかな動きは<strong>「等速をやめる → イーズイン/アウト → 速度グラフで加速・減速を彫る」</strong>。
+        たったこれだけで、テロップも画像も“気持ちよく”動きます。まずは全部のキーフレームからリニアを追放するところから始めてください。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/controlling-effect-changes-using-keyframe.html" target="_blank" rel="noopener">Adobe公式：Control effect changes using keyframe interpolation →</a><br>
+        <a href="https://blog.frame.io/2023/09/20/insider-tips-use-keyframe-interpolation-for-smoother-animation-premiere-pro/" target="_blank" rel="noopener">Frame.io：Use Keyframe Interpolation for Smoother Animation →</a><br>
+        <a href="https://mtmograph.com/blogs/tools/how-to-ease-keyframes-in-premiere-pro" target="_blank" rel="noopener">Mt. Mograph：How to Ease Keyframes in Premiere Pro →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

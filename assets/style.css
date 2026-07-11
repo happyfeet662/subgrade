@@ -313,6 +313,12 @@ a.card:hover h3 { color: var(--coral); }
 /* extra category colors */
 .chip--export { background: #d9eef2; color: #2b8a9a; }
 .th-export { background: #d9eef2; }
+.chip--audio { background: #dde8f7; color: #3d6bc4; }
+.th-audio { background: #dde8f7; }
+.chip--trans { background: #ffe6d2; color: #d67a2e; }
+.th-trans { background: #ffe6d2; }
+.chip--text { background: #f3e2f0; color: #b3559f; }
+.th-text { background: #f3e2f0; }
 
 /* =========================================================
    Prose tables

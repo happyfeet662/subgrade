@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-essential-sound.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="エッセンシャルサウンド完全ガイド：ノイズ除去と音量の統一">
+<meta property="og:description" content="音が悪いと動画は一気に安っぽくなります。Premiere Proのエッセンシャルサウンドで、ノイズ除去・音量の自動統一（オートマッチ）・BGMバランスを整える手順を、海外・日本のtipsをもとに解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-essential-sound.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="エッセンシャルサウンド完全ガイド：ノイズ除去と音量の統一">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"エッセンシャルサウンド完全ガイド：ノイズ除去と音量の統一","description":"音が悪いと動画は一気に安っぽくなります。Premiere Proのエッセンシャルサウンドで、ノイズ除去・音量の自動統一（オートマッチ）・BGMバランスを整える手順を、海外・日本のtipsをもとに解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-essential-sound.html"}}
+</script>
+<title>エッセンシャルサウンド完全ガイド：ノイズ除去と音量の統一 | SUBGRADE</title>
+<meta name="description" content="音が悪いと動画は一気に安っぽくなります。Premiere Proのエッセンシャルサウンドで、ノイズ除去・音量の自動統一（オートマッチ）・BGMバランスを整える手順を、海外・日本のtipsをもとに解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--audio">オーディオ</span></div>
+    <div class="article__banner th-audio">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <line x1="28" y1="70" x2="172" y2="70" stroke="#c7d8ef" stroke-width="2"/>
+        <rect x="40" y="58" width="8" height="24" rx="4" fill="#3d6bc4"/>
+        <rect x="56" y="46" width="8" height="48" rx="4" fill="#3d6bc4"/>
+        <rect x="72" y="36" width="8" height="68" rx="4" fill="#3d6bc4"/>
+        <rect x="88" y="52" width="8" height="36" rx="4" fill="#3d6bc4"/>
+        <rect x="104" y="30" width="8" height="80" rx="4" fill="#56b4ef"/>
+        <rect x="120" y="50" width="8" height="40" rx="4" fill="#3d6bc4"/>
+        <rect x="136" y="42" width="8" height="56" rx="4" fill="#3d6bc4"/>
+        <rect x="152" y="60" width="8" height="20" rx="4" fill="#3d6bc4"/>
+        <path d="M150 22 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>エッセンシャルサウンド完全ガイド<br>ノイズ除去と音量の統一</h1>
+    <p class="article__lead">
+      視聴者は「画質が少し悪い動画」は我慢できても、「音が悪い動画」はすぐ離脱します。
+      Premiere Pro のエッセンシャルサウンドを使えば、ノイズ除去・音量の統一・BGMバランスまで、専門知識なしで“聴きやすい音”に整えられます。
+    </p>
+    <div class="article__meta">
+      <span>オーディオ</span><span class="dot"></span>
+      <span>読了 約11分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① 音声にタグを付けてエッセンシャルサウンドを使えるようにし、② ノイズを自然に除去し、
+        ③ 複数クリップの音量を<strong>オートマッチ</strong>で一括統一し、④ BGMとナレーションのバランスを整える——までを再現できるようになること。
+      </div>
+
+      <h2>まず「音声の種類」をタグ付けする</h2>
+      <p>
+        エッセンシャルサウンド（ウィンドウ → エッセンシャルサウンド）は、<strong>最初にクリップの種類を指定しないと機能が有効になりません</strong>。
+        クリップを選んで、次のいずれかをクリックします。
+      </p>
+      <ul>
+        <li><strong>会話（Dialogue）</strong>：ナレーション・インタビューなどの人の声</li>
+        <li><strong>ミュージック（Music）</strong>：BGM</li>
+        <li><strong>SFX</strong>：効果音</li>
+        <li><strong>環境音（Ambience）</strong>：背景の空気感</li>
+      </ul>
+      <p>
+        このタグ付けで、種類ごとに最適な調整メニュー（ノイズ除去・ラウドネス等）が出てきます。まずはここから。
+      </p>
+
+      <h2>ノイズ除去は“3〜5”から</h2>
+      <p>
+        「会話」タグの<strong>修復（Repair）</strong>タブで「ノイズを軽減」にチェック。ここで<strong>いきなり最大にしないこと</strong>が最大のコツです。
+      </p>
+      <ul>
+        <li>スライダーは<strong>3〜5あたりから</strong>開始。上げすぎると声が“水中のように”こもり、ロボットっぽくなります。</li>
+        <li>「ノイズ」「ハム（電源のブーン）」「雑音」など、原因ごとに別スライダーで対処できる。</li>
+        <li>耳で確認しながら、<strong>ノイズが気にならない最小値</strong>で止めるのが自然。</li>
+      </ul>
+
+      <h2>音量を「オートマッチ」で一気に揃える</h2>
+      <p>
+        複数のカットで声の大きさがバラバラ——これは<strong>ラウドネスのオートマッチ</strong>で一発解決します。
+      </p>
+      <ol class="steps">
+        <li>
+          <strong>対象クリップを全選択</strong>
+          音量を揃えたい会話クリップをまとめて選びます。
+        </li>
+        <li>
+          <strong>同じタグ（会話）を付ける</strong>
+          全部に「会話」タグが付いていることが条件。付いていないとオートマッチが出ません。
+        </li>
+        <li>
+          <strong>ラウドネス → オートマッチ</strong>
+          「ラウドネス」タブを開いて「オートマッチ」をクリック。Premiereが各クリップに個別のゲイン補正を自動適用し、<strong>全体の音量が均一</strong>になります。
+        </li>
+      </ol>
+      <p>
+        配信プラットフォームは基準ラウドネス（YouTubeは概ね −14 LUFS 前後）で自動調整されます。オートマッチで整えておけば、大きな破綻はまず起きません。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>BGMとナレーションのバランス</h2>
+      <p>
+        BGMが大きすぎて声が埋もれる——ありがちな失敗です。目安の音量バランスはこちら。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>音の種類</th><th>目安レベル</th><th>ねらい</th></tr></thead>
+        <tbody>
+          <tr><th>ナレーション（会話）</th><td>−6〜−12 dB あたり</td><td>主役。いちばん聴かせたい</td></tr>
+          <tr><th>BGM（会話あり）</th><td>−18〜−25 dB あたり</td><td>声を邪魔しない“下敷き”</td></tr>
+          <tr><th>BGM（会話なし）</th><td>−12〜−18 dB あたり</td><td>映像を引き立てる主役級</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        さらに、声が出ている間だけBGMを自動的に下げる<strong>「ダッキング」</strong>を使うと、手作業なしで聴きやすくなります（エッセンシャルサウンドのミュージック → ダッキング）。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・オートマッチが押せない → クリップに種類タグが付いているか確認。<br>
+        ・声がこもった → ノイズ除去を下げる（3〜5目安）。<br>
+        ・BGMがうるさい → ダッキングを有効化、または手動で−20dB前後へ。<br>
+        ・全体が小さい → クリップではなくシーケンス全体のラウドネスを確認。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>ノイズ除去はどれくらいが正解？</summary>
+          <p>「ノイズが気にならなくなる最小値」が正解です。数値の正解はなく、3〜5から始めて耳で判断。上げるほど声質が犠牲になるため、欲張らないのがコツです。</p>
+        </details>
+        <details>
+          <summary>撮影時にできるノイズ対策は？</summary>
+          <p>編集より撮影が9割です。マイクを口に近づける、静かな環境で録る、エアコン・PCファンを切る——これだけでノイズ除去に頼らずに済みます。編集はあくまで“仕上げ”です。</p>
+        </details>
+        <details>
+          <summary>LUFSとdB、どっちを見ればいい？</summary>
+          <p>クリップ単位の微調整はdB、動画全体の“聴感上の大きさ”はLUFS（ラウドネス）で見ます。配信向けはオートマッチで整えれば、細かいLUFS管理は不要なことが多いです。</p>
+        </details>
+        <details>
+          <summary>書き出し時の音声設定は？</summary>
+          <p>AAC / 320kbps / 48kHz が無難です。詳しくは<a href="premiere-export-settings.html">書き出し設定の記事</a>を参照してください。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        音づくりは<strong>「タグ付け → ノイズ除去（控えめ）→ オートマッチで音量統一 → BGMバランス／ダッキング」</strong>。
+        エッセンシャルサウンドはこの流れを専門知識なしで実現してくれます。映像と同じくらい、いや、それ以上に音は印象を決めます。最後のひと手間を惜しまないでください。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/premiere-essential-sound-panel.html" target="_blank" rel="noopener">Adobe公式：Edit audio with the Essential Sound panel →</a><br>
+        <a href="https://helpx.adobe.com/premiere/desktop/add-audio-effects/adjust-volume-and-levels/auto-match-audio-loudness.html" target="_blank" rel="noopener">Adobe公式：Auto-match audio loudness →</a><br>
+        <a href="https://www.miracamp.com/learn/premiere-pro/how-to-denoise" target="_blank" rel="noopener">Miracamp：Denoise in Premiere Pro →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語・日本語の情報をもとに検証・再構成したものです。数値は目安であり、素材により最適値は変わります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

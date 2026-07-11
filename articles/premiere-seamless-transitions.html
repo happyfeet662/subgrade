@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-seamless-transitions.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="シームレストランジションの作り方（ズーム・ホイップパン）">
+<meta property="og:description" content="プリセット任せではない“自作”シームレストランジション。調整レイヤー＋ブラーで作るホイップパン、スムーズズーム、ルミナンスフェードの手順と、使いすぎないコツを海外tipsをもとに解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-seamless-transitions.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="シームレストランジションの作り方（ズーム・ホイップパン）">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"シームレストランジションの作り方（ズーム・ホイップパン）","description":"プリセット任せではない“自作”シームレストランジション。調整レイヤー＋ブラーで作るホイップパン、スムーズズーム、ルミナンスフェードの手順と、使いすぎないコツを海外tipsをもとに解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-seamless-transitions.html"}}
+</script>
+<title>シームレストランジションの作り方（ズーム・ホイップパン） | SUBGRADE</title>
+<meta name="description" content="プリセット任せではない“自作”シームレストランジション。調整レイヤー＋ブラーで作るホイップパン、スムーズズーム、ルミナンスフェードの手順と、使いすぎないコツを海外tipsをもとに解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--trans">トランジション</span></div>
+    <div class="article__banner th-trans">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="46" width="70" height="52" rx="12" fill="#fff" stroke="#f0c39a" stroke-width="3"/>
+        <rect x="96" y="46" width="70" height="52" rx="12" fill="#ffe6d2" stroke="#d67a2e" stroke-width="3"/>
+        <path d="M60 118 q40 -18 80 0" fill="none" stroke="#d67a2e" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M140 118 l-8 -3 m8 3 l-3 -8" fill="none" stroke="#d67a2e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="112" y1="60" x2="126" y2="60" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
+        <line x1="112" y1="72" x2="132" y2="72" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
+        <line x1="112" y1="84" x2="122" y2="84" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>シームレストランジションの作り方<br>ズーム・ホイップパン</h1>
+    <p class="article__lead">
+      配布プリセットを当てるだけの“いかにも”なトランジションから卒業しましょう。
+      仕組みを理解すれば、調整レイヤーとブラーだけで<strong>シームレスなホイップパンやズーム</strong>を自作でき、狙った速さ・向きに調整できます。使いどころの判断力も含めて解説します。
+    </p>
+    <div class="article__meta">
+      <span>トランジション</span><span class="dot"></span>
+      <span>読了 約11分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① 調整レイヤーの使い方を理解し、② ブラーで<strong>ホイップパン</strong>を、③ スケールで<strong>スムーズズーム</strong>を自作し、
+        ④ ルミナンスフェードなど“上品な”定番も押さえ、⑤ 使いすぎない判断ができるようになること。
+      </div>
+
+      <h2>基本の考え方：トランジションは「つなぎ目を隠す」</h2>
+      <p>
+        シームレストランジションの正体は、<strong>カットの切り替わりを、動き・ブラー・明るさで一瞬“見えなく”する</strong>こと。
+        目線が追いつかない一瞬を作り、その裏でカットを切り替えます。派手な効果より、この“隠す”発想が本質です。
+      </p>
+
+      <h2>調整レイヤーを用意する</h2>
+      <p>
+        自作トランジションの土台が<strong>調整レイヤー</strong>です。プロジェクトパネルの新規項目 → 調整レイヤーを作り、<strong>2つのクリップの境目にまたがるように</strong>タイムラインの上のトラックへ置きます。ここにブラー等をかけると、下の両クリップに効果が乗ります。
+      </p>
+
+      <h2>ホイップパン（振り向き）トランジション</h2>
+      <p>海外tipsでも定番の作り方。方向ブラーで“ビュン”と振る動きを作ります。</p>
+      <ol class="steps">
+        <li>
+          <strong>境目に調整レイヤーを置く</strong>
+          切り替わりをまたぐ長さ（0.5秒前後）で配置。
+        </li>
+        <li>
+          <strong>方向ブラー（Directional Blur）を適用</strong>
+          振りたい向きに角度を設定（横なら90°など）。
+        </li>
+        <li>
+          <strong>ブラー量をキーフレーム</strong>
+          中央で最大、前後で0になるように。<strong>0 → 最大 → 0</strong>の山を作ると、振って戻る動きに。
+        </li>
+        <li>
+          <strong>“ウォッシュ”効果音を足す</strong>
+          「whoosh（ヒュッ）」というSEを重ねるだけで、体感の完成度が跳ね上がります。
+        </li>
+      </ol>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>スムーズズーム トランジション</h2>
+      <p>
+        調整レイヤーの<strong>スケール</strong>をキーフレームで一気に拡大し、ガウスブラーを少量重ねると、吸い込まれるようなズーム切り替えになります。イージング（次章）をかけると一気に“ぬるっ”と滑らかに。テンポの速いVlogやショート動画で映えます。
+      </p>
+
+      <h2>定番トランジションと使いどころ</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>種類</th><th>印象</th><th>向く場面</th></tr></thead>
+        <tbody>
+          <tr><th>ホイップパン</th><td>勢い・テンポ</td><td>Vlog、ショート、場面転換</td></tr>
+          <tr><th>スムーズズーム</th><td>ダイナミック</td><td>強調、リズム編集</td></tr>
+          <tr><th>ルミナンスフェード</th><td>上品・シネマ</td><td>作品、しっとりした映像</td></tr>
+          <tr><th>ディゾルブ（クロスフェード）</th><td>時間経過・自然</td><td>回想、場所移動</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="callout">
+        <strong class="label">使いすぎ注意</strong>
+        派手なトランジションは<strong>“ここぞ”の1回で効きます</strong>。全カットに入れると逆に安っぽく、目が疲れます。
+        基本はカット（無地の切り替え）で、場面が変わる要所だけトランジション——が上級者の使い方。長さは0.5〜1秒で短く。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>プリセットを買うのと自作、どっちがいい？</summary>
+          <p>時短ならプリセット、調整の自由度と“他と被らない”を求めるなら自作です。仕組みを理解しておくと、買ったプリセットも自分好みに直せるようになります。</p>
+        </details>
+        <details>
+          <summary>トランジションでカクつく・重い。</summary>
+          <p>調整レイヤー＋ブラーはプレビューが重くなりがち。再生解像度を下げるか、プロキシで作業を。詳しくは<a href="premiere-proxy-workflow.html">プロキシ運用の記事</a>へ。</p>
+        </details>
+        <details>
+          <summary>もっと滑らかにしたい。</summary>
+          <p>キーフレームにイージングをかけましょう。等速だと機械的になります。<a href="premiere-keyframe-easing.html">キーフレームとイージングの記事</a>で解説しています。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        シームレストランジションは<strong>「調整レイヤー＋ブラー/スケールで、切り替わりを一瞬隠す」</strong>だけ。
+        ホイップパンとズームの2つを自作できれば、たいていの場面はカバーできます。あとは<strong>使いすぎないこと</strong>——効果は要所で光ります。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://www.miracamp.com/learn/premiere-pro/whip-transition" target="_blank" rel="noopener">Miracamp：Create a seamless whip transition →</a><br>
+        <a href="https://lensvid.com/post-processing/creating-smooth-seamless-transitions-in-premiere-pro/" target="_blank" rel="noopener">LensVid：Creating Smooth Seamless Transitions →</a><br>
+        <a href="https://www.miracamp.com/learn/premiere-pro/how-to-add-transitions" target="_blank" rel="noopener">Miracamp：How to Add Transitions →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語・日本語の情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
