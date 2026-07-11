@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# 公開ドメインが決まったら example.com を差し替えてください
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://happyfeet662.github.io/subgrade/sitemap.xml

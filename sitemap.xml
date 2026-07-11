@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 公開ドメインが決まったら https://example.com を実際のドメインに一括置換してください -->
+<!-- 公開ドメインが決まったら https://happyfeet662.github.io/subgrade を実際のドメインに一括置換してください -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://example.com/articles/premiere-color-management.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://example.com/articles/premiere-proxy-workflow.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://example.com/articles/premiere-mogrt-essential-graphics.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
-  <url><loc>https://example.com/articles/expressions-basics.html</loc><lastmod>2026-07-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://example.com/articles/premiere-shortcuts-efficiency.html</loc><lastmod>2026-07-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://example.com/articles/ai-captions-claude.html</loc><lastmod>2026-07-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://example.com/about.html</loc><priority>0.5</priority></url>
-  <url><loc>https://example.com/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-color-management.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-proxy-workflow.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-mogrt-essential-graphics.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles/expressions-basics.html</loc><lastmod>2026-07-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-shortcuts-efficiency.html</loc><lastmod>2026-07-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles/ai-captions-claude.html</loc><lastmod>2026-07-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/about.html</loc><priority>0.5</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/privacy.html</loc><priority>0.3</priority></url>
 </urlset>
