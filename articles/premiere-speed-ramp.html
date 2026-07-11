@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-speed-ramp.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="スピードランプの作り方：時間の緩急でカッコよく見せる">
+<meta property="og:description" content="速→遅→速の“緩急”で映像に勢いを生むスピードランプ（タイムリマップ）。キーフレームの打ち方、イーズでの滑らか化、オプティカルフロー、素材のフレームレートまで実用手順を解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-speed-ramp.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="スピードランプの作り方：時間の緩急でカッコよく見せる">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"スピードランプの作り方：時間の緩急でカッコよく見せる","description":"速→遅→速の“緩急”で映像に勢いを生むスピードランプ（タイムリマップ）。キーフレームの打ち方、イーズでの滑らか化、オプティカルフロー、素材のフレームレートまで実用手順を解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-speed-ramp.html"}}
+</script>
+<title>スピードランプの作り方：時間の緩急でカッコよく見せる | SUBGRADE</title>
+<meta name="description" content="速→遅→速の“緩急”で映像に勢いを生むスピードランプ（タイムリマップ）。キーフレームの打ち方、イーズでの滑らか化、オプティカルフロー、素材のフレームレートまで実用手順を解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--fx">エフェクト</span></div>
+    <div class="article__banner th-fx">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <line x1="34" y1="96" x2="166" y2="96" stroke="#e6a6a2" stroke-width="2"/>
+        <path d="M40 92 C 74 92, 78 46, 100 46 C 122 46, 126 92, 160 92" fill="none" stroke="#d9534f" stroke-width="3.5" stroke-linecap="round"/>
+        <rect x="35" y="87" width="10" height="10" rx="2.5" transform="rotate(45 40 92)" fill="#d9534f"/>
+        <rect x="95" y="41" width="10" height="10" rx="2.5" transform="rotate(45 100 46)" fill="#ffc94d"/>
+        <rect x="155" y="87" width="10" height="10" rx="2.5" transform="rotate(45 160 92)" fill="#d9534f"/>
+        <text x="100" y="118" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="11" font-weight="700" fill="#d9534f">速 → 遅 → 速</text>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>スピードランプの作り方<br>時間の緩急でカッコよく見せる</h1>
+    <p class="article__lead">
+      同じ映像でも、<strong>速→遅→速</strong>と再生速度を変化させるだけで、一気に“エモく・力強く”なります。
+      これがスピードランプ（タイムリマップ）。キーフレームの打ち方から、なめらかに繋ぐイーズ、破綻しないための素材選びまで実用手順で解説します。
+    </p>
+    <div class="article__meta">
+      <span>エフェクト / 速度</span><span class="dot"></span>
+      <span>読了 約10分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① タイムリマップで速度キーフレームを打ち、② 速い所と遅い所を作り、③ 変化点を<strong>イーズでなめらか</strong>にし、
+        ④ オプティカルフローとフレームレートで“ぬるぬる”に仕上げられるようになること。
+      </div>
+
+      <h2>スピードランプとは</h2>
+      <p>
+        1つのクリップの中で、<strong>再生速度を動的に変える</strong>技術です。アクションの決め所でスッと遅くし、前後を速く流す——
+        この緩急が、平凡な映像に“見せ場”を作ります。MV・スポーツ・Vlogの定番テクニックです。
+      </p>
+
+      <h2>手順：タイムリマップで速度を打つ</h2>
+      <ol class="steps">
+        <li>
+          <strong>クリップキーフレームを速度表示に</strong>
+          クリップを右クリック →「クリップキーフレームを表示 → タイムリマップ → 速度」。クリップ上に速度を示す白い線が出ます。
+        </li>
+        <li>
+          <strong>ペンツールで区間を区切る</strong>
+          P（ペン）で、速度を変えたい<strong>開始点と終了点</strong>に白い線上をクリック。2点でひとつの区間ができます。
+        </li>
+        <li>
+          <strong>線を上下にドラッグ</strong>
+          2点の間の線を<strong>上へ＝速く、下へ＝スロー</strong>。数値で速度が変わります。
+        </li>
+        <li>
+          <strong>変化を“瞬間”から“なめらか”へ</strong>
+          このままだと速度が一瞬で切り替わります。選択ツールでキーフレームの片側マーカーを<strong>ドラッグして広げる</strong>と、緩やかに加速・減速します。
+        </li>
+      </ol>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>“なめらか”を突き詰める</h2>
+      <ul>
+        <li><strong>イーズを併用</strong>：変化点のキーフレームにイーズイン/アウト。等速の切り替えより格段に自然（詳しくは<a href="premiere-keyframe-easing.html">キーフレームとイージング</a>）。</li>
+        <li><strong>オプティカルフロー</strong>：スロー時のカクつきは、速度の補間を「オプティカルフロー」にすると中間フレームを生成して滑らかに。要レンダリング。</li>
+        <li><strong>ハイフレームレート素材</strong>：60fps・120fpsで撮った素材はスローにしても情報が多く、ぬるぬるに。スロー狙いは高フレームレートで撮るのが正解。</li>
+      </ul>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・切り替えがカクッとする → キーフレームのマーカーを広げてイーズを効かせる。<br>
+        ・スローがパラパラ → オプティカルフロー、または高フレームレート素材を使う。<br>
+        ・音がおかしくなる → 速度変化で音程が変わる。音は別トラックに分けて処理。<br>
+        ・重い・レンダリングが長い → オプティカルフローは負荷大。必要な所だけに。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>30fpsの素材でもスローにできる？</summary>
+          <p>できますが、フレームが足りずカクつきます。オプティカルフローで補えますが限界あり。スローを多用するなら60fps以上で撮るのが根本解決です。</p>
+        </details>
+        <details>
+          <summary>どこで遅くするのが効果的？</summary>
+          <p>“決めのアクション”の瞬間です。ジャンプの頂点、振り向き、着地など。前後を速く流し、その一点だけスローにすると緩急が最大化します。</p>
+        </details>
+        <details>
+          <summary>音楽に合わせたい。</summary>
+          <p>ビートの位置に速度変化を合わせると気持ちよくハマります。まず音楽のリズムにマーカーを打ち、その点で速度を切り替えると同期しやすいです。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        スピードランプは<strong>「速度キーフレームを打つ → 上下で速い/遅いを作る → マーカーを広げてなめらかに → イーズ＋オプティカルフローで磨く」</strong>。
+        緩急は映像の“抑揚”。決め所を一点スローにするだけで、動画がぐっと締まります。高フレームレート素材があればなお強力です。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://www.adobe.com/creativecloud/video/hub/guides/premiere-pro-speed-ramp.html" target="_blank" rel="noopener">Adobe：Create action speed ramps →</a><br>
+        <a href="https://motionarray.com/learn/premiere-pro/premiere-pro-speed-ramping-tutorial/" target="_blank" rel="noopener">Motion Array：How to Use Speed Ramping →</a><br>
+        <a href="https://www.surfacedstudio.com/tutorials/premiere-pro/premiere-pro-speed-ramp-smooth-slow-motion/" target="_blank" rel="noopener">Surfaced Studio：Speed Ramp & Smooth Slow Motion →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

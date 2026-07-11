@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-text-based-editing.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="テキストベース編集：文字起こしを消すだけで動画が切れる">
+<meta property="og:description" content="Premiere Proのテキストベース編集で、原稿を消す感覚で動画をカット。フィラーワード（えー・あのー）や無音の自動検出・一括削除の手順と、消しすぎない注意点まで解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-text-based-editing.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="テキストベース編集：文字起こしを消すだけで動画が切れる">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"テキストベース編集：文字起こしを消すだけで動画が切れる","description":"Premiere Proのテキストベース編集で、原稿を消す感覚で動画をカット。フィラーワード（えー・あのー）や無音の自動検出・一括削除の手順と、消しすぎない注意点まで解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-text-based-editing.html"}}
+</script>
+<title>テキストベース編集：文字起こしを消すだけで動画が切れる | SUBGRADE</title>
+<meta name="description" content="Premiere Proのテキストベース編集で、原稿を消す感覚で動画をカット。フィラーワード（えー・あのー）や無音の自動検出・一括削除の手順と、消しすぎない注意点まで解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--flow">ワークフロー</span></div>
+    <div class="article__banner th-flow">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="32" width="112" height="76" rx="12" fill="#fff" stroke="#a9cdef" stroke-width="3"/>
+        <rect x="56" y="46" width="60" height="7" rx="3.5" fill="#56b4ef"/>
+        <rect x="56" y="60" width="88" height="7" rx="3.5" fill="#d5e6f7"/>
+        <g>
+          <rect x="56" y="74" width="52" height="7" rx="3.5" fill="#d5e6f7"/>
+          <line x1="52" y1="77.5" x2="112" y2="77.5" stroke="#d9534f" stroke-width="2"/>
+        </g>
+        <rect x="56" y="88" width="76" height="7" rx="3.5" fill="#d5e6f7"/>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>テキストベース編集<br>文字起こしを消すだけで動画が切れる</h1>
+    <p class="article__lead">
+      タイムラインでイン/アウトを打つ代わりに、<strong>原稿（文字起こし）の要らない部分を消すだけ</strong>で動画がカットされる——
+      それがテキストベース編集です。長尺のトーク・インタビュー編集が劇的に速くなります。フィラーワードや無音の自動削除まで解説します。
+    </p>
+    <div class="article__meta">
+      <span>ワークフロー</span><span class="dot"></span>
+      <span>読了 約10分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        ① 文字起こしを生成し、② テキストを消す感覚でカットし、③ フィラーワード（えー・あのー）や無音を<strong>自動検出・一括削除</strong>し、
+        ④ “消しすぎ”で不自然にしないコツを押さえること。
+      </div>
+
+      <h2>テキストベース編集とは</h2>
+      <p>
+        音声を自動で文字起こしし、その<strong>文字を編集するとタイムラインのカットに反映される</strong>ワークフローです。
+        トランスクリプト（文字起こし）パネルで要らない言葉を選んで削除すると、Premiereが対応する映像を実際にカットしてくれます。
+        タイムラインを睨まなくても、原稿を読みながら編集できるのが革命的です。
+      </p>
+
+      <h2>手順：文字起こしから切る</h2>
+      <ol class="steps">
+        <li>
+          <strong>文字起こしを生成</strong>
+          テキストパネルで「文字起こしを生成」。言語・話者を指定して実行します（詳しくは<a href="ai-captions-claude.html">AI字幕の記事</a>）。
+        </li>
+        <li>
+          <strong>要らない部分を選んで削除</strong>
+          トランスクリプトで、言い直し・脱線・沈黙などをドラッグ選択して Delete。対応する映像がカットされます。
+        </li>
+        <li>
+          <strong>並べ替えもできる</strong>
+          文の順番を入れ替えれば、映像の並びも変わります。構成を“原稿ベース”で組めます。
+        </li>
+      </ol>
+
+      <h2>フィラーワードと無音を自動で消す</h2>
+      <p>
+        「えー」「あのー」「um」などの<strong>フィラーワード</strong>や<strong>無音（間）</strong>は、自動検出して一括削除できます。
+      </p>
+      <ol class="steps">
+        <li>
+          <strong>フィルター（じょうごアイコン）を開く</strong>
+          トランスクリプトパネル上部のフィルターから「フィラーワード」をオンにすると、該当箇所がハイライトされます。
+        </li>
+        <li>
+          <strong>まとめて選択して削除</strong>
+          「すべて選択」→ Delete で一括削除。1つずつ確認しながら消すことも可能です。
+        </li>
+        <li>
+          <strong>無音（ポーズ）も検出</strong>
+          長すぎる間を検出して削除する機能もあります。テンポの改善に有効です。
+        </li>
+      </ol>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>“消しすぎ”に注意</h2>
+      <p>
+        フィラーワードや間を<strong>全部消すと、逆に不自然</strong>になります。少しの「えー」や短い間は、話のリズムや人間味を作っています。
+        <strong>一括削除の前に必ず一度目を通し</strong>、リズムに必要なものは残しましょう。機械的に消すと“詰まりすぎて息苦しい”動画になります。
+      </p>
+      <p>
+        より文脈を見て判断したい場合は、Claude など<strong>文脈を読めるAI</strong>に文字起こしを渡し、「意味を持つ“えー”は残す」といった判断をさせる手もあります（<a href="ai-captions-claude.html">Claude API × Premiere</a>）。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・文字起こしの精度が低い → 音がクリアなほど精度↑。<a href="premiere-essential-sound.html">ノイズ除去</a>で音を整えてから。<br>
+        ・消したら映像が飛ぶ → 想定どおり。J・Lカットで繋ぎを自然に（<a href="premiere-jl-cut.html">J・Lカット</a>）。<br>
+        ・テンポが悪い → 消しすぎ。間を少し残す。<br>
+        ・固有名詞が誤変換 → 先に文字起こしを手直ししてから削除作業へ。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>どんな動画に向いてる？</summary>
+          <p>トーク・インタビュー・ポッドキャスト・解説動画など“喋りが主役”の長尺に最適です。逆に、喋りの少ないMVや風景動画では恩恵は小さめです。</p>
+        </details>
+        <details>
+          <summary>日本語でも使える？</summary>
+          <p>使えます。精度は音質に左右されるので、マイクを近づけ、ノイズを抑えて録ると文字起こしが安定します。固有名詞は後で手直しを。</p>
+        </details>
+        <details>
+          <summary>細かい調整はタイムラインで必要？</summary>
+          <p>大枠はテキストで一気に、最後の微調整はタイムラインで、が効率的です。カットの境目やJ・Lカットはタイムライン側で仕上げると自然になります。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        テキストベース編集は<strong>「文字起こし → 要らない言葉を消す → フィラー/無音を自動削除 → 消しすぎず整える」</strong>。
+        長尺トークのラフ編集が別次元の速さになります。仕上げはタイムラインで——この合わせ技で、速さと自然さを両立させましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere/desktop/edit-projects/edit-video-using-text-based-editing/overview-of-text-based-editing.html" target="_blank" rel="noopener">Adobe公式：Text-Based Editing overview →</a><br>
+        <a href="https://helpx.adobe.com/premiere/desktop/edit-projects/edit-video-using-text-based-editing/detect-and-delete-pauses-in-transcripts.html" target="_blank" rel="noopener">Adobe公式：Detect and delete pauses in transcripts →</a><br>
+        <a href="https://www.junoschool.org/article/automatically-remove-pauses-filler-words-premiere-pro/" target="_blank" rel="noopener">Juno School：Remove Pauses & Filler Words →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。UIや名称はバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
