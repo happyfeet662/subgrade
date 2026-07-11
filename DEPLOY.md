@@ -5,7 +5,9 @@
 ## 公開前チェックリスト
 - [ ] `about.html` の運営者名・連絡先メールを記入
 - [ ] 全ページの `href="#"`（X / note リンク）を実URLに差し替え
-- [ ] `robots.txt` と `sitemap.xml` の `example.com` を実ドメインに置換
+- [ ] `example.com` を実ドメインに一括置換（`robots.txt`・`sitemap.xml`・全HTMLの canonical / OGP / 構造化データ）
+      例：`grep -rl example.com . | xargs sed -i '' 's#https://example.com#https://<あなたのドメイン>#g'`
+- [ ] OGP画像 `assets/ogp.png`（1200×630）はそのまま利用可。差し替える場合も同サイズ推奨
 - [ ] （AdSense承認後）各HTML `<head>` のローダー1行を有効化し、`ca-pub-XXXX`・`data-ad-slot` を記入
 - [ ] （AdSense承認後）`ads.txt` をルートに設置：`google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`
 
