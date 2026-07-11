@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-lumetri-color-grading.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Lumetri徹底解説：スコープ・カーブ・HSLセカンダリで色を“作る”">
+<meta property="og:description" content="Premiere ProのLumetriカラーを、感覚ではなく数値で。波形・ベクトルスコープの読み方、カーブでの質感づくり、HSLセカンダリの部分補正、スキントーンの整え方までプロの手順を体系的に解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-lumetri-color-grading.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lumetri徹底解説：スコープ・カーブ・HSLセカンダリで色を“作る”">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lumetri徹底解説：スコープ・カーブ・HSLセカンダリで色を“作る”","description":"Premiere ProのLumetriカラーを、感覚ではなく数値で。波形・ベクトルスコープの読み方、カーブでの質感づくり、HSLセカンダリの部分補正、スキントーンの整え方までプロの手順を体系的に解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-lumetri-color-grading.html"}}
+</script>
+<title>Lumetri徹底解説：スコープ・カーブ・HSLセカンダリで色を“作る” | SUBGRADE</title>
+<meta name="description" content="Premiere ProのLumetriカラーを、感覚ではなく数値で。波形・ベクトルスコープの読み方、カーブでの質感づくり、HSLセカンダリの部分補正、スキントーンの整え方までプロの手順を体系的に解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--color">カラー</span></div>
+    <div class="article__banner th-color">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="70" r="40" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+        <line x1="80" y1="32" x2="80" y2="108" stroke="#f3d9cc" stroke-width="1.5"/>
+        <line x1="42" y1="70" x2="118" y2="70" stroke="#f3d9cc" stroke-width="1.5"/>
+        <line x1="58" y1="48" x2="102" y2="92" stroke="#ff6f7e" stroke-width="2.5" stroke-dasharray="3 3"/>
+        <circle cx="96" cy="84" r="7" fill="#ffc94d" stroke="#fff" stroke-width="2"/>
+        <circle cx="68" cy="56" r="5" fill="#8b7cf0" stroke="#fff" stroke-width="2"/>
+        <rect x="128" y="42" width="48" height="58" rx="10" fill="#f2effc" stroke="#c9bef7" stroke-width="2.5"/>
+        <path d="M135 92 C 148 92, 152 54, 170 50" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M150 22 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>Lumetri徹底解説<br>スコープ・カーブ・HSLセカンダリで色を“作る”</h1>
+    <p class="article__lead">
+      色は「なんとなく暖かく」で合わせると、モニターや案件が変わった瞬間に破綻します。
+      プロが安定して同じ画を出せるのは、<strong>目ではなくスコープ（数値）で判断している</strong>から。
+      この記事では、Lumetriの読み方・カーブ・HSLセカンダリ・スキントーンまでを、再現できる手順として一気に整理します。
+    </p>
+    <div class="article__meta">
+      <span>カラーグレーディング</span><span class="dot"></span>
+      <span>読了 約14分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">🎯 この記事のゴール</strong>
+        ① 3つのスコープを読めるようになり、② 基本補正で土台を作り、③ カーブで質感を彫り、
+        ④ HSLセカンダリで一部の色だけ調整し、⑤ スキントーンを基準に全体を整える——という
+        「毎回同じ結果になるグレーディングの型」を身につけること。
+      </div>
+
+      <h2>まず：カラーコレクションとカラーグレーディングは別物</h2>
+      <p>
+        この2つを混ぜると、いつまでも安定しません。順番と役割が違います。
+      </p>
+      <ul>
+        <li><strong>カラーコレクション（補正）</strong>：素材を“正しい”状態にする作業。露出・ホワイトバランス・コントラストを整え、複数カットの色を揃える。<strong>正解がある</strong>工程。</li>
+        <li><strong>カラーグレーディング（演出）</strong>：補正済みの土台に“世界観”を乗せる作業。シネマティックに寒色へ振る、暖かい記憶色にする、など。<strong>正解がない</strong>工程。</li>
+      </ul>
+      <p>
+        <strong>必ず補正 → グレーディングの順</strong>で。土台が傾いたまま演出を足すと、カットごとにバラつきます。
+      </p>
+
+      <h2>ステップ0：スコープを読めるようになる</h2>
+      <p>
+        Lumetriスコープ（ウィンドウ → Lumetriスコープ）は、色を“客観的な数値”で見るための計器です。最低限この3つを押さえます。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>スコープ</th><th>見るもの</th><th>実務での使い方</th></tr></thead>
+        <tbody>
+          <tr><th>波形（Waveform）</th><td>明るさ（輝度）。縦軸 0〜100</td><td>白飛び（100超え）・黒つぶれ（0割れ）を防ぐ。顔の明るさを中間（60〜70付近）にキープ</td></tr>
+          <tr><th>RGBパレード</th><td>R/G/Bチャンネルの分布</td><td>色かぶりの発見。3色の“足元（暗部）”と“頭（明部）”を揃えるとニュートラルに</td></tr>
+          <tr><th>ベクトルスコープ（YUV）</th><td>色相と彩度</td><td>彩度の出しすぎを防ぐ。<strong>スキントーンライン</strong>に肌の点を寄せると自然な肌色に</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        コツは<strong>「まず波形で明るさ、次にパレードで色かぶり、最後にベクトルで彩度と肌」</strong>という見る順番を固定すること。目の錯覚に左右されなくなります。
+      </p>
+
+      <h2>ステップ1：基本補正で土台を作る</h2>
+      <p>Lumetriの「基本補正」タブを、上から順に触るのが基本です。</p>
+      <ol class="steps">
+        <li>
+          <strong>ホワイトバランス</strong>
+          スポイトで“本来グレー/白のもの”をクリック。色かぶりが一発で取れます。RGBパレードで3色が揃うのを確認。
+        </li>
+        <li>
+          <strong>露出（Exposure）</strong>
+          全体の明るさ。波形を見て、顔が中間に来るよう調整。
+        </li>
+        <li>
+          <strong>コントラスト／ハイライト／シャドウ</strong>
+          明暗の幅を作る。ハイライトを少し下げ、シャドウを少し持ち上げると情報が残る。
+        </li>
+        <li>
+          <strong>白レベル・黒レベル</strong>
+          波形の上端が100を超えず、下端が0を割らないように微調整。ここで“レンジ”が決まります。
+        </li>
+      </ol>
+
+      <h2>ステップ2：カーブで質感を“彫る”</h2>
+      <p>
+        基本補正がスライダーの世界なら、カーブは<strong>ピンポイントで質感を作る</strong>世界です。Lumetriの「カーブ」には主に次があります。
+      </p>
+      <h3>RGBカーブ（マスター）</h3>
+      <p>
+        白いマスターカーブで、暗部を少し下げ・明部を少し上げる<strong>ゆるいS字</strong>を描くと、フィルムのようなコントラストが出ます。やりすぎ厳禁、ほんの少しで効きます。
+      </p>
+      <h3>色チャンネルカーブ（R/G/B個別）</h3>
+      <p>
+        赤・緑・青を個別に曲げると“色かぶり”を意図的に作れます。定番は<strong>暗部に青を少し足し、明部に暖色を足す</strong>スプリットトーン風。シネマティックの王道です。
+      </p>
+      <h3>色相 vs 彩度／色相 vs 色相／輝度 vs 彩度</h3>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>カーブ</th><th>できること</th></tr></thead>
+        <tbody>
+          <tr><th>色相 vs 彩度</th><td>「特定の色だけ」彩度を上下。例：空の青だけ鮮やかに、肌の赤だけ落ち着かせる</td></tr>
+          <tr><th>色相 vs 色相</th><td>特定の色の“色味”をずらす。例：黄みの葉を鮮やかな緑へ</td></tr>
+          <tr><th>輝度 vs 彩度</th><td>明るさ帯ごとに彩度を調整。例：白飛び手前の彩度を抜いて自然に</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>ステップ3：HSLセカンダリで“一部の色だけ”変える</h2>
+      <p>
+        「肌はそのまま、背景の緑だけ落ち着かせたい」——そんな外科手術的な調整が <strong>HSLセカンダリ</strong>です。
+      </p>
+      <ol class="steps">
+        <li>
+          <strong>キー（対象の色）を抽出</strong>
+          スポイトで変えたい色をクリック。範囲を掴みます。
+        </li>
+        <li>
+          <strong>選択範囲を確認・調整</strong>
+          「カラー/グレー」表示にすると、選択された部分だけが色付きで見えます。H・S・Lのスライダーで範囲を詰め、<strong>ノイズ除去・ブラー</strong>で境界をなめらかに。
+        </li>
+        <li>
+          <strong>補正を当てる</strong>
+          色温度・色かぶり・彩度・明るさを“ほんの少し”動かす。強くやると不自然になります。
+        </li>
+      </ol>
+      <p>
+        HSLセカンダリの目的は<strong>「全体ではなく、特定の色を精密にコントロールする」</strong>こと。空・肌・葉・ネオンなど、印象を左右する要素だけを狙い撃ちします。
+      </p>
+
+      <h2>ステップ4：スキントーンを制する者がグレーディングを制す</h2>
+      <p>
+        人の目は肌の色に最も敏感です。だからプロは<strong>ベクトルスコープの「スキントーンライン」</strong>（左上から中心へ伸びる斜めの線）を基準にします。
+      </p>
+      <ul>
+        <li>肌の点（ブロブ）が<strong>スキントーンライン上に乗る</strong>と、自然な肌色。</li>
+        <li>ラインより時計回り（黄寄り）だと不健康、反時計回り（赤寄り）だと火照って見える。</li>
+        <li>彩度は出しすぎない。ラインに沿って“長さは控えめ”が上品。</li>
+      </ul>
+      <p>
+        肌が正しければ、多少個性的なグレーディングでも画が破綻しません。<strong>肌を最後の基準点</strong>にしてください。
+      </p>
+
+      <h2>ステップ5：LUTは“最後に薄く”</h2>
+      <p>
+        LUTは便利ですが、<strong>補正の代わりにはなりません</strong>。土台を整えた最後に、クリエイティブタブのLook（LUT）を当て、
+        <strong>強度（Intensity）を50〜80%程度に下げて</strong>“味付け”として使うのが上品です。
+        LUTが想定する色空間の話は、姉妹記事の<a href="premiere-color-management.html">新カラーマネジメント解説</a>もあわせてどうぞ。
+      </p>
+
+      <div class="callout">
+        <strong class="label">⚠️ つまずきポイント</strong>
+        ・彩度を上げると“それっぽく”見えるが、ベクトルスコープで振り切っていないか確認。<br>
+        ・モニターの明るさ・色で判断しない。<strong>必ずスコープで数値確認</strong>。<br>
+        ・カット間で色が揃わない → まず基本補正（コレクション）に戻る。演出より先に土台。<br>
+        ・LUT 100%当ては“やりすぎ”のもと。強度を下げる。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>カラーコレクションとグレーディング、初心者はどちらから？</summary>
+          <p>必ずコレクション（補正）からです。露出・WB・コントラストを整え、カット間の色を揃えるだけで、動画の“垢抜け度”は大きく上がります。演出（グレーディング）はその後で十分です。</p>
+        </details>
+        <details>
+          <summary>スキントーンラインに乗せれば、どんな人種の肌でも正しいの？</summary>
+          <p>スキントーンラインは「肌の色相のおおよその方向」を示す目安です。肌の明るさ・彩度は人によって異なるため、ラインは“方向の基準”として使い、最終判断は波形（明るさ）と実際の見た目で。ラインから大きく外れていないかの確認に使うのが実務的です。</p>
+        </details>
+        <details>
+          <summary>プリセットやLUTを買えば、この知識は要らない？</summary>
+          <p>いいえ。LUTは「整った素材」に当てて初めて機能します。露出やWBがズレた素材にLUTを当てても濁るだけ。基本補正ができて初めて、LUTが“味付け”として効きます。</p>
+        </details>
+        <details>
+          <summary>重い素材でカラー作業がカクつきます。</summary>
+          <p>再生解像度を下げるか、プロキシで軽くしてから作業しましょう。詳しくは<a href="premiere-proxy-workflow.html">プロキシ運用の記事</a>と<a href="premiere-shortcuts-efficiency.html">効率化の記事</a>を。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        グレーディングは<strong>「スコープで見る → 補正で土台 → カーブで質感 → HSLで部分 → 肌で最終確認」</strong>という順番の作業です。
+        感覚を数値に置き換えるほど、どんなモニター・案件でも同じ画を再現できるようになります。まずは“スコープを見る癖”から始めてください。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>📚 一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/lumetri-scopes.html" target="_blank" rel="noopener">Adobe公式：Lumetri scopes to monitor color →</a><br>
+        <a href="https://premierebro.com/premiere-in-post/the-complete-lumetri-color-workflow-in-premiere-pro" target="_blank" rel="noopener">Premiere Bro：The Complete Lumetri Color Workflow →</a><br>
+        <a href="https://wildflourmedia.com/blog/lumetri-scopes-curves" target="_blank" rel="noopener">Wild Flour Media：How to Use Lumetri Scopes and Curves →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。手順やUIはバージョンにより異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

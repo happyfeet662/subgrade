@@ -309,3 +309,34 @@ a.card:hover h3 { color: var(--coral); }
 }
 .article__banner svg { width: 44%; max-width: 300px; height: auto; }
 @media (max-width: 600px) { .article__banner { height: 156px; } .article__banner svg { width: 58%; } }
+
+/* extra category colors */
+.chip--export { background: #d9eef2; color: #2b8a9a; }
+.th-export { background: #d9eef2; }
+
+/* =========================================================
+   Prose tables
+   ========================================================= */
+.table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; }
+.prose table { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.table-wrap table { margin: 0; }
+.prose thead th { background: var(--band); color: var(--ink); font-family: var(--maru); font-weight: 700;
+  text-align: left; padding: 12px 15px; font-size: 13.5px; white-space: nowrap; }
+.prose tbody td, .prose tbody th { border-top: 1px solid var(--line); padding: 11px 15px; color: var(--ink-soft); vertical-align: top; }
+.prose tbody th { font-weight: 700; color: var(--ink); white-space: nowrap; text-align: left; }
+.prose table code { white-space: nowrap; }
+
+/* =========================================================
+   FAQ accordion
+   ========================================================= */
+.faq details { border: 1px solid var(--line); border-radius: 14px; padding: 0 20px; margin: 12px 0;
+  background: var(--surface); box-shadow: 0 3px 0 var(--line); }
+.faq summary { font-family: var(--maru); font-weight: 700; padding: 16px 0; cursor: pointer;
+  color: var(--ink); list-style: none; position: relative; padding-right: 28px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before { content: "Q "; color: var(--coral); font-weight: 700; }
+.faq summary::after { content: "＋"; position: absolute; right: 2px; top: 15px; color: var(--muted); font-weight: 700; }
+.faq details[open] summary::after { content: "－"; }
+.faq details[open] summary { border-bottom: 1px dashed var(--line); }
+.faq details p { padding: 12px 0 16px; margin: 0; color: var(--ink-soft); }

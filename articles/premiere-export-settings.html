@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://happyfeet662.github.io/subgrade/articles/premiere-export-settings.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="書き出し設定の正解：YouTube最適化・H.264/H.265・ビットレート">
+<meta property="og:description" content="Premiere Proの書き出しで迷わないための決定版。H.264とH.265の使い分け、解像度別のビットレート早見表、VBR2パス、ハードウェアエンコード、音声設定まで、海外の定番ガイドをもとに解説します。">
+<meta property="og:url" content="https://happyfeet662.github.io/subgrade/articles/premiere-export-settings.html">
+<meta property="og:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="書き出し設定の正解：YouTube最適化・H.264/H.265・ビットレート">
+<meta name="twitter:image" content="https://happyfeet662.github.io/subgrade/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"書き出し設定の正解：YouTube最適化・H.264/H.265・ビットレート","description":"Premiere Proの書き出しで迷わないための決定版。H.264とH.265の使い分け、解像度別のビットレート早見表、VBR2パス、ハードウェアエンコード、音声設定まで、海外の定番ガイドをもとに解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://happyfeet662.github.io/subgrade/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://happyfeet662.github.io/subgrade/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://happyfeet662.github.io/subgrade/articles/premiere-export-settings.html"}}
+</script>
+<title>書き出し設定の正解：YouTube最適化・H.264/H.265・ビットレート | SUBGRADE</title>
+<meta name="description" content="Premiere Proの書き出しで迷わないための決定版。H.264とH.265の使い分け、解像度別のビットレート早見表、VBR2パス、ハードウェアエンコード、音声設定まで、海外の定番ガイドをもとに解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--export">書き出し</span></div>
+    <div class="article__banner th-export">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="36" width="76" height="66" rx="12" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
+        <rect x="40" y="36" width="76" height="15" rx="7" fill="#2b8a9a"/>
+        <circle cx="51" cy="43.5" r="2.4" fill="#fff"/><circle cx="60" cy="43.5" r="2.4" fill="#fff"/>
+        <circle cx="78" cy="76" r="16" fill="#d9eef2"/>
+        <path d="M78 67v18 M71 78l7 7 7-7" fill="none" stroke="#2b8a9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M124 70 h18 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="150" y="52" width="36" height="36" rx="9" fill="#fff" stroke="#2b8a9a" stroke-width="3"/>
+        <text x="168" y="74" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#2b8a9a">MP4</text>
+        <path d="M150 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>書き出し設定の正解<br>YouTube最適化・H.264/H.265・ビットレート</h1>
+    <p class="article__lead">
+      せっかく綺麗に編集しても、書き出しで台無しに——「アップしたら眠くなった」「ブロックノイズが出た」の多くは設定のせいです。
+      Premiere の書き出しを<strong>“もう迷わない早見表”</strong>にまとめました。コピペ感覚で使えます。
+    </p>
+    <div class="article__meta">
+      <span>書き出し・エンコード</span><span class="dot"></span>
+      <span>読了 約12分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">🎯 まず結論（YouTube向け）</strong>
+        形式 <strong>H.264 / MP4</strong>、ビットレートは <strong>VBR・2パス</strong>、
+        1080pなら<strong>ターゲット8・最大12 Mbps</strong>、4Kなら<strong>ターゲット40・最大45 Mbps</strong>、
+        音声は<strong>AAC・320kbps</strong>。まずはこれで間違いありません。以下で理由と応用を解説します。
+      </div>
+
+      <h2>H.264 と H.265、どっちを選ぶ？</h2>
+      <p>
+        どちらもYouTubeは対応しています。違いは「速度・互換性・ファイルサイズ」のトレードオフです。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>H.264</th><th>H.265（HEVC）</th></tr></thead>
+        <tbody>
+          <tr><th>エンコード速度</th><td>速い</td><td>遅い（負荷大）</td></tr>
+          <tr><th>互換性</th><td>ほぼ全環境で再生可</td><td>古い環境で不可の場合あり</td></tr>
+          <tr><th>同画質のファイルサイズ</th><td>大きめ</td><td>小さい（約半分）</td></tr>
+          <tr><th>向いている用途</th><td>YouTube・納品・汎用（<strong>基本これ</strong>）</td><td>4Kの保存・回線が細い環境・容量節約</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        <strong>迷ったら H.264。</strong>「4Kで容量を抑えたい」「配布先が最新環境と分かっている」ときだけ H.265 を検討します。
+      </p>
+
+      <h2>ビットレート早見表（YouTube目安）</h2>
+      <p>
+        ビットレートは「1秒あたりのデータ量」。高いほど高画質・大容量です。YouTube推奨をベースにした実用値がこちら。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>解像度 / fps</th><th>ターゲット</th><th>最大</th></tr></thead>
+        <tbody>
+          <tr><th>1080p / 24〜30</th><td>8 Mbps</td><td>12 Mbps</td></tr>
+          <tr><th>1080p / 60</th><td>12 Mbps</td><td>18 Mbps</td></tr>
+          <tr><th>4K / 24〜30</th><td>40 Mbps</td><td>45 Mbps</td></tr>
+          <tr><th>4K / 60</th><td>55 Mbps</td><td>66 Mbps</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        YouTubeは<strong>アップロード後に再エンコード</strong>します。そのため「少し高め」に出しておくと、再エンコードの劣化を見越して結果がきれいになります。とはいえ上げすぎはアップロード時間の無駄。<strong>上の“最大”を上限の目安</strong>にしましょう。
+      </p>
+
+      <h2>VBR 1パス vs 2パス —— 2パス一択の理由</h2>
+      <p>
+        ビットレートの割り当て方には CBR（固定）と VBR（可変）があり、動画では <strong>VBR</strong> が基本。
+        さらに VBR には1パスと2パスがあります。
+      </p>
+      <ul>
+        <li><strong>VBR 1パス</strong>：一度で書き出し。速いが、動きの激しい場面にビットレートを賢く配れない。</li>
+        <li><strong>VBR 2パス</strong>：1回目で映像を解析し、2回目で<strong>動きの多い所へ多く、静かな所へ少なく</strong>配分。同じ容量でも画質が安定。</li>
+      </ul>
+      <p>
+        書き出し時間は約2倍になりますが、<strong>複雑なモーションでの差は歴然</strong>。納品・作品は迷わず2パスにしましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>ハードウェア vs ソフトウェアエンコード</h2>
+      <p>
+        書き出し画面のエンコード設定で選べます。
+      </p>
+      <ul>
+        <li><strong>ハードウェアエンコード（GPU）</strong>：対応GPUがあれば<strong>大幅に高速</strong>。日常のYouTube書き出しはこれで十分。</li>
+        <li><strong>ソフトウェアエンコード（CPU）</strong>：遅いが、細部の画質はわずかに有利とされる場面も。GPU非対応の古いマシンや、最高画質を追う納品で。</li>
+      </ul>
+      <p>
+        古いシステムや一部設定ではハードウェアが使えず、自動的にソフトウェアに切り替わることがあります。基本は<strong>ハードウェアを選び、速く回す</strong>のが実用的です。
+      </p>
+
+      <h2>音声設定を忘れない</h2>
+      <p>
+        映像に気を取られて音声を放置しがち。<strong>AAC / 320 kbps / 48kHz / ステレオ</strong>を選べば、YouTubeで音がこもりません。ナレーションや音楽の印象が変わるので侮れません。
+      </p>
+
+      <h2>プリセットを保存して毎回使い回す</h2>
+      <p>
+        上の設定を一度作ったら、書き出し画面で<strong>プリセットとして保存</strong>。次回からはワンクリックで同じ設定を呼び出せます。
+        「YouTube-1080p」「YouTube-4K」などと名前を付けておくと、書き出しの度に悩む時間がゼロになります。効率化の観点は<a href="premiere-shortcuts-efficiency.html">ショートカット＆自動化の記事</a>もどうぞ。
+      </p>
+
+      <div class="callout">
+        <strong class="label">⚠️ つまずきポイント</strong>
+        ・<strong>アップ後に眠い/ブロックノイズ</strong> → ビットレートを上げ、VBR2パスに。<br>
+        ・<strong>音が小さい/こもる</strong> → 音声がAAC 320kbpsか確認。ラウドネスも要チェック。<br>
+        ・<strong>書き出しが極端に遅い</strong> → ハードウェアエンコードになっているか、2パスで倍時間かかっていないか。<br>
+        ・<strong>色が変わる</strong> → 書き出しの色空間・タグ。姉妹記事の<a href="premiere-color-management.html">カラーマネジメント解説</a>を参照。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>結局いちばん無難な設定は？</summary>
+          <p>H.264 / MP4 / VBR 2パス、1080pならターゲット8・最大12Mbps、音声AAC 320kbps。これが「迷ったらこれ」の鉄板です。プリセット化して使い回しましょう。</p>
+        </details>
+        <details>
+          <summary>ビットレートを上げれば上げるほど綺麗になる？</summary>
+          <p>ある点を超えると見た目はほぼ変わらず、ファイルとアップロード時間だけが増えます。YouTubeは再エンコードするので、早見表の“最大”あたりが実用的な上限です。</p>
+        </details>
+        <details>
+          <summary>H.265で出したらYouTubeで再生できないと言われた。</summary>
+          <p>視聴者の環境（古い端末・ブラウザ）でHEVC非対応の場合があります。配布先が不特定多数なら H.264 が安全です。H.265は保存用・限定配布向けと考えましょう。</p>
+        </details>
+        <details>
+          <summary>Instagram や TikTok も同じ設定でいい？</summary>
+          <p>コーデック（H.264/MP4）は共通でOKですが、解像度・アスペクト比が縦（9:16）になります。ビットレートは1080p基準で問題ありません。縦動画のテンプレ化は<a href="premiere-mogrt-essential-graphics.html">.mogrtの記事</a>が役立ちます。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        書き出しは<strong>「H.264/MP4 → VBR2パス → 解像度に合わせたビットレート → 音声AAC320k → プリセット保存」</strong>で完成です。
+        一度テンプレを作れば、次からは考えずにワンクリック。作品のクオリティを最後の1工程で落とさないよう、ここだけは押さえておきましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>📚 一次情報（英語）</h4>
+        <a href="https://www.adobe.com/creativecloud/video/hub/features/best-premiere-pro-export-settings-youtube.html" target="_blank" rel="noopener">Adobe：Best Premiere Pro export settings for YouTube →</a><br>
+        <a href="https://helpx.adobe.com/premiere/desktop/render-and-export/export-files/basic-video-settings.html" target="_blank" rel="noopener">Adobe公式：Basic video export settings →</a><br>
+        <a href="https://pixflow.net/blog/best-export-settings-youtube-premiere-pro/" target="_blank" rel="noopener">Pixflow：Best Export Settings for YouTube (2026) →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。数値は目安であり、素材や配信先により最適値は変わります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
