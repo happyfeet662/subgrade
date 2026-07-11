@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プロキシ運用を正しく組む：SSDを圧迫しない設計 | SUBGRADE</title>
+<meta name="description" content="重い4K素材をサクサク編集するためのプロキシ運用。コーデックと解像度の正解、取り込み時の自動生成、切り替えボタン、保存場所と命名まで、海外の定番ガイドをもとにやさしく解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--flow">ワークフロー</span></div>
+    <div class="article__banner th-flow">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="38" width="72" height="64" rx="12" fill="#cfe9fb" stroke="#fff" stroke-width="3"/>
+        <rect x="34" y="38" width="72" height="15" rx="7" fill="#56b4ef"/>
+        <circle cx="45" cy="45.5" r="2.4" fill="#fff"/><circle cx="54" cy="45.5" r="2.4" fill="#fff"/>
+        <path d="M58 82 l13 -13 8 8 12 -16" fill="none" stroke="#56b4ef" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M112 70 h20 m0 0 l-7 -6 m7 6 l-7 6" fill="none" stroke="#9aa5b1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="140" y="54" width="34" height="34" rx="9" fill="#fff" stroke="#56b4ef" stroke-width="3"/>
+        <path d="M158 60 l-8 12 h6 l-2 9 9 -13 h-6 z" fill="#ffc94d" stroke="#fff" stroke-width="1.5"/>
+        <path d="M150 26 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#56b4ef"/>
+      </svg>
+    </div>
+    <h1>プロキシ運用を正しく組む<br>——SSDを圧迫しない設計</h1>
+    <p class="article__lead">
+      4KやH.265の素材で、再生がカクつく・書き出しが遅い。その多くは「プロキシ」で解決します。
+      ただ、コーデックや保存場所を間違えると逆に容量を圧迫したり、リンクが切れたり。海外の定番ガイドをもとに、正しい組み方を通しで整理します。
+    </p>
+    <div class="article__meta">
+      <span>ワークフロー</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.11</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">🎯 この記事のゴール</strong>
+        プロキシの仕組みを理解し、① 適切なコーデック・解像度で作成、② 取り込み時に自動生成、
+        ③ 元データとワンクリックで切り替え、④ リンクが切れない保存場所・命名——までを自分で設計できるようになること。
+      </div>
+
+      <h2>プロキシとは何か</h2>
+      <p>
+        プロキシとは、高解像度の素材から作った<strong>低解像度で軽い“身代わり”ファイル</strong>のことです。
+        編集中はこの軽いファイルを再生し、書き出しのときだけ自動的に元の高解像度データに戻します。
+        つまり<strong>画質はそのまま、編集の軽さだけを手に入れる</strong>仕組みです。
+      </p>
+      <p>
+        4K・6K、H.265（HEVC）、RAWなど「再生が重い素材」ほど効果は大きく、非力なノートPCでもタイムラインがサクサク動くようになります。
+      </p>
+
+      <h2>プロキシの作り方</h2>
+      <ol class="steps">
+        <li>
+          <strong>素材を右クリック → Proxy → Create Proxies</strong>
+          プロジェクトパネルでクリップ（複数選択OK）を右クリックし、メニューから作成ダイアログを開きます。
+        </li>
+        <li>
+          <strong>フレームサイズは「Half（1/2）」が基準</strong>
+          解像度を半分に落とすだけで、ファイルは劇的に軽くなります。まずはHalfで十分です。
+        </li>
+        <li>
+          <strong>プリセット（コーデック）を選ぶ</strong>
+          既定は ProRes / QuickTime。用途に合わせて次章のとおり選びます。
+        </li>
+        <li>
+          <strong>OKで書き出し開始（Media Encoder が動きます）</strong>
+          裏でエンコードされ、終わると自動的に元素材へプロキシが紐づきます。
+        </li>
+      </ol>
+
+      <h2>コーデックと解像度の“正解”</h2>
+      <p>ここが最初の分かれ道です。海外の実務ガイドでは、次の使い分けが定番とされています。</p>
+      <ul>
+        <li><strong>基本は H.264 の 720p</strong>：ファイルが最小で、最近のGPUなら瞬時にデコードできる“万能の落としどころ”。</li>
+        <li><strong>ProRes Proxy</strong>：Premiere と DaVinci Resolve / Final Cut を行き来する場合。コーデックが揃うのでNLE間で扱いやすい。</li>
+      </ul>
+
+      <div class="callout">
+        <strong class="label">💡 ポイント</strong>
+        「とりあえずProRes」で作ると容量がかさみSSDを圧迫しがち。<strong>単独のPremiere編集なら H.264 720p</strong>、
+        他ソフトと連携するなら ProRes、と目的で選ぶのがコツです。
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>取り込み時に“自動で”作る（Ingest 設定）</h2>
+      <p>
+        毎回手で作るのは面倒です。プロジェクト設定の <strong>Ingest Settings</strong> で「取り込み時にプロキシを生成」をオンにしておくと、
+        カードから読み込んだ瞬間から裏でプロキシ化が走ります。撮影後の素材整理と同時に準備が終わるので、編集開始までがスムーズです。
+      </p>
+
+      <h2>元データとの切り替え</h2>
+      <p>
+        Program モニター／Source モニターの <strong>「Toggle Proxies（プロキシの有効化）」ボタン</strong> で、
+        プロキシと元データをワンクリックで切り替えられます。ボタンが<strong>青色ならプロキシ表示中</strong>。
+        細部の画質を確認したいときだけ元データに戻す、という使い方ができます。
+      </p>
+      <p>
+        このボタンは既定でモニター下部に無い場合があります。モニター右下の「＋（ボタンエディター）」から <code>Toggle Proxies</code> をドラッグして常設しておくと便利です。
+      </p>
+
+      <h2>保存場所と命名——リンクを切らないために</h2>
+      <ul>
+        <li><strong>専用フォルダにまとめる</strong>：元データの隣に <code>proxies</code> というサブフォルダを作って格納すると、混ざらず管理が明快。</li>
+        <li><strong>名前は元ファイルに揃える</strong>：例）<code>Interview_4K.mp4</code> → <code>Interview_4K_Proxy.mp4</code>。規則を統一しておくと再リンクが楽。</li>
+        <li><strong>音声チャンネル数を変えない</strong>：元素材とプロキシで音声チャンネル数が食い違うと正しく紐づきません。取り込みプリセットの音声設定はいじらないのが安全。</li>
+      </ul>
+
+      <div class="callout">
+        <strong class="label">⚠️ つまずきポイント</strong>
+        ・プロキシに切り替わらない → モニターのToggleボタンが青か確認。<br>
+        ・「メディアオフライン」表示 → プロキシの保存場所が動いた可能性。再リンクで復旧。<br>
+        ・容量がすぐ埋まる → コーデックがProResになっていないか、H.264 720pに見直す。
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        プロキシは「軽く編集して、書き出しで元に戻す」だけのシンプルな仕組み。
+        <strong>H.264 720pを基準に、取り込み時に自動生成し、専用フォルダで名前を揃える</strong>——この3点を押さえれば、
+        非力なマシンでも4K編集が驚くほど軽くなります。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>📚 一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere/desktop/organize-media/ingest-proxy-workflow/ingest-and-proxy-workflow.html" target="_blank" rel="noopener">Adobe公式：Ingest and proxy workflows in Premiere →</a><br>
+        <a href="https://helpx.adobe.com/premiere/desktop/organize-media/ingest-proxy-workflow/create-proxies.html" target="_blank" rel="noopener">Adobe公式：Create proxies in Premiere →</a><br>
+        <a href="https://blog.frame.io/2024/07/29/updated-guide-premiere-pro-proxies-and-proxy-workflows/" target="_blank" rel="noopener">Frame.io：Complete Guide to Premiere Proxies →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。手順はバージョンにより表記が異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

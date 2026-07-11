@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新カラーマネジメント完全解説 ——「LUTが効かない」の正体 | SUBGRADE</title>
+<meta name="description" content="2024年以降に刷新されたPremiere Proの新カラーマネジメント。仕組みを理解して、Log・RAW混在素材の色を揃え、LUTが効かない問題をやさしく解決します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--color">カラー</span></div>
+    <div class="article__banner th-color">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 62 L100 26 A36 36 0 0 1 136 62 Z" fill="#ff6f7e" stroke="#fff" stroke-width="3"/>
+        <path d="M100 62 L136 62 A36 36 0 0 1 100 98 Z" fill="#ffc94d" stroke="#fff" stroke-width="3"/>
+        <path d="M100 62 L100 98 A36 36 0 0 1 64 62 Z" fill="#3fca9f" stroke="#fff" stroke-width="3"/>
+        <path d="M100 62 L64 62 A36 36 0 0 1 100 26 Z" fill="#8b7cf0" stroke="#fff" stroke-width="3"/>
+        <circle cx="100" cy="62" r="11" fill="#fff"/>
+        <rect x="58" y="114" width="84" height="10" rx="5" fill="#fff" stroke="#ffd0bb" stroke-width="2"/>
+        <circle cx="120" cy="119" r="8" fill="#ff6f7e" stroke="#fff" stroke-width="2.5"/>
+        <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>新カラーマネジメント完全解説<br>——「LUTが効かない」の正体</h1>
+    <p class="article__lead">
+      2024年以降のPremiere Proは、カラーマネジメントの考え方が根本から変わりました。
+      仕組みを一度つかめば、Log・RAW混在素材の色は勝手に揃い、“急にLUTが当たらなくなった”問題も自分で説明できるようになります。
+    </p>
+    <div class="article__meta">
+      <span>カラーマネジメント</span><span class="dot"></span>
+      <span>読了 約9分</span><span class="dot"></span>
+      <span>2026.07.11</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">🎯 この記事のゴール</strong>
+        新カラーマネジメントで「なぜ色が自動で揃うのか」を理解し、① Log素材を正しく現像し、
+        ② LUTが効かないときの原因を切り分けられるようになること。海外の一次情報は豊富ですが、
+        日本語でこの全体像を通しで解説したものは、まだ多くありません。
+      </div>
+
+      <h2>なぜ今“カラーマネジメント”を学び直すのか</h2>
+      <p>
+        従来のPremiere Proは、素材の色を基本的に“そのまま”タイムラインに並べ、Lumetriで手作業で整える
+        ディスプレイ参照（display-referred）の世界でした。ところが新しいカラーマネジメントでは、
+        Premiere が内部で <strong>Wide Gamut（広色域）の作業空間</strong> を持ち、
+        読み込んだ素材を自動でその空間へ変換し、最後に表示・書き出しの色空間へ変換し直します。
+      </p>
+      <p>
+        この“自動変換”こそが、便利さの正体であり、同時に「急にLUTが効かなくなった」と戸惑う原因でもあります。
+        つまり<strong>敵ではなく、理解すれば最強の味方</strong>です。
+      </p>
+
+      <h2>新しい仕組みを3つの層で捉える</h2>
+      <p>新カラーマネジメントは、ざっくり次の3つの層で動いています。</p>
+      <ul>
+        <li><strong>入力（Input）</strong>：各素材が「どの色空間で撮られたか」を判定し、作業空間へ変換する。</li>
+        <li><strong>作業空間（Working）</strong>：Hollywood標準の <code>ACEScct</code> をベースにした広色域。ここで補正・グレーディングを行う。</li>
+        <li><strong>出力（Output）</strong>：SDR（Rec.709）やHDR（PQ / HLG）など、最終的な見せ方に合わせて変換する。</li>
+      </ul>
+      <p>
+        この“入口と出口で変換される”前提を持つだけで、後述のLUT問題は驚くほどシンプルに理解できます。
+      </p>
+
+      <h2>「LUTが効かない」の正体</h2>
+      <p>
+        LUTは <strong>「特定の色空間の映像を変換するために作られた」</strong> ものです。
+        たとえば付属のクリエイティブLUTの多くは <code>Rec.709</code> の映像に当てる前提で設計されています。
+        ところが新カラーマネジメントでは作業空間が広色域になったため、
+        「このLUTはどの色空間の映像に当てるものか」をPremiere側に教えてあげないと、意図した見た目になりません。
+      </p>
+
+      <div class="callout">
+        <strong class="label">💡 要するに</strong>
+        LUTが効かないのは壊れているからではなく、<strong>LUTが想定する色空間</strong>と<strong>いま流し込まれている映像の色空間</strong>が
+        食い違っているだけ。Lumetriの Look の色空間を <code>Rec.709 (scene)</code> に合わせれば、多くのケースで正しく当たります。
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>実践：Log素材を正しく現像する</h2>
+      <ol class="steps">
+        <li>
+          <strong>素材の色空間タグを確認する</strong>
+          プロジェクト内でクリップを右クリックし、解釈されている色空間（例：S-Log3 / S-Gamut3.Cine）が
+          正しいかをチェックします。ここが間違っていると以降すべてがズレます。
+        </li>
+        <li>
+          <strong>自動カラーマネジメントを有効にする</strong>
+          シーケンス設定のColor Setupで自動変換を使い、Log素材が作業空間へ正しくトーンマップされる状態にします。
+        </li>
+        <li>
+          <strong>Lumetriで整える</strong>
+          露出・ホワイトバランス → コントラスト → 彩度の順に、作業空間の上で調整します。
+          この段階では“見た目”は既に破綻していないはずです。
+        </li>
+        <li>
+          <strong>Look / LUTは色空間を合わせて当てる</strong>
+          クリエイティブLUTを使うなら、そのLUTが設計された色空間（多くは <code>Rec.709</code>）を明示してから適用します。
+        </li>
+      </ol>
+
+      <h2>“あえて自動を切る”という選択</h2>
+      <p>
+        すべてを自動に任せるのが正解とは限りません。従来どおりLUTと手作業で作り込むパススルー運用や、
+        素材の色をいっさい加工したくない場面では、Color Setupから<strong>自動カラーマネジメントをオフ</strong>にできます。
+        「自動を使う/使わない」を状況で選べることこそ、仕組みを理解した中級者の強みです。
+      </p>
+
+      <div class="callout">
+        <strong class="label">⚠️ つまずきポイント</strong>
+        ・LUTが濃すぎる／薄すぎる → Lookの色空間指定を疑う。<br>
+        ・素材ごとに色が揃わない → 各クリップの入力色空間タグを確認。<br>
+        ・HDRで意図と違う → 出力がPQ/HLGのどちらか、モニタ環境が対応しているかを確認。
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        新カラーマネジメントは「入口で作業空間へ変換し、出口で見せ方へ変換する」——この一文に尽きます。
+        LUTが効かないのはバグではなく、<strong>色空間の食い違い</strong>。仕組みを持っている人だけが、
+        混在素材を淡々と揃え、狙った画を最短で出せます。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>📚 一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/color-manager.html" target="_blank" rel="noopener">Adobe公式：Color Management and Lumetri Color in Premiere →</a><br>
+        <a href="https://blog.adobe.com/en/publish/2024/09/10/adobe-introduces-major-color-management-updates-adobe-premiere-pro-beta" target="_blank" rel="noopener">Adobe Blog：新カラーマネジメントの導入 →</a><br>
+        <a href="https://www.televisual.com/news/adobe-premiere-pro-colour-management-with-lumetri/" target="_blank" rel="noopener">Televisual：Colour Management with Lumetri →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。手順はバージョンにより表記が異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

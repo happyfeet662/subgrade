@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUBGRADE — 中級者のためのPremiere Pro解説</title>
+<meta name="description" content="英語では詳しいのに、日本語にない。Premiere Proの一歩先のテクニックを、やさしく体系的に解説する学習メディアです。">
+<link rel="stylesheet" href="assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg>
+      </span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="#articles">記事一覧</a>
+      <a href="#topics">トピック</a>
+      <a href="about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="spark s1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="#ffcf5c"/></svg></span>
+  <span class="spark s2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="#8b7cf0"/></svg></span>
+  <span class="spark s3" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="#ff6f7e"/></svg></span>
+  <span class="spark s4" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3fca9f"/></svg></span>
+
+  <div class="wrap">
+    <div class="hero__text">
+      <span class="hero__eyebrow">🎬 中級者のためのPremiere Pro</span>
+      <h1>英語では詳しいのに、<br>日本語に<span class="u">ない</span>解説を。</h1>
+      <p>
+        基本操作はもう卒業した人へ。海外では丁寧に解説されているのに、日本語だと情報が薄い——
+        そんなテクニックを、実際に手を動かしてやさしく解説します。
+      </p>
+      <div class="hero__stats">
+        <div class="hero__stat"><b>6</b><span>公開中の記事</span></div>
+        <div class="hero__stat"><b>Adobe</b><span>いずれ全体へ拡張</span></div>
+      </div>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="articles/premiere-color-management.html">最新記事を読む</a>
+        <a class="link-plain" href="#articles">記事一覧を見る →</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="6" stdDeviation="0" flood-color="#00000012"/>
+          </filter>
+        </defs>
+        <ellipse cx="210" cy="300" rx="170" ry="20" fill="#f4e2cf"/>
+        <g filter="url(#soft)">
+          <rect x="70" y="40" width="280" height="170" rx="20" fill="#ffffff" stroke="#ffe0c2" stroke-width="4"/>
+          <rect x="70" y="40" width="280" height="40" rx="20" fill="#fff3e6"/>
+          <rect x="70" y="62" width="280" height="18" fill="#fff3e6"/>
+          <circle cx="90" cy="60" r="5" fill="#ff6f7e"/>
+          <circle cx="106" cy="60" r="5" fill="#ffc94d"/>
+          <circle cx="122" cy="60" r="5" fill="#3fca9f"/>
+          <rect x="88" y="92" width="244" height="100" rx="12" fill="#f2effc"/>
+          <circle cx="210" cy="142" r="30" fill="#8b7cf0"/>
+          <path d="M202 128v28l22-14-22-14z" fill="#fff"/>
+        </g>
+        <g filter="url(#soft)">
+          <rect x="70" y="232" width="280" height="66" rx="16" fill="#ffffff" stroke="#ffe0c2" stroke-width="4"/>
+          <rect x="84" y="248" width="70" height="16" rx="6" fill="#ff6f7e"/>
+          <rect x="160" y="248" width="52" height="16" rx="6" fill="#56b4ef"/>
+          <rect x="218" y="248" width="44" height="16" rx="6" fill="#3fca9f"/>
+          <rect x="268" y="248" width="66" height="16" rx="6" fill="#ffc94d"/>
+          <rect x="84" y="274" width="120" height="12" rx="6" fill="#eceaf3"/>
+          <rect x="210" y="274" width="124" height="12" rx="6" fill="#eceaf3"/>
+          <rect x="176" y="238" width="4" height="54" rx="2" fill="#3b4a5a"/>
+          <circle cx="178" cy="238" r="7" fill="#3b4a5a"/>
+        </g>
+        <g transform="translate(320 168)">
+          <circle cx="0" cy="0" r="26" fill="#ffc94d" stroke="#fff" stroke-width="4"/>
+          <path d="M-9 -8l18 16M-9 8l18 -16" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="-9" cy="-8" r="4" fill="none" stroke="#fff" stroke-width="3.5"/>
+          <circle cx="-9" cy="8" r="4" fill="none" stroke="#fff" stroke-width="3.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section" id="articles">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="kicker">ARTICLES</span>
+      <h2>いま読める・これから出す解説</h2>
+      <p>一次情報は英語。検証と再構成は、ぜんぶ日本語で。</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- #01 Color -->
+      <a class="card" href="articles/premiere-color-management.html">
+        <div class="card__thumb th-color">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 62 L100 26 A36 36 0 0 1 136 62 Z" fill="#ff6f7e" stroke="#fff" stroke-width="3"/>
+            <path d="M100 62 L136 62 A36 36 0 0 1 100 98 Z" fill="#ffc94d" stroke="#fff" stroke-width="3"/>
+            <path d="M100 62 L100 98 A36 36 0 0 1 64 62 Z" fill="#3fca9f" stroke="#fff" stroke-width="3"/>
+            <path d="M100 62 L64 62 A36 36 0 0 1 100 26 Z" fill="#8b7cf0" stroke="#fff" stroke-width="3"/>
+            <circle cx="100" cy="62" r="11" fill="#fff"/>
+            <rect x="58" y="114" width="84" height="10" rx="5" fill="#fff" stroke="#ffd0bb" stroke-width="2"/>
+            <circle cx="120" cy="119" r="8" fill="#ff6f7e" stroke="#fff" stroke-width="2.5"/>
+            <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#01</span></div>
+          <h3>新カラーマネジメント完全解説「LUTが効かない」の正体</h3>
+          <p>2024年以降に刷新された仕組みを理解して、混在素材の色を揃える。日本語で最も薄い領域を根本から。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
+        </div>
+      </a>
+
+      <!-- #02 Expressions -->
+      <a class="card" href="articles/expressions-basics.html">
+        <div class="card__thumb th-expr">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="34" width="120" height="74" rx="16" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+            <path d="M62 64 q9 -16 18 0 t18 0 t18 0" fill="none" stroke="#8b7cf0" stroke-width="4" stroke-linecap="round"/>
+            <text x="70" y="98" font-family="monospace" font-size="20" fill="#8b7cf0" font-weight="700">{ }</text>
+            <circle cx="116" cy="90" r="4" fill="#ff6f7e"/>
+            <path d="M152 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#8b7cf0"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--expr">エクスプレッション</span><span class="card__num">#02</span></div>
+          <h3>コピペ卒業：エクスプレッションを“意味”から</h3>
+          <p><code>wiggle</code> や <code>loopOut</code> が、なぜそう動くのか。仕組みから理解して自分で書けるように。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+        </div>
+      </a>
+
+      <!-- #03 Proxy -->
+      <a class="card" href="articles/premiere-proxy-workflow.html">
+        <div class="card__thumb th-flow">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="34" y="38" width="72" height="64" rx="12" fill="#cfe9fb" stroke="#fff" stroke-width="3"/>
+            <rect x="34" y="38" width="72" height="15" rx="7" fill="#56b4ef"/>
+            <circle cx="45" cy="45.5" r="2.4" fill="#fff"/><circle cx="54" cy="45.5" r="2.4" fill="#fff"/>
+            <path d="M58 82 l13 -13 8 8 12 -16" fill="none" stroke="#56b4ef" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M112 70 h20 m0 0 l-7 -6 m7 6 l-7 6" fill="none" stroke="#9aa5b1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="140" y="54" width="34" height="34" rx="9" fill="#fff" stroke="#56b4ef" stroke-width="3"/>
+            <path d="M158 60 l-8 12 h6 l-2 9 9 -13 h-6 z" fill="#ffc94d" stroke="#fff" stroke-width="1.5"/>
+            <path d="M150 26 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#56b4ef"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#03</span></div>
+          <h3>プロキシ運用を正しく組む：SSDを圧迫しない設計</h3>
+          <p>重い4K素材を軽く編集して、書き出しで実データに戻す。コーデック選びと保存場所の正解を海外の定番ガイドから。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+        </div>
+      </a>
+
+      <!-- #04 Motion / mogrt -->
+      <a class="card" href="articles/premiere-mogrt-essential-graphics.html">
+        <div class="card__thumb th-motion">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="42" y="34" width="116" height="74" rx="16" fill="#fff" stroke="#f0d692" stroke-width="3"/>
+            <rect x="66" y="52" width="40" height="9" rx="4" fill="#ffc94d"/>
+            <rect x="82" y="52" width="9" height="42" rx="4" fill="#ffc94d"/>
+            <path d="M112 86 q16 -20 34 -6" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-dasharray="4 5" stroke-linecap="round"/>
+            <rect x="108" y="81" width="10" height="10" rx="2.5" transform="rotate(45 113 86)" fill="#ff6f7e"/>
+            <rect x="141" y="74" width="10" height="10" rx="2.5" transform="rotate(45 146 79)" fill="#3fca9f"/>
+            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#04</span></div>
+          <h3>.mogrt を自作して使い回す：Essential Graphics 入門</h3>
+          <p>テロップをテンプレート化して毎回の作業を圧縮。縦・横・正方形に自動対応するレスポンシブ設計まで。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+        </div>
+      </a>
+
+      <!-- #05 Efficiency -->
+      <a class="card" href="articles/premiere-shortcuts-efficiency.html">
+        <div class="card__thumb th-eff">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="34" y="52" width="132" height="58" rx="12" fill="#fff" stroke="#a9e6d3" stroke-width="3"/>
+            <g fill="#d9f5ec" stroke="#3fca9f" stroke-width="2">
+              <rect x="44" y="62" width="14" height="14" rx="3"/><rect x="62" y="62" width="14" height="14" rx="3"/>
+              <rect x="80" y="62" width="14" height="14" rx="3"/><rect x="98" y="62" width="14" height="14" rx="3"/>
+              <rect x="116" y="62" width="14" height="14" rx="3"/><rect x="134" y="62" width="18" height="14" rx="3"/>
+            </g>
+            <rect x="60" y="86" width="80" height="12" rx="5" fill="#d9f5ec" stroke="#3fca9f" stroke-width="2"/>
+            <path d="M150 28 l-12 20 h9 l-3 16 14 -22 h-10 z" fill="#ffc94d" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--eff">効率化</span><span class="card__num">#05</span></div>
+          <h3>ショートカット＆スクリプトで単純作業を消す</h3>
+          <p>カット・書き出し・命名を自動化して、価値の出る仕事に時間を回す。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約7分</span></div>
+        </div>
+      </a>
+
+      <!-- #06 AI -->
+      <a class="card" href="articles/ai-captions-claude.html">
+        <div class="card__thumb th-ai">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <line x1="100" y1="26" x2="100" y2="40" stroke="#db5b93" stroke-width="3"/>
+            <circle cx="100" cy="24" r="5" fill="#ff6f7e"/>
+            <rect x="66" y="40" width="68" height="52" rx="16" fill="#fff" stroke="#f2b9d1" stroke-width="3"/>
+            <circle cx="86" cy="62" r="7" fill="#db5b93"/><circle cx="114" cy="62" r="7" fill="#db5b93"/>
+            <rect x="88" y="76" width="24" height="6" rx="3" fill="#f2b9d1"/>
+            <rect x="58" y="58" width="6" height="14" rx="3" fill="#f2b9d1"/><rect x="136" y="58" width="6" height="14" rx="3" fill="#f2b9d1"/>
+            <rect x="60" y="100" width="80" height="16" rx="6" fill="#ffe1ec" stroke="#f2b9d1" stroke-width="2"/>
+            <rect x="68" y="106" width="32" height="4" rx="2" fill="#db5b93"/><rect x="104" y="106" width="18" height="4" rx="2" fill="#db5b93"/>
+            <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--ai">AI活用</span><span class="card__num">#06</span></div>
+          <h3>Claude API × Premiere で字幕を自動生成</h3>
+          <p>文字起こしからキャプション化までを一気通貫。英語先行の実装ネタを日本語で。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ▼ 広告枠 -->
+    <div class="ad-slot">
+      <span class="ad-slot__label">スポンサーリンク</span>
+      <!-- AdSense 承認後、下の <ins> を有効化して data-ad-slot を設定してください
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <div class="ad-slot__box">広告スペース（レスポンシブ）</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY / FEATURES -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="kicker">WHY SUBGRADE</span>
+      <h2>“ちょっと上”を、やさしく。</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature__icon" style="background:#ffe7da">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-7 4 14 2-7h6" stroke="#e07344" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>英語の一次情報が土台</h3>
+        <p>Adobe公式や海外の専門メディアを読み込み、出典まで明記します。</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon" style="background:#d9f5ec">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#1fa480" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>実際に手を動かして検証</h3>
+        <p>翻訳ではなく、自分で試してつまずいた所まで含めて再構成。</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon" style="background:#eae6ff">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke="#6a5acd" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>初歩は載せない</h3>
+        <p>基本操作は他サイトにお任せ。中級者が“次に伸ばす所”だけを。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="section" id="topics">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="kicker">TOPICS</span>
+      <h2>これから増えるトピック</h2>
+      <p>Premiere Pro を軸に、いずれ After Effects や DaVinci へ。</p>
+    </div>
+    <div class="topics">
+      <a class="topic" href="#articles"><i>🎨</i>カラーマネジメント</a>
+      <a class="topic" href="#articles"><i>✨</i>Lumetri / LUT</a>
+      <a class="topic" href="#articles"><i>🧩</i>エクスプレッション</a>
+      <a class="topic" href="#articles"><i>⚙️</i>ワークフロー</a>
+      <a class="topic" href="#articles"><i>🎞️</i>モーショングラフィックス</a>
+      <a class="topic" href="#articles"><i>🔌</i>プラグイン</a>
+      <a class="topic" href="#articles"><i>⚡</i>効率化・自動化</a>
+      <a class="topic" href="#articles"><i>🤖</i>AIワークフロー</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / ABOUT -->
+<section class="section" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <span class="spark" style="position:absolute;top:20px;left:30px;width:16px" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="#ffcf5c"/></svg></span>
+      <span class="spark" style="position:absolute;bottom:24px;right:36px;width:14px" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z" fill="#ff6f7e"/></svg></span>
+      <h2>“作れるのに、報われない” を終わらせる。</h2>
+      <p>note と X で更新をお知らせしています。よかったらフォローしてください🙌</p>
+      <div id="follow" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn--sky" href="#">X をフォロー</a>
+        <a class="btn btn--ghost" href="#">note を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="#articles">記事一覧</a>
+        <a href="#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="about.html">このサイトについて</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

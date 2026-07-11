@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コピペ卒業：エクスプレッションを“意味”から | SUBGRADE</title>
+<meta name="description" content="After Effectsのエクスプレッションを、コピペではなく仕組みから理解する。time・wiggle・loopOut・linearの4つを“何をしているか”から解説し、自分で書けるようになるための入門です。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--expr">エクスプレッション</span></div>
+    <div class="article__banner th-expr">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="34" width="120" height="74" rx="16" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+        <path d="M62 64 q9 -16 18 0 t18 0 t18 0" fill="none" stroke="#8b7cf0" stroke-width="4" stroke-linecap="round"/>
+        <text x="70" y="98" font-family="monospace" font-size="20" fill="#8b7cf0" font-weight="700">{ }</text>
+        <circle cx="116" cy="90" r="4" fill="#ff6f7e"/>
+        <path d="M152 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#8b7cf0"/>
+      </svg>
+    </div>
+    <h1>コピペ卒業：エクスプレッションを“意味”から</h1>
+    <p class="article__lead">
+      ネットで拾った<code>wiggle</code>を貼るだけ——それでも動きますが、少しズラしたいときに手が止まります。
+      After Effects のエクスプレッションは、4つの基本を“何をしているか”から理解すれば、自分で書けるようになります。
+      （Premiere Pro から広げる Adobe シリーズの第一弾です）
+    </p>
+    <div class="article__meta">
+      <span>After Effects</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">🎯 この記事のゴール</strong>
+        <code>time</code>・<code>wiggle</code>・<code>loopOut</code>・<code>linear</code> の4つについて、
+        「引数が何を意味するか」を理解し、コピペを卒業して自分で調整・応用できるようになること。
+      </div>
+
+      <h2>エクスプレッションとは</h2>
+      <p>
+        エクスプレッションは、プロパティ（位置・回転・不透明度など）に差し込む<strong>小さな JavaScript のコード</strong>です。
+        キーフレームを手で打つ代わりに「こう動け」と数式で指示することで、繰り返しやランダムな動きを一瞬で作れます。
+      </p>
+      <p>
+        プロパティのストップウォッチを <strong>Alt（Option）＋クリック</strong>すると、エクスプレッションの入力欄が開きます。ここに書いていきます。
+      </p>
+
+      <h2>① time —— 一番シンプルで強力</h2>
+      <p>
+        <code>time</code> は「再生開始からの秒数」を返すだけの値です。これをプロパティに掛けると、<strong>止まらない一定の動き</strong>になります。
+      </p>
+      <ul>
+        <li><code>time * 360</code> を回転に入れる → <strong>1秒で1回転</strong>し続ける。</li>
+        <li><code>time * 100</code> を位置のX成分に入れる → 毎秒100pxずつ進み続ける。</li>
+      </ul>
+      <p>意味さえ分かれば、数字を変えるだけで速さを自在に調整できます。</p>
+
+      <h2>② wiggle —— ランダムに揺らす</h2>
+      <p>
+        手ぶれや、ふわふわした揺れを作る定番。書き方は <code>wiggle(頻度, 振幅)</code> の2つの引数だけです。
+      </p>
+      <ul>
+        <li><strong>頻度（frequency）</strong>：1秒あたり何回動くか。</li>
+        <li><strong>振幅（amplitude）</strong>：元の値からどれだけズレてよいか。</li>
+      </ul>
+      <p>
+        たとえば <code>wiggle(3, 50)</code> は「1秒に3回、最大±50の範囲でランダムに揺れる」という意味。
+        “なんとなく揺れてる”ではなく、2つの数字の意味で完全にコントロールできます。
+      </p>
+
+      <h2>③ loopOut —— キーフレームを自動で繰り返す</h2>
+      <p>
+        キーフレームを2〜3個打ったあと、末尾に <code>loopOut()</code> を書くだけで、その動きが<strong>最後まで自動でループ</strong>します。
+        キーフレームを手でコピペして並べる必要はありません。跳ねる・点滅する・回転する、といった反復モーションが一気に楽になります。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>④ linear —— 値を別の範囲に“翻訳”する</h2>
+      <p>
+        <code>linear</code> は、ある値の範囲を、別の範囲へなめらかに対応させる関数です。書き方は
+        <code>linear(t, 入力min, 入力max, 出力min, 出力max)</code>。
+      </p>
+      <p>
+        たとえば「不透明度（0〜100）に合わせてスケールを80〜120にしたい」なら、
+        <code>linear(opacity, 0, 100, 80, 120)</code> のように、<strong>あるプロパティの動きを別のプロパティに連動</strong>させられます。
+        これを覚えると、手数をかけずに複数の要素を一体で動かせるようになります。
+      </p>
+
+      <div class="callout">
+        <strong class="label">💡 コピペを卒業するコツ</strong>
+        拾ったコードを貼ったら、<strong>まず引数（カッコの中の数字）が何を意味するかを1つずつ確認</strong>する。
+        <code>wiggle(3, 50)</code> の 3 と 50 が分かれば、それはもう“自分のコード”です。公式の
+        「エクスプレッションの例」ページを辞書代わりにするのがおすすめです。
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        エクスプレッションは魔法ではなく、<strong>「値をどう動かすか」を数式で書いているだけ</strong>。
+        <code>time</code>（進み続ける）／<code>wiggle</code>（揺らす）／<code>loopOut</code>（繰り返す）／<code>linear</code>（連動させる）——
+        この4つの“意味”を押さえれば、コピペ頼みから抜け出して、狙った動きを自分で組み立てられます。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>📚 一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/after-effects/using/expression-examples.html" target="_blank" rel="noopener">Adobe公式：After Effects expression examples →</a><br>
+        <a href="https://www.schoolofmotion.com/blog/wiggle-expression" target="_blank" rel="noopener">School of Motion：Getting Started with the Wiggle Expression →</a><br>
+        <a href="https://www.motionscript.com/design-guide/looping-wiggle.html" target="_blank" rel="noopener">Dan Ebberts：Expressioneering Design Guide →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。手順はバージョンにより表記が異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

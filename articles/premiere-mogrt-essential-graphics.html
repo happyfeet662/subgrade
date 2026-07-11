@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.mogrt を自作して使い回す：Essential Graphics 入門 | SUBGRADE</title>
+<meta name="description" content="毎回テロップを作り直していませんか。Premiere Proだけで作れるモーショングラフィックステンプレート(.mogrt)の作り方と、縦・横・正方形に自動対応するレスポンシブ設計を、海外チュートリアルをもとにやさしく解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#articles">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../index.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--motion">モーション</span></div>
+    <div class="article__banner th-motion">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="42" y="34" width="116" height="74" rx="16" fill="#fff" stroke="#f0d692" stroke-width="3"/>
+        <rect x="66" y="52" width="40" height="9" rx="4" fill="#ffc94d"/>
+        <rect x="82" y="52" width="9" height="42" rx="4" fill="#ffc94d"/>
+        <path d="M112 86 q16 -20 34 -6" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-dasharray="4 5" stroke-linecap="round"/>
+        <rect x="108" y="81" width="10" height="10" rx="2.5" transform="rotate(45 113 86)" fill="#ff6f7e"/>
+        <rect x="141" y="74" width="10" height="10" rx="2.5" transform="rotate(45 146 79)" fill="#3fca9f"/>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>.mogrt を自作して使い回す<br>——Essential Graphics 入門</h1>
+    <p class="article__lead">
+      案件のたびに同じテロップを一から作り直していませんか。Premiere Pro なら、After Effects なしでも
+      自分専用のテンプレート（.mogrt）を作って毎回呼び出せます。縦・横・正方形に自動で対応する“レスポンシブ設計”まで解説します。
+    </p>
+    <div class="article__meta">
+      <span>モーショングラフィックス</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.11</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">🎯 この記事のゴール</strong>
+        ① Essential Graphics パネルでテロップを組み、② それを .mogrt として書き出して毎回使い回し、
+        ③ 1つのテンプレートを縦・横・正方形に自動対応させる——ところまで。すべて<strong>Premiere Pro だけ</strong>で完結します。
+      </div>
+
+      <h2>MOGRT（.mogrt）とは</h2>
+      <p>
+        MOGRTは <strong>Motion Graphics Template</strong> の略で、テロップやローワーサード（下部の名前表示）などを
+        <strong>“設定できる部品”としてパッケージ化したファイル</strong>です。一度作れば、次からは Essential Graphics パネルの
+        Browse タブから検索してドラッグするだけ。文字や色は後から差し替えられます。
+      </p>
+      <p>
+        After Effects でも作れますが、<strong>AEで作ったものは Premiere からは .mogrt 書き出しができません</strong>。
+        「Premiere だけで完結させたい」なら、最初から Premiere 内で作るのがポイントです。
+      </p>
+
+      <h2>Essential Graphics パネルを開く</h2>
+      <p>
+        メニューの <strong>ウィンドウ → エッセンシャルグラフィックス（Window → Essential Graphics）</strong> でパネルを表示します。
+        タブは2つ。<strong>Browse</strong>（既存テンプレートを探す）と <strong>Edit</strong>（レイヤーやキーフレーム、プロパティを編集する）。
+        自作するときは主に Edit タブを使います。
+      </p>
+
+      <h2>テロップを作ってまとめる</h2>
+      <ol class="steps">
+        <li>
+          <strong>テキストと図形を配置する</strong>
+          横書き文字ツールでテロップを打ち、背景の帯やアクセント図形を足します。
+        </li>
+        <li>
+          <strong>1つのグラフィッククリップにまとめる</strong>
+          関連するレイヤーを同じグラフィッククリップ内に置くと、テンプレートとして一体で扱えます。
+        </li>
+        <li>
+          <strong>アニメーションを付ける</strong>
+          位置や不透明度にキーフレームを打ち、フェードやスライドインを作ります。
+        </li>
+        <li>
+          <strong>編集しやすい形に整える</strong>
+          後で差し替えたい文字・色は分かりやすい名前にしておくと、使うときに迷いません。
+        </li>
+      </ol>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>テンプレートとして書き出す</h2>
+      <p>
+        タイムライン上のグラフィッククリップを右クリックし、
+        <strong>「モーショングラフィックステンプレートとして書き出し（Export as Motion Graphics Template）」</strong>を選びます。
+        保存先を <strong>Local Templates（ローカルテンプレート）フォルダ</strong>にすると、Essential Graphics パネルに登録され、
+        <strong>以降どのプロジェクトでも Browse タブから検索して呼び出せる</strong>ようになります。これが“使い回し”の正体です。
+      </p>
+
+      <h2>レスポンシブ設計：縦・横・正方形に自動対応</h2>
+      <p>
+        SNS運用では、同じテロップを 16:9・1:1・9:16 で出し分ける場面が多いはず。
+        <strong>レスポンシブデザイン</strong>を使うと、1つのテンプレートが画面比率に合わせて自動でレイアウトを調整してくれます。
+      </p>
+      <ul>
+        <li><strong>3つのシーケンスを用意</strong>：横 16:9（1920×1080）／正方形 1:1（1080×1080）／縦 9:16（例 540×960）。</li>
+        <li><strong>Pinning（ピン留め）で追従させる</strong>：レイヤーを選び、<strong>「レスポンシブデザイン – 位置」→「ピン先（Pin To）」</strong>で
+        追従したい相手（例：テキストレイヤー）を指定。背景の帯を文字に紐づければ、文字量が変わっても帯が自動で伸縮します。</li>
+        <li><strong>時間のレスポンシブ</strong>：クリップの尺を変えても、開始・終了のアニメーションが崩れないように“イントロ/アウトロ区間”を保護できます。</li>
+      </ul>
+
+      <div class="callout">
+        <strong class="label">💡 ポイント</strong>
+        Pinning は「どのレイヤーに、何を追従させるか」を決める機能。<strong>背景帯を文字にピン留め</strong>しておくのが、
+        レスポンシブ・テロップの一番おいしい使い方です。
+      </div>
+
+      <h2>運用のコツ</h2>
+      <ul>
+        <li><strong>命名を統一</strong>：<code>LowerThird_名前表示</code> のように役割が分かる名前に。Browseタブでの検索が速くなります。</li>
+        <li><strong>色はテンプレート側で編集可能に</strong>：ブランドカラーを差し替えられるようにしておくと、案件ごとに再利用できます。</li>
+        <li><strong>配布・販売も可能</strong>：作った .mogrt はファイル1つで配れます。素材販売の商品にもなります。</li>
+      </ul>
+
+      <h2>まとめ</h2>
+      <p>
+        .mogrt は「作ったテロップを部品化して、毎回呼び出す」仕組み。
+        <strong>Essential Graphics で組む → Local Templates に書き出す → レスポンシブで縦横に対応</strong>——この流れを一度作れば、
+        テロップ作業の時間はぐっと縮みます。浮いた時間を、構成や演出という“価値の出る仕事”に回しましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>📚 一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/motion-graphics-templates.html" target="_blank" rel="noopener">Adobe公式：Add Motion Graphics templates to sequences →</a><br>
+        <a href="https://photography.tutsplus.com/articles/how-to-create-a-template-for-the-essential-graphics-panel-with-premiere-pro--cms-34297" target="_blank" rel="noopener">Envato Tuts+：Create a Template With Premiere Pro →</a><br>
+        <a href="https://blog.pond5.com/23558-how-to-design-auto-responsive-templates-for-vertical-and-square-videos/" target="_blank" rel="noopener">Pond5：Auto-Responsive Templates for Vertical & Square →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。手順はバージョンにより表記が異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../index.html#articles">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
