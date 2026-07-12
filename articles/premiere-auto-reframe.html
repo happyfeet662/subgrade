@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-auto-reframe.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="オートリフレーム完全ガイド：横動画をワンクリックで縦(9:16)に">
+<meta property="og:description" content="Premiere Proのオートリフレームで、16:9の横動画をTikTok・Reels・Shorts向けの縦(9:16)へ自動変換。シーケンス全体と単一クリップの2つの使い方、モーション追跡プリセットの選び方、ネストの判断、自動生成後のキーフレーム微調整まで、分かりにくいAdobe公式を噛み砕いて解説します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-auto-reframe.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="オートリフレーム完全ガイド：横動画をワンクリックで縦(9:16)に">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"オートリフレーム完全ガイド：横動画をワンクリックで縦(9:16)に","description":"Premiere Proのオートリフレームで、16:9の横動画をTikTok・Reels・Shorts向けの縦(9:16)へ自動変換。シーケンス全体と単一クリップの2つの使い方、モーション追跡プリセットの選び方、ネストの判断、自動生成後のキーフレーム微調整まで、分かりにくいAdobe公式を噛み砕いて解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-auto-reframe.html"}}
+</script>
+<title>オートリフレーム完全ガイド：横動画をワンクリックで縦(9:16)に | SUBGRADE</title>
+<meta name="description" content="Premiere Proのオートリフレームで、16:9の横動画をTikTok・Reels・Shorts向けの縦(9:16)へ自動変換。2つの使い方、モーション追跡プリセットの選び方、ネストの判断、自動生成後のキーフレーム微調整まで、分かりにくいAdobe公式を噛み砕いて解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--motion">モーション</span></div>
+    <div class="article__banner th-motion">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="44" width="92" height="52" rx="8" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+        <circle cx="58" cy="70" r="11" fill="#ffd7b0" stroke="#8b7cf0" stroke-width="2.5"/>
+        <rect x="118" y="34" width="46" height="72" rx="8" fill="#fff" stroke="#8b7cf0" stroke-width="3"/>
+        <circle cx="141" cy="66" r="12" fill="#ffd7b0" stroke="#8b7cf0" stroke-width="3"/>
+        <rect x="129" y="52" width="24" height="28" rx="4" fill="none" stroke="#ff6f7e" stroke-width="2.4" stroke-dasharray="4 3"/>
+        <path d="M100 70 h12 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>オートリフレーム完全ガイド<br>横動画をワンクリックで縦(9:16)に</h1>
+    <p class="article__lead">
+      「YouTube用に作った横動画を、TikTok・Reels・Shorts用に縦でも出したい」——
+      その度に手作業でクロップ＆キーフレーム…は、もう終わりです。Premiere の
+      <strong>オートリフレーム</strong>は、被写体を自動追跡しながらアスペクト比を作り替えてくれます。
+      ただしAdobe公式の説明は要点が散らばっていて分かりにくい。ここでは<strong>「どこを押すか」と「後で直す方法」</strong>まで一本にまとめます。
+    </p>
+    <div class="article__meta">
+      <span>モーション・SNS縦動画</span><span class="dot"></span>
+      <span>読了 約11分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">まず結論</strong>
+        シーケンスを丸ごと縦にするなら <strong>シーケンス &gt; オートリフレームシーケンス</strong>。
+        比率は <strong>9:16（縦）</strong>、モーション追跡は<strong>まず「標準」</strong>、
+        構造を守りたいので<strong>「クリップをネストする」</strong>を選ぶ。
+        あとは自動生成された動きを見て、ズレたクリップだけ<strong>「生成されたパスを上書き」</strong>で手直しすればOKです。
+      </div>
+
+      <h2>オートリフレームは何を自動化してくれるのか</h2>
+      <p>
+        縦横比を変えるとき本当に面倒なのは、リサイズそのものではなく<strong>「被写体を画面内に追い続けること」</strong>です。
+        16:9を9:16に切り出すと、映像の左右が大きく削られます。人物が右に動けばフレームアウト——それを防ぐには、
+        本来クリップごとに<strong>位置キーフレーム</strong>を打って追いかける必要があります。
+      </p>
+      <p>
+        オートリフレームは、この<strong>被写体追跡と位置キーフレームの生成を自動</strong>でやってくれる機能です。
+        Adobe Sensei（AI）が動く対象を検出し、常に画面の中心付近に収まるよう<strong>位置（Position）を自動でアニメーション</strong>させます。
+        つまり「クロップ」ではなく「<strong>賢く追いかけるクロップ</strong>」だと思ってください。
+      </p>
+
+      <h2>使い方は2通り：シーケンス全体 vs 単一クリップ</h2>
+      <p>
+        ここが公式で最初につまずくポイント。オートリフレームには<strong>入口が2つ</strong>あり、目的で使い分けます。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>シーケンス全体</th><th>単一クリップ</th></tr></thead>
+        <tbody>
+          <tr><th>入口</th><td><strong>シーケンス &gt; オートリフレームシーケンス</strong></td><td>エフェクト &gt; ビデオエフェクト &gt; <strong>トランスフォーム &gt; オートリフレーム</strong> をクリップにドラッグ</td></tr>
+          <tr><th>できること</th><td>タイムライン全体を新しい比率の<strong>複製シーケンス</strong>として一括生成</td><td>選んだ<strong>1クリップだけ</strong>を追跡・リフレーム</td></tr>
+          <tr><th>向いている場面</th><td>完成した横動画を<strong>まるごと縦へ</strong>作り替える</td><td>特定カットだけ挙動を直したい／部分的に使いたい</td></tr>
+          <tr><th>出力先</th><td>「Auto Reframe Sequences」ビンに新シーケンスが作られる（元は無傷）</td><td>そのクリップの<strong>エフェクトコントロール</strong>に追加される</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        基本は<strong>シーケンス全体</strong>で一気に変換し、うまくいかないカットだけ後述の方法で個別に直す、という流れが最速です。
+      </p>
+
+      <h2>モーション追跡プリセットの選び方</h2>
+      <p>
+        変換ダイアログ（およびエフェクトコントロール）で選ぶ<strong>「モーション追跡」</strong>は、追いかけの“機敏さ”の設定です。
+        素材の動きの激しさで選びます。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>プリセット</th><th>向いている素材</th><th>キーフレーム量／挙動</th></tr></thead>
+        <tbody>
+          <tr><th>遅いモーション</th><td>トーク・インタビューなど<strong>カメラも被写体もほぼ静止</strong></td><td>ごく少数。ほぼ固定でカクつきにくい</td></tr>
+          <tr><th>標準</th><td><strong>大半のコンテンツ</strong>（まず標準で試す）</td><td>適度に追従。動きが速すぎると外すことも</td></tr>
+          <tr><th>速いモーション</th><td>スポーツ・アクションなど<strong>動きが大きい</strong></td><td>多数のキーフレームで積極的に追う。細かく揺れやすい</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        迷ったら<strong>「標準」</strong>。静かなトーク動画で背景が微妙に揺れるなら「遅い」、被写体が画面を大きく動くなら「速い」に上げます。
+        <strong>速い＝正義ではありません</strong>。キーフレームが増えるほど小刻みな揺れ（ジッター）も乗りやすいので、素材に合わせて最小限の機敏さを選ぶのがコツです。
+      </p>
+
+      <h2>アスペクト比プリセット早見表</h2>
+      <p>
+        出力先のSNSに合わせて比率を選びます。主要な行き先はこの4つ。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>比率</th><th>形</th><th>主な用途</th></tr></thead>
+        <tbody>
+          <tr><th>9:16</th><td>縦長</td><td>TikTok／Instagram Reels／YouTube Shorts</td></tr>
+          <tr><th>4:5</th><td>やや縦</td><td>Instagram フィード投稿（占有面積が大きく有利）</td></tr>
+          <tr><th>1:1</th><td>正方形</td><td>フィード汎用・一部の広告枠</td></tr>
+          <tr><th>16:9</th><td>横長</td><td>縦素材を横向きに整えたいとき・従来配信</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>「ネストする / しない」——ここが分かれ道</h2>
+      <p>
+        シーケンス変換のダイアログには、地味だけど重要な<strong>ネスト（入れ子）</strong>の選択があります。ここを理解せず進むと後で泣きます。
+      </p>
+      <ul>
+        <li><strong>クリップをネストする</strong>：各クリップを<strong>ひとつのネスト（入れ子シーケンス）にまとめて</strong>からリフレーム。元のカット点・トラック構成・適用済みエフェクトが<strong>保持</strong>され、テロップや音声も崩れにくい。<strong>基本はこちら</strong>。</li>
+        <li><strong>ネストしない</strong>：クリップ単位でそのままリフレーム。<strong>1カットずつ細かく調整したい</strong>ときは楽だが、構造が変わりやすい。</li>
+      </ul>
+      <p>
+        完成済みの横動画をまるごと縦にするなら<strong>ネストする</strong>が安全。
+        ただしネストすると中身の微調整は<strong>ネストをダブルクリックして中に入ってから</strong>行う点だけ覚えておきましょう。
+      </p>
+
+      <h2>自動生成のあと、ズレを手で直す</h2>
+      <p>
+        オートリフレームは万能ではありません。被写体が2人いる・素早く動く・背景に動く物があると、<strong>追う対象を間違える</strong>ことがあります。
+        そこで、自動生成された動きを<strong>手で上書き</strong>します。
+      </p>
+      <ol>
+        <li>直したいクリップを選び、<strong>エフェクトコントロール</strong>パネルを開く。</li>
+        <li><strong>オートリフレーム</strong>の項目を展開し、<strong>「生成されたパスを上書き」</strong>にチェックを入れる。</li>
+        <li>すると<strong>「位置を調整」</strong>にキーフレーム（自動生成された動き）が現れる。これを<strong>手で動かして修正</strong>できる。</li>
+        <li>「もう追跡させず固定でいい」場合は、<strong>ストップウォッチをオフ</strong>にしてキーフレームを消し、好きな位置で止める。</li>
+      </ol>
+      <p>
+        コツは<strong>「全部やり直さない」</strong>こと。大半のカットは自動でOKなので、<strong>破綻した数カットだけ</strong>上書きすれば十分です。
+        キーフレームの基本操作に不安があれば、<a href="premiere-keyframe-easing.html">キーフレームとイージングの記事</a>も合わせてどうぞ。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント（Adobe公式が書かない所）</strong>
+        ・<strong>テロップやロゴがズレる</strong> → グラフィックは追跡対象外。縦フレームに合わせて<strong>手動で再配置</strong>が必要。<br>
+        ・<strong>追う人物を間違える</strong> → 「生成されたパスを上書き」で手修正。もしくはモーション追跡を「遅い」に。<br>
+        ・<strong>小刻みに揺れる（ジッター）</strong> → プリセットを機敏側にしすぎ。「標準」や「遅い」に下げる。<br>
+        ・<strong>元シーケンスが消えた気がする</strong> → 消えていません。新しい比率は<strong>複製</strong>として別シーケンスに作られます。<br>
+        ・<strong>ネストの中が直せない</strong> → ネストを<strong>ダブルクリックして中へ入る</strong>。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>結局いちばん無難な設定は？</summary>
+          <p>シーケンス &gt; オートリフレームシーケンス → 比率9:16 → モーション追跡「標準」→「クリップをネストする」。まずこれで変換し、破綻したカットだけ「生成されたパスを上書き」で手直しするのが最速です。</p>
+        </details>
+        <details>
+          <summary>テロップや字幕もいい感じに動かしてくれる？</summary>
+          <p>いいえ。オートリフレームが追うのは映像の被写体で、グラフィック（テロップ・ロゴ・字幕）は対象外です。縦フレームに合わせて手動で配置し直す必要があります。テンプレ化は<a href="premiere-mogrt-essential-graphics.html">.mogrtの記事</a>が役立ちます。</p>
+        </details>
+        <details>
+          <summary>追跡なしで、ただ中央を切り出したいだけ。</summary>
+          <p>できます。単一クリップにオートリフレームを適用し、エフェクトコントロールで「生成されたパスを上書き」→ ストップウォッチをオフにしてキーフレームを消せば、動かない固定クロップになります。位置は手で好きな場所へ。</p>
+        </details>
+        <details>
+          <summary>画質は落ちますか？</summary>
+          <p>元が高解像度（4Kなど）なら、縦に切り出しても実用上の劣化はほぼ気になりません。むしろ高解像度素材ほどクロップ耐性があり有利です。書き出しは<a href="premiere-export-settings.html">書き出し設定の記事</a>を参照してください。</p>
+        </details>
+        <details>
+          <summary>どのバージョンから使える？</summary>
+          <p>オートリフレームは Premiere Pro 14.0（2020）で追加された機能です。以降の標準機能なので、最近のバージョンなら問題なく使えます。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        オートリフレームは<strong>「シーケンスごと変換 → 標準・9:16・ネスト → 破綻カットだけ上書き」</strong>の3ステップで完成します。
+        全自動を期待して丸投げすると、テロップのズレや追跡ミスでガッカリしがち。
+        <strong>「8割は自動、2割は手直し」</strong>と割り切れば、横動画の縦展開が一気に現実的な作業時間に収まります。
+        1本の素材を複数のSNSへ——単価と発信量を同時に上げる、中級者にこそ効く一手です。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>一次情報（英語）</h4>
+        <a href="https://helpx.adobe.com/uk/premiere/desktop/add-video-effects/commonly-used-effects/auto-reframe-overview.html" target="_blank" rel="noopener">Adobe公式：Auto Reframe overview →</a><br>
+        <a href="https://helpx.adobe.com/uk/premiere/desktop/add-video-effects/commonly-used-effects/add-auto-reframe-effect-to-a-sequence.html" target="_blank" rel="noopener">Adobe公式：Add Auto Reframe effect to a sequence →</a><br>
+        <a href="https://helpx.adobe.com/premiere/desktop/add-video-effects/commonly-used-effects/add-auto-reframe-effect-to-a-clip.html" target="_blank" rel="noopener">Adobe公式：Add Auto Reframe effect to a clip →</a><br>
+        <a href="https://larryjordan.com/articles/auto-reframe-convert-a-horizontal-timeline-to-vertical-in-adobe-premiere-pro/" target="_blank" rel="noopener">Larry Jordan：Convert a Horizontal Timeline to Vertical →</a>
+      </div>
+
+      <p class="article__foot">
+        この記事は英語の一次情報をもとに検証・再構成したものです。メニュー名はバージョンや言語設定により表記が異なる場合があります。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
