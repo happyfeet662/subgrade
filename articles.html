@@ -54,6 +54,11 @@
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#9aa5b1" stroke-width="2"/><path d="M20 20l-3.2-3.2" stroke="#9aa5b1" stroke-width="2" stroke-linecap="round"/></svg>
         <input type="search" id="articleSearch" placeholder="キーワードで探す（例：カラー、テロップ、書き出し）" aria-label="記事を検索">
       </div>
+      <div class="filter-levels" id="filterLevels">
+        <button type="button" class="filter-cat filter-lvl is-active" data-level="all">すべて</button>
+        <button type="button" class="filter-cat filter-lvl" data-level="beginner">初心者</button>
+        <button type="button" class="filter-cat filter-lvl" data-level="intermediate">中級者</button>
+      </div>
       <div class="filter-cats" id="filterCats">
         <button type="button" class="filter-cat is-active" data-cat="all">すべて</button>
         <button type="button" class="filter-cat" data-cat="color">カラー</button>
@@ -74,7 +79,7 @@
     <div class="grid">
 
       <!-- #01 Color -->
-      <a class="card" href="articles/premiere-color-management.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-color-management.html">
         <div class="card__thumb th-color">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <path d="M100 62 L100 26 A36 36 0 0 1 136 62 Z" fill="#ff6f7e" stroke="#fff" stroke-width="3"/>
@@ -96,7 +101,7 @@
       </a>
 
       <!-- #02 Expressions -->
-      <a class="card" href="articles/expressions-basics.html">
+      <a class="card" data-level="intermediate" href="articles/expressions-basics.html">
         <div class="card__thumb th-expr">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="40" y="34" width="120" height="74" rx="16" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
@@ -115,7 +120,7 @@
       </a>
 
       <!-- #03 Proxy -->
-      <a class="card" href="articles/premiere-proxy-workflow.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-proxy-workflow.html">
         <div class="card__thumb th-flow">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="34" y="38" width="72" height="64" rx="12" fill="#cfe9fb" stroke="#fff" stroke-width="3"/>
@@ -137,7 +142,7 @@
       </a>
 
       <!-- #04 Motion / mogrt -->
-      <a class="card" href="articles/premiere-mogrt-essential-graphics.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-mogrt-essential-graphics.html">
         <div class="card__thumb th-motion">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="42" y="34" width="116" height="74" rx="16" fill="#fff" stroke="#f0d692" stroke-width="3"/>
@@ -158,7 +163,7 @@
       </a>
 
       <!-- #05 Efficiency -->
-      <a class="card" href="articles/premiere-shortcuts-efficiency.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-shortcuts-efficiency.html">
         <div class="card__thumb th-eff">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="34" y="52" width="132" height="58" rx="12" fill="#fff" stroke="#a9e6d3" stroke-width="3"/>
@@ -180,7 +185,7 @@
       </a>
 
       <!-- #06 AI -->
-      <a class="card" href="articles/ai-captions-claude.html">
+      <a class="card" data-level="intermediate" href="articles/ai-captions-claude.html">
         <div class="card__thumb th-ai">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <line x1="100" y1="26" x2="100" y2="40" stroke="#db5b93" stroke-width="3"/>
@@ -203,7 +208,7 @@
       </a>
 
       <!-- #07 Lumetri -->
-      <a class="card" href="articles/premiere-lumetri-color-grading.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-lumetri-color-grading.html">
         <div class="card__thumb th-color">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <circle cx="80" cy="70" r="40" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
@@ -226,7 +231,7 @@
       </a>
 
       <!-- #08 Export -->
-      <a class="card" href="articles/premiere-export-settings.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-export-settings.html">
         <div class="card__thumb th-export">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="40" y="36" width="76" height="66" rx="12" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
@@ -249,7 +254,7 @@
       </a>
 
       <!-- #09 Audio -->
-      <a class="card" href="articles/premiere-essential-sound.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-essential-sound.html">
         <div class="card__thumb th-audio">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <line x1="28" y1="70" x2="172" y2="70" stroke="#c7d8ef" stroke-width="2"/>
@@ -273,7 +278,7 @@
       </a>
 
       <!-- #10 Transition -->
-      <a class="card" href="articles/premiere-seamless-transitions.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-seamless-transitions.html">
         <div class="card__thumb th-trans">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="34" y="46" width="70" height="52" rx="12" fill="#fff" stroke="#f0c39a" stroke-width="3"/>
@@ -295,7 +300,7 @@
       </a>
 
       <!-- #11 Telop -->
-      <a class="card" href="articles/premiere-telop-design.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-telop-design.html">
         <div class="card__thumb th-text">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="40" y="34" width="120" height="72" rx="14" fill="#fff" stroke="#e2bcdb" stroke-width="3"/>
@@ -317,7 +322,7 @@
       </a>
 
       <!-- #12 Keyframe -->
-      <a class="card" href="articles/premiere-keyframe-easing.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-keyframe-easing.html">
         <div class="card__thumb th-motion">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="34" y="30" width="132" height="80" rx="14" fill="#fff" stroke="#f0d692" stroke-width="3"/>
@@ -337,7 +342,7 @@
       </a>
 
       <!-- #13 LUT -->
-      <a class="card" href="articles/premiere-lut-guide.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-lut-guide.html">
         <div class="card__thumb th-color">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="42" y="34" width="66" height="72" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
@@ -359,7 +364,7 @@
       </a>
 
       <!-- #14 Multicam -->
-      <a class="card" href="articles/premiere-multicam.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-multicam.html">
         <div class="card__thumb th-edit">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="44" y="36" width="52" height="32" rx="8" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
@@ -381,7 +386,7 @@
       </a>
 
       <!-- #15 J/L cut -->
-      <a class="card" href="articles/premiere-jl-cut.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-jl-cut.html">
         <div class="card__thumb th-edit">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="40" y="44" width="88" height="22" rx="6" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
@@ -400,7 +405,7 @@
       </a>
 
       <!-- #16 Warp Stabilizer -->
-      <a class="card" href="articles/premiere-warp-stabilizer.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-warp-stabilizer.html">
         <div class="card__thumb th-fx">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="52" y="40" width="96" height="60" rx="10" fill="none" stroke="#e6a6a2" stroke-width="3" stroke-dasharray="6 5"/>
@@ -420,7 +425,7 @@
       </a>
 
       <!-- #17 Cinematic grade -->
-      <a class="card" href="articles/premiere-cinematic-grade.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-cinematic-grade.html">
         <div class="card__thumb th-color">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="46" y="38" width="108" height="64" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
@@ -439,7 +444,7 @@
       </a>
 
       <!-- #18 Speed ramp -->
-      <a class="card" href="articles/premiere-speed-ramp.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-speed-ramp.html">
         <div class="card__thumb th-fx">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <line x1="34" y1="96" x2="166" y2="96" stroke="#e6a6a2" stroke-width="2"/>
@@ -459,7 +464,7 @@
       </a>
 
       <!-- #19 Mask & tracking -->
-      <a class="card" href="articles/premiere-mask-tracking.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-mask-tracking.html">
         <div class="card__thumb th-fx">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="40" y="34" width="120" height="72" rx="12" fill="#fff" stroke="#e6a6a2" stroke-width="3"/>
@@ -482,7 +487,7 @@
       </a>
 
       <!-- #20 Text-based editing -->
-      <a class="card" href="articles/premiere-text-based-editing.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-text-based-editing.html">
         <div class="card__thumb th-flow">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="44" y="32" width="112" height="76" rx="12" fill="#fff" stroke="#a9cdef" stroke-width="3"/>
@@ -503,7 +508,7 @@
       </a>
 
       <!-- #21 Auto Reframe -->
-      <a class="card" href="articles/premiere-auto-reframe.html">
+      <a class="card" data-level="intermediate" href="articles/premiere-auto-reframe.html">
         <div class="card__thumb th-motion">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="20" y="48" width="86" height="48" rx="8" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
@@ -520,6 +525,29 @@
           <h3>オートリフレーム：横動画をワンクリックで縦(9:16)に</h3>
           <p>被写体を自動追跡してSNS縦動画へ。2つの使い方・追跡プリセット・自動後の手直しまで。</p>
           <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+        </div>
+      </a>
+
+      <!-- #22 First Edit (beginner) -->
+      <a class="card" data-level="beginner" href="articles/premiere-first-edit.html">
+        <div class="card__thumb th-flow">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="42" width="34" height="26" rx="5" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+            <path d="M31 51 v8 l7 -4 z" fill="#1fa480"/>
+            <path d="M58 55 h14 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="80" y="46" width="40" height="17" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
+            <rect x="80" y="67" width="40" height="17" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
+            <path d="M124 64 h14 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="146" y="50" width="32" height="32" rx="8" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+            <text x="162" y="71" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="700" fill="#1fa480">MP4</text>
+            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#22</span></div>
+          <h3>Premiere 最初の1本：読み込み→カット→書き出し</h3>
+          <p>まったくの初めてでもOK。5ステップで動画を完成させる、いちばん最初の一本道。</p>
+          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
         </div>
       </a>
 
@@ -564,9 +592,11 @@
 (function () {
   var search = document.getElementById('articleSearch');
   var cats = document.getElementById('filterCats');
+  var levels = document.getElementById('filterLevels');
   var noRes = document.getElementById('noResults');
   var cards = Array.prototype.slice.call(document.querySelectorAll('#articles .grid > .card'));
   var activeCat = 'all';
+  var activeLevel = 'all';
 
   function catOf(card) {
     var chip = card.querySelector('.chip');
@@ -582,8 +612,9 @@
     var shown = 0;
     cards.forEach(function (c) {
       var okCat = activeCat === 'all' || catOf(c) === activeCat;
+      var okLevel = activeLevel === 'all' || c.getAttribute('data-level') === activeLevel;
       var okQ = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
-      var show = okCat && okQ;
+      var show = okCat && okLevel && okQ;
       c.style.display = show ? '' : 'none';
       if (show) shown++;
     });
@@ -596,6 +627,15 @@
     if (!b) return;
     activeCat = b.getAttribute('data-cat');
     cats.querySelectorAll('.filter-cat').forEach(function (x) {
+      x.classList.toggle('is-active', x === b);
+    });
+    apply();
+  });
+  if (levels) levels.addEventListener('click', function (e) {
+    var b = e.target.closest('.filter-lvl');
+    if (!b) return;
+    activeLevel = b.getAttribute('data-level');
+    levels.querySelectorAll('.filter-lvl').forEach(function (x) {
       x.classList.toggle('is-active', x === b);
     });
     apply();

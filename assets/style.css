@@ -373,3 +373,18 @@ a.card:hover h3 { color: var(--coral); }
 .filter-cat:hover { transform: translateY(-2px); color: var(--coral); }
 .filter-cat.is-active { background: var(--coral); color: #fff; border-color: var(--coral); box-shadow: 0 3px 0 var(--coral-dk); }
 .no-results { display: none; text-align: center; color: var(--muted); font-family: var(--maru); padding: 46px 0; }
+
+/* レベル分け（初心者／中級者） */
+.filter-levels { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 0 0 14px; }
+.filter-lvl.is-active { background: #4a8a3d; color: #fff; border-color: #4a8a3d; box-shadow: 0 3px 0 #37692e; }
+.card__thumb { position: relative; }
+.card[data-level] .card__thumb::after {
+  position: absolute; top: 10px; left: 10px; line-height: 1;
+  font-family: var(--maru); font-weight: 700; font-size: 11.5px; padding: 4px 10px; border-radius: 999px;
+}
+.card[data-level="beginner"] .card__thumb::after { content: "初心者"; background: #e3f3e0; color: #4a8a3d; }
+.card[data-level="intermediate"] .card__thumb::after { content: "中級者"; background: #eae6ff; color: #6a5acd; }
+/* 記事ページ上部のレベル表示 */
+.lvl-tag { display: inline-block; font-family: var(--maru); font-weight: 700; font-size: 12.5px; padding: 4px 12px; border-radius: 999px; margin-left: 8px; }
+.lvl-tag--beginner { background: #e3f3e0; color: #4a8a3d; }
+.lvl-tag--intermediate { background: #eae6ff; color: #6a5acd; }

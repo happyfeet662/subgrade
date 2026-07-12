@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-first-edit.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="Premiere Pro 最初の1本：読み込み→カット→書き出しの全体像">
+<meta property="og:description" content="動画編集がまったく初めての人向け。Premiere Proで新規プロジェクトを作り、素材を読み込み、タイムラインに並べてカットし、書き出すまでの全体の流れを、専門用語を噛み砕いて一本道で解説します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-first-edit.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Premiere Pro 最初の1本：読み込み→カット→書き出しの全体像">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Premiere Pro 最初の1本：読み込み→カット→書き出しの全体像","description":"動画編集がまったく初めての人向け。Premiere Proで新規プロジェクトを作り、素材を読み込み、タイムラインに並べてカットし、書き出すまでの全体の流れを、専門用語を噛み砕いて一本道で解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-first-edit.html"}}
+</script>
+<title>Premiere Pro 最初の1本：読み込み→カット→書き出しの全体像 | SUBGRADE</title>
+<meta name="description" content="動画編集がまったく初めての人向け。Premiere Proで新規プロジェクトを作り、素材を読み込み、タイムラインに並べてカットし、書き出すまでの全体の流れを、専門用語を噛み砕いて一本道で解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--flow">ワークフロー</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-flow">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="40" width="34" height="26" rx="5" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+        <path d="M31 49 v8 l7 -4 z" fill="#1fa480"/>
+        <path d="M58 53 h16 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="80" y="44" width="40" height="18" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
+        <rect x="80" y="66" width="40" height="18" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
+        <path d="M124 62 h16 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="146" y="48" width="34" height="34" rx="8" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+        <text x="163" y="70" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#1fa480">MP4</text>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+        <path d="M30 96 l1.6 5 5 1.6 -5 1.6 -1.6 5 -1.6-5 -5-1.6 5-1.6z" fill="#ff6f7e"/>
+      </svg>
+    </div>
+    <h1>Premiere Pro 最初の1本<br>読み込み→カット→書き出しの全体像</h1>
+    <p class="article__lead">
+      「動画編集をやってみたいけど、Premiere Proを開いたらボタンだらけで固まった」——大丈夫です。
+      実は、最初の1本を作るのに覚えることは<strong>たった5ステップ</strong>だけ。
+      この記事では<strong>専門用語をなるべく使わず</strong>、素材を読み込んでからYouTubeに上げられる動画になるまでを、一本道でたどります。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①新規プロジェクトを作る → ②素材を読み込む → ③タイムラインに並べる → ④いらない所をカット → ⑤書き出す</strong>。
+        この5ステップが分かれば、もう「最初の1本」は完成できます。まずは全体の地図を頭に入れましょう。
+      </div>
+
+      <h2>そもそも画面はどうなっている？</h2>
+      <p>
+        Premiere の画面は、大きく<strong>4つのエリア</strong>に分かれています。名前だけ先に覚えておくと、この後の説明が一気に分かりやすくなります。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>エリア</th><th>役割（ざっくり）</th></tr></thead>
+        <tbody>
+          <tr><th>プロジェクトパネル</th><td>読み込んだ素材の<strong>置き場</strong>。撮った動画や音楽がここに並ぶ。</td></tr>
+          <tr><th>タイムライン</th><td>素材を<strong>時間順に並べて編集</strong>する場所。編集作業のメイン舞台。</td></tr>
+          <tr><th>プログラムモニター</th><td>編集中の映像を<strong>再生して確認</strong>する画面。</td></tr>
+          <tr><th>ツールパネル</th><td>カットする・選ぶなどの<strong>道具</strong>が並ぶ細長いバー。</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        最初は「素材の置き場」と「並べる場所（タイムライン）」の2つだけ意識すればOKです。
+      </p>
+
+      <h2>ステップ① 新規プロジェクトを作る</h2>
+      <p>
+        Premiere を起動したら<strong>「新規プロジェクト」</strong>を選びます。プロジェクトとは、その動画1本ぶんの<strong>作業ファイル</strong>のこと。
+        名前（例：「初めての動画」）と保存場所を決めて作成します。
+      </p>
+      <p>
+        保存場所は、後から迷わないように<strong>素材と同じフォルダ</strong>にまとめておくのがおすすめです。デスクトップに専用フォルダを1つ作り、そこに動画も音楽もプロジェクトも入れておくと安全です。
+      </p>
+
+      <h2>ステップ② 素材を読み込む</h2>
+      <p>
+        撮影した動画ファイルを Premiere に取り込みます。方法はかんたん、<strong>ファイルをプロジェクトパネルにドラッグ＆ドロップ</strong>するだけ。
+        これで素材が「置き場」に並びます。
+      </p>
+      <div class="callout">
+        <strong class="label">大事な注意</strong>
+        読み込みは<strong>ファイルの“リンク”</strong>です。元の動画ファイルを後で移動・削除・リネームすると、Premiere が見失って「メディアオフライン」と赤く表示されます。
+        <strong>編集が終わるまで、素材ファイルは動かさない</strong>のが鉄則です。
+      </div>
+
+      <h2>ステップ③ タイムラインに並べる</h2>
+      <p>
+        置き場の素材を、下の<strong>タイムライン</strong>へドラッグします。最初の素材をタイムラインに置くと、
+        Premiere が<strong>その素材に合ったシーケンス（編集の器）</strong>を自動で作ってくれます。むずかしい設定は要りません。
+      </p>
+      <p>
+        複数のクリップは、<strong>左から右へ時間順</strong>に並べます。左が動画のはじまり、右が終わり。この「左から右に時間が流れる」感覚が、編集の基本です。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>ステップ④ いらない所をカットする</h2>
+      <p>
+        編集の8割は<strong>「いらない部分を消す」</strong>作業です。基本の道具は2つだけ覚えれば十分。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>道具</th><th>ショートカット</th><th>できること</th></tr></thead>
+        <tbody>
+          <tr><th>選択ツール（矢印）</th><td>V</td><td>クリップを<strong>選ぶ・動かす・端を伸縮</strong></td></tr>
+          <tr><th>レーザーツール（カミソリ）</th><td>C</td><td>クリップを<strong>好きな位置で切る</strong></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        流れはこう。<strong>①レーザー（C）でいらない区間の前後を切る → ②選択（V）に戻して切った区間を選び、Deleteで消す。</strong>
+      </p>
+      <p>
+        ただの Delete だと、消した所が<strong>すき間（空白）</strong>として残ります。すき間を残さず前へ詰めたいときは、
+        消したいクリップを右クリックして<strong>「リップル削除」</strong>を選びます。「削除して、後ろを前に詰める」——これが快適なカットの決め手です。
+      </p>
+
+      <h2>ステップ⑤ 書き出す（動画ファイルにする）</h2>
+      <p>
+        編集が終わったら、1本の動画ファイルに変換します。これを<strong>「書き出し（エクスポート）」</strong>と呼びます。
+        メニューの<strong>ファイル &gt; 書き出し &gt; メディア</strong>から進みます。
+      </p>
+      <p>
+        初めてなら、形式は<strong>H.264</strong>、プリセットは<strong>「YouTube 1080p」</strong>系を選べばまず失敗しません。
+        書き出しボタンを押せば、MP4ファイルが1つでき上がります。これでYouTubeにもSNSにもアップできます。
+        設定を細かく詰めたくなったら、<a href="premiere-export-settings.html">書き出し設定の記事（中級者向け）</a>へどうぞ。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>素材が赤く「メディアオフライン」</strong> → 元ファイルを移動/削除した。ファイルを元の場所に戻すか、右クリック「メディアをリンク」。<br>
+        ・<strong>切ったのにすき間が残る</strong> → 「リップル削除」を使う。<br>
+        ・<strong>書き出した動画が真っ暗/短い</strong> → タイムラインの<strong>書き出し範囲</strong>が一部だけになっているかも。範囲を全体に。<br>
+        ・<strong>保存し忘れが怖い</strong> → こまめに <strong>Ctrl/Cmd + S</strong>。Premiere は自動保存もありますが、手動保存の癖をつけましょう。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>まず何から覚えればいい？</summary>
+          <p>この記事の5ステップだけでOKです。①プロジェクト作成 ②読み込み ③タイムラインに並べる ④カット（VとC、リップル削除）⑤書き出し。まず1本を最後まで作りきる体験がいちばんの近道です。</p>
+        </details>
+        <details>
+          <summary>ショートカットは覚えないとダメ？</summary>
+          <p>最初は<strong>V（選択）とC（レーザー）</strong>の2つだけで十分です。慣れてきたら少しずつ増やしましょう。効率化は中級ステップの<a href="premiere-shortcuts-efficiency.html">ショートカット＆自動化の記事</a>が役立ちます。</p>
+        </details>
+        <details>
+          <summary>「シーケンス」って結局なに？</summary>
+          <p>編集の“器”です。タイムラインに最初のクリップを置くと自動で作られるので、初めのうちは中身を気にしなくて大丈夫。素材に合ったサイズ・フレームレートで作ってくれます。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>カットの質を上げたいなら<a href="premiere-jl-cut.html">J・Lカット</a>、テロップを入れたいなら<a href="premiere-telop-design.html">テロップデザイン</a>、SNS用に縦動画にしたいなら<a href="premiere-auto-reframe.html">オートリフレーム</a>へ。少しずつ中級の世界へ進めます。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        Premiere の最初の1本は、<strong>「作る → 読み込む → 並べる → 切る → 書き出す」</strong>の5ステップ。
+        ボタンの数に圧倒される必要はありません。まずはこの一本道を最後まで通してみること。
+        1本作りきれば、画面のどこに何があるかが自然と分かり、2本目からは驚くほどスムーズになります。
+        できあがったら、次はカットやテロップで“見やすさ”を足していきましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/importing-media.html" target="_blank" rel="noopener">Adobe公式：メディアの読み込み →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/export-video.html" target="_blank" rel="noopener">Adobe公式：ビデオの書き出し →</a>
+      </div>
+
+      <p class="article__foot">
+        メニュー名や画面はバージョンや言語設定により表記が異なる場合があります。まずは手を動かして、1本を最後まで作ってみましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
