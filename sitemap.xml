@@ -2,6 +2,7 @@
 <!-- 公開ドメインが決まったら https://happyfeet662.github.io/subgrade を実際のドメインに一括置換してください -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://happyfeet662.github.io/subgrade/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://happyfeet662.github.io/subgrade/articles.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-color-management.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-proxy-workflow.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://happyfeet662.github.io/subgrade/articles/premiere-mogrt-essential-graphics.html</loc><lastmod>2026-07-11</lastmod><priority>0.8</priority></url>
