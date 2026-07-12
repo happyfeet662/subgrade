@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://happyfeet662.github.io/subgrade/sitemap.xml
+Sitemap: https://zeebraweb.com/sitemap.xml
