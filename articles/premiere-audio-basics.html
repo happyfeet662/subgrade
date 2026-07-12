@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-audio-basics.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="音の調整の基本：声を聞き取りやすく、BGMをちょうどよく">
+<meta property="og:description" content="初心者向けに、Premiere Proの音の整え方を解説。音量メーターの見方、ラウドネスの目安、エッセンシャルサウンドでの半自動処理、ノイズ軽減、声とBGMのバランス（ダッキング）まで、噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-audio-basics.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="音の調整の基本：声を聞き取りやすく、BGMをちょうどよく">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"音の調整の基本：声を聞き取りやすく、BGMをちょうどよく","description":"初心者向けに、Premiere Proの音の整え方を解説。音量メーターの見方、ラウドネスの目安、エッセンシャルサウンドでの半自動処理、ノイズ軽減、声とBGMのバランス（ダッキング）まで、噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-audio-basics.html"}}
+</script>
+<title>音の調整の基本：声を聞き取りやすく、BGMをちょうどよく | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere Proの音の整え方を解説。音量メーターの見方、ラウドネスの目安、エッセンシャルサウンドでの半自動処理、ノイズ軽減、声とBGMのバランス（ダッキング）まで、噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--audio">オーディオ</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-audio">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#3d6bc4" stroke-width="4" stroke-linecap="round">
+          <path d="M58 70 v14"/><path d="M72 60 v34"/><path d="M86 46 v62"/><path d="M100 56 v38"/><path d="M114 40 v70"/><path d="M128 62 v30"/><path d="M142 68 v18"/>
+        </g>
+        <rect x="46" y="66" width="108" height="2.6" rx="1.3" fill="#9aa5b1"/>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>音の調整の基本<br>声を聞き取りやすく、BGMをちょうどよく</h1>
+    <p class="article__lead">
+      「映像はきれいなのに、なんか安っぽい」——その原因は<strong>たいてい音</strong>です。人は<strong>聞き取りにくい音声にすぐ耐えられなくなる</strong>もの。
+      この記事では初心者向けに、<strong>音量をそろえる・ノイズを減らす・BGMと声のバランスを取る</strong>という、最低限やれば効く3点を噛み砕いて解説します。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約9分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①メーターを見て音量をそろえる → ②エッセンシャルサウンドで声を聞きやすく（ノイズ軽減も）→ ③BGMは声より小さく、必要ならダッキングで自動的に下げる。</strong>
+        この3点だけで、音は見違えます。
+      </div>
+
+      <h2>まず「音量メーター」を見る</h2>
+      <p>
+        音量は<strong>dB（デシベル）</strong>という単位で、右側の<strong>オーディオメーター</strong>に出ます。数字は<strong>0が上限</strong>で、そこに近づくほど大きい音。
+        大事なのは<strong>0dBを超えないこと</strong>。超えると<strong>「音割れ（クリップ）」</strong>してバリバリ濁ります。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>状態</th><th>メーターの目安</th><th>どうする</th></tr></thead>
+        <tbody>
+          <tr><th>声（会話）</th><td>だいたい <strong>-12〜-6dB</strong> でピーク</td><td>聞きやすい基準。ここに合わせる</td></tr>
+          <tr><th>0dBに張り付く / 赤</th><td>大きすぎ（音割れ）</td><td>クリップの音量を<strong>下げる</strong></td></tr>
+          <tr><th>-30dBより下でしか動かない</th><td>小さすぎ</td><td>音量を<strong>上げる</strong>（上げてもノイズが増えるなら録り直しが理想）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        個々のクリップの音量は、クリップを選んで<strong>音量（レベル）</strong>を上下して調整します。まずは<strong>「声が-12〜-6dBで、割れていない」</strong>を目指しましょう。
+      </p>
+
+      <h2>ラウドネスの目安（配信先に合わせる）</h2>
+      <p>
+        瞬間の大きさ（ピーク）とは別に、<strong>「全体として聞こえる音の大きさ」</strong>を表す<strong>ラウドネス（LUFS）</strong>という指標があります。
+        配信プラットフォームには目安があり、そこに合わせると<strong>「他の動画と音量差がない」</strong>自然な仕上がりになります。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>配信先</th><th>ラウドネス目安</th></tr></thead>
+        <tbody>
+          <tr><th>YouTube</th><td>約 <strong>-14 LUFS</strong></td></tr>
+          <tr><th>Instagram / TikTok</th><td>約 <strong>-14 LUFS</strong> 前後</td></tr>
+          <tr><th>ナレーション主体の動画</th><td>-16〜-14 LUFS を目安に</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        初心者のうちは<strong>「-14 LUFSくらい」</strong>をざっくり意識すれば十分。後述のエッセンシャルサウンドに<strong>ラウドネスの自動調整</strong>があるので、それに任せるのが簡単です。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>エッセンシャルサウンドで半自動で整える</h2>
+      <p>
+        Premiere には<strong>エッセンシャルサウンド</strong>という、初心者に最適な音の調整パネルがあります。使い方はかんたん。
+      </p>
+      <ol>
+        <li>音声クリップを選び、エッセンシャルサウンドを開く。</li>
+        <li>そのクリップが何かを<strong>タグ付け</strong>する：<strong>会話 / ミュージック / SE(効果音) / アンビエンス</strong>。</li>
+        <li>「会話」を選ぶと、<strong>ラウドネスの自動一致・ノイズ軽減・明瞭度</strong>などのスライダーが出る。</li>
+      </ol>
+      <p>
+        特に<strong>「会話」タグの中の<em>ノイズを軽減</em></strong>を少し上げると、エアコンや環境音の「サー」というノイズが目立たなくなります。
+        <strong>上げすぎると声が不自然に</strong>なるので、効きを聞きながら控えめに。まずはここを触るだけで、声がぐっとクリアになります。
+      </p>
+
+      <h2>声とBGMのバランス</h2>
+      <p>
+        BGMは<strong>「あるかないか分かるくらい」</strong>が基本。声を邪魔したら本末転倒です。目安は、<strong>BGMを声よりはっきり小さく</strong>（体感で声が主役、BGMは支え）。
+      </p>
+      <p>
+        さらに、<strong>声が入る所だけBGMを自動で下げる</strong>テクニックを<strong>「ダッキング」</strong>と呼びます。エッセンシャルサウンドの「ミュージック」タグにこの機能があります。
+        仕組みと細かい設定は<a href="premiere-essential-sound.html">エッセンシャルサウンドの記事（中級）</a>で詳しく解説しています。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>音が割れる（バリバリ）</strong> → メーターが0dBを超えている。クリップの音量を下げる。<br>
+        ・<strong>声が小さくて聞こえない</strong> → 音量を上げる。上げてもノイズが増える録音は、次回マイクを近づける。<br>
+        ・<strong>BGMがうるさくて声が聞こえない</strong> → BGMを下げる／ダッキングを使う。<br>
+        ・<strong>ノイズ軽減で声がこもる</strong> → 効かせすぎ。スライダーを控えめに戻す。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>まず何をすればいい？</summary>
+          <p>①声が-12〜-6dBで割れていないか確認 → ②エッセンシャルサウンドで「会話」タグ＋ノイズ軽減を少し → ③BGMを声より小さく。この順で十分効果が出ます。</p>
+        </details>
+        <details>
+          <summary>LUFSって難しそう…</summary>
+          <p>ざっくり「-14 LUFSくらい」を意識すればOK。エッセンシャルサウンドの「ラウドネスの自動一致」に任せれば、数字を細かく見なくても近い値に整えてくれます。</p>
+        </details>
+        <details>
+          <summary>ノイズはどこまで消せる？</summary>
+          <p>軽い環境音は目立たなくできますが、消しすぎると声が不自然になります。根本的には<strong>録音の段階</strong>（マイクを近く・静かな場所）がいちばん効きます。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>音をさらに追い込むなら<a href="premiere-essential-sound.html">エッセンシャルサウンド（中級）</a>、テロップは<a href="premiere-titles-basics.html">テロップの入れ方</a>、カットは<a href="premiere-cutting-basics.html">カット編集の基本</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        音は<strong>「割れない音量にそろえる → 会話タグ＋ノイズ軽減で声をクリアに → BGMは声より小さく」</strong>。
+        高価な機材がなくても、この3点を整えるだけで<strong>「聞きやすい＝ちゃんとして見える」</strong>動画になります。映像を磨く前に、まず音を整えましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/essential-sound-panel.html" target="_blank" rel="noopener">Adobe公式：エッセンシャルサウンドパネル →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/adjust-loudness.html" target="_blank" rel="noopener">Adobe公式：ラウドネスの調整 →</a>
+      </div>
+
+      <p class="article__foot">
+        数値は目安であり、素材や配信先により最適値は変わります。まずは「声が割れず、聞き取りやすい」を目指しましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

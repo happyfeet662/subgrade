@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-cutting-basics.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="カット編集の基本：切って・詰めて・テンポを作る">
+<meta property="og:description" content="動画編集の8割はカット。初心者向けに、選択とレーザー、トリム、リップル削除、Q/Wの時短ワザまで、いらない部分を消してテンポよくつなぐ基本を噛み砕いて解説します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-cutting-basics.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="カット編集の基本：切って・詰めて・テンポを作る">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"カット編集の基本：切って・詰めて・テンポを作る","description":"動画編集の8割はカット。初心者向けに、選択とレーザー、トリム、リップル削除、Q/Wの時短ワザまで、いらない部分を消してテンポよくつなぐ基本を噛み砕いて解説します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-cutting-basics.html"}}
+</script>
+<title>カット編集の基本：切って・詰めて・テンポを作る | SUBGRADE</title>
+<meta name="description" content="動画編集の8割はカット。初心者向けに、選択とレーザー、トリム、リップル削除、Q/Wの時短ワザまで、いらない部分を消してテンポよくつなぐ基本を噛み砕いて解説します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--edit">編集</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-edit">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="26" y="52" width="52" height="30" rx="5" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+        <rect x="120" y="52" width="52" height="30" rx="5" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+        <rect x="86" y="44" width="26" height="46" rx="4" fill="#fff" stroke="#d9534f" stroke-width="3" stroke-dasharray="5 4"/>
+        <path d="M99 34 v66" stroke="#d9534f" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="99" cy="30" r="5" fill="#d9534f"/>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>カット編集の基本<br>切って・詰めて・テンポを作る</h1>
+    <p class="article__lead">
+      編集作業の<strong>8割は「いらない所を消す」</strong>こと。逆に言えば、カットさえ気持ちよくできれば、動画は一気に見やすくなります。
+      この記事では、<a href="premiere-first-edit.html">最初の1本</a>で触れた切り方を一歩進めて、
+      <strong>トリム・リップル削除・時短ショートカット</strong>まで、初心者がまず押さえる基本をまとめます。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①レーザー(C)で切る → ②選択(V)で消す → ③すき間はリップル削除で詰める → ④端はトリムで微調整</strong>。
+        さらに <strong>Q / W</strong> を覚えると、いらない前後をワンキーで削れて一気に速くなります。
+      </div>
+
+      <h2>なぜカットが大事なのか</h2>
+      <p>
+        撮った素材には、必ず<strong>「間(ま)」や「言い直し」「無音」</strong>が含まれます。これをそのまま出すと、見る人はすぐ飽きて離れます。
+        いらない所を削ってテンポを作る——それだけで<strong>「見やすい動画」</strong>になります。派手なエフェクトより、まずカットです。
+      </p>
+
+      <h2>基本の道具（おさらい＋α）</h2>
+      <p>
+        使う道具はほんの数個。ショートカットで手が覚えると、作業スピードが何倍にもなります。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>道具 / 操作</th><th>キー</th><th>できること</th></tr></thead>
+        <tbody>
+          <tr><th>選択ツール</th><td>V</td><td>クリップを選ぶ・動かす・端を伸縮</td></tr>
+          <tr><th>レーザーツール</th><td>C</td><td>再生ヘッドの位置で<strong>クリップを切る</strong></td></tr>
+          <tr><th>編集点を追加</th><td>Ctrl/Cmd + K</td><td>レーザーに持ち替えず、<strong>再生ヘッドの位置で切る</strong>（速い）</td></tr>
+          <tr><th>再生ヘッドまで前を削除</th><td>Q</td><td>クリップの<strong>頭側</strong>を再生ヘッドまで削って詰める</td></tr>
+          <tr><th>再生ヘッドまで後ろを削除</th><td>W</td><td>クリップの<strong>お尻側</strong>を再生ヘッドまで削って詰める</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        <strong>Ctrl/Cmd + K</strong> は「レーザー(C)に持ち替えて切って、また選択(V)に戻す」を1キーで済ませる技。カットが速い人はだいたいこれを使っています。
+      </p>
+
+      <h2>「削除」と「リップル削除」の違い</h2>
+      <p>
+        ここが初心者のいちばんのつまずきポイント。同じ「消す」でも2種類あります。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>ふつうの削除（Delete）</th><th>リップル削除（Shift+Delete）</th></tr></thead>
+        <tbody>
+          <tr><th>結果</th><td>消した所が<strong>すき間（空白）として残る</strong></td><td>消して、<strong>後ろのクリップを前へ自動で詰める</strong></td></tr>
+          <tr><th>向いている場面</th><td>後で別素材を差し込む予定がある</td><td>不要部分をどんどん削ってテンポを作る（<strong>基本こちら</strong>）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        カット編集で<strong>すき間を残さない</strong>なら <strong>リップル削除（Shift+Delete）</strong>。右クリックメニューからも選べます。まずはこれを手に馴染ませましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>トリムで端を微調整する</h2>
+      <p>
+        カットは「バッサリ切る」だけではありません。クリップの<strong>端を選択ツール(V)でドラッグ</strong>すると、始まり・終わりを少しずつ伸ばしたり縮めたりできます。これが<strong>トリム</strong>。
+      </p>
+      <p>
+        「もう少し手前から始めたい」「語尾を少し残したい」といった微調整はトリムで。<strong>リップルトリム</strong>（端をドラッグしたぶん後ろが詰まる）を使うと、すき間を作らずに長さを整えられます。
+      </p>
+
+      <h2>テンポの作り方</h2>
+      <p>
+        いいテンポの正体は<strong>「無駄な間を削ること」</strong>です。目安はこの3つ。
+      </p>
+      <ul>
+        <li><strong>話し出す直前・言い終わった直後</strong>の無音を削る。</li>
+        <li><strong>「えー」「あの」</strong>などの言いよどみ（フィラー）を削る。</li>
+        <li><strong>同じ内容の繰り返し</strong>や言い直しは、良いテイクだけ残す。</li>
+      </ul>
+      <p>
+        削りすぎると逆に忙しなくなるので、<strong>呼吸のための短い間</strong>は残すのがコツ。慣れてきたら、音と映像をずらして自然につなぐ
+        <a href="premiere-jl-cut.html">J・Lカット（中級）</a>に進むと、会話がぐっと自然になります。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>切ったのにすき間が残る</strong> → 「リップル削除（Shift+Delete）」を使う。<br>
+        ・<strong>間違えて別のクリップまで動いた</strong> → Ctrl/Cmd + Z で戻す。詰めるのは「リップル」系だけと意識。<br>
+        ・<strong>切る位置がズレる</strong> → 再生ヘッドを合わせてから Ctrl/Cmd + K。フレーム単位は矢印キーで移動。<br>
+        ・<strong>音だけ/映像だけ切りたい</strong> → クリップの「リンク」を解除（右クリック→リンク解除）してから操作。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>まず覚えるべきキーは？</summary>
+          <p>Ctrl/Cmd + K（切る）、Shift + Delete（リップル削除）、V（選択）、C（レーザー）。この4つでカットの大半が回ります。Q/W は慣れてきたら追加しましょう。</p>
+        </details>
+        <details>
+          <summary>リップル削除とふつうの削除、どっちを使えばいい？</summary>
+          <p>テンポを作るカット編集では基本「リップル削除」。すき間を空けて後で別素材を入れたいときだけ、ふつうの削除を使います。</p>
+        </details>
+        <details>
+          <summary>音と映像を別々に切るには？</summary>
+          <p>クリップを右クリックして「リンク解除」すると、映像と音声を独立して切れます。会話を自然につなぐJ・Lカットの下準備にもなります。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>カットの質を上げるなら<a href="premiere-jl-cut.html">J・Lカット</a>、文字を足すなら<a href="premiere-titles-basics.html">テロップの入れ方</a>、音を整えるなら<a href="premiere-audio-basics.html">音の調整の基本</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        カット編集は<strong>「切る（Cmd+K）→ リップル削除で詰める → トリムで微調整 → 無駄な間を削ってテンポを作る」</strong>。
+        派手な機能はいりません。この基本の反復だけで、動画は見違えるほど見やすくなります。
+        手がキーを覚えるまで、まずは1本、最後までカットしきってみましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/trimming-clips.html" target="_blank" rel="noopener">Adobe公式：クリップのトリミング →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/editing-sequences-clips.html" target="_blank" rel="noopener">Adobe公式：シーケンスとクリップの編集 →</a>
+      </div>
+
+      <p class="article__foot">
+        メニュー名やショートカットはバージョンや言語設定・キーボード設定により異なる場合があります。まずは手を動かして体で覚えましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

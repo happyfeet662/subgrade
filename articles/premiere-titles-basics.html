@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-titles-basics.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="テロップの入れ方：文字ツールで“読める字幕”を作る基本">
+<meta property="og:description" content="初心者向けに、Premiere Proで文字（テロップ）を入れる基本を解説。横書き文字ツールで打つ→エッセンシャルグラフィックスで整える→縁取り・影・背景帯で読みやすくする→セーフマージンに収める、までを噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-titles-basics.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="テロップの入れ方：文字ツールで“読める字幕”を作る基本">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"テロップの入れ方：文字ツールで“読める字幕”を作る基本","description":"初心者向けに、Premiere Proで文字（テロップ）を入れる基本を解説。横書き文字ツールで打つ→エッセンシャルグラフィックスで整える→縁取り・影・背景帯で読みやすくする→セーフマージンに収める、までを噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-titles-basics.html"}}
+</script>
+<title>テロップの入れ方：文字ツールで“読める字幕”を作る基本 | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere Proで文字（テロップ）を入れる基本を解説。横書き文字ツールで打つ→エッセンシャルグラフィックスで整える→縁取り・影・背景帯で読みやすくする→セーフマージンに収める、までを噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--text">テロップ</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-text">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="34" width="120" height="74" rx="12" fill="#fff" stroke="#e6c7e0" stroke-width="3"/>
+        <rect x="52" y="82" width="96" height="16" rx="4" fill="#f3e2f0"/>
+        <text x="100" y="95" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="12" font-weight="700" fill="#b3559f">テロップ</text>
+        <text x="66" y="64" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="30" font-weight="700" fill="#b3559f">T</text>
+        <rect x="84" y="44" width="3" height="26" fill="#d67a2e"/>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>テロップの入れ方<br>文字ツールで“読める字幕”を作る基本</h1>
+    <p class="article__lead">
+      文字（テロップ）が入るだけで、動画は一気に<strong>「作品」っぽく</strong>なり、内容も伝わりやすくなります。
+      この記事では初心者向けに、<strong>文字を打つ→見やすく整える→安全な位置に置く</strong>までの基本を、噛み砕いて解説します。
+      凝ったデザインは<a href="premiere-telop-design.html">テロップデザイン（中級）</a>で。まずは「読める字幕」を作れるようになりましょう。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①横書き文字ツール(T)で画面をクリックして入力 → ②エッセンシャルグラフィックスでフォント・サイズを調整 → ③縁取り or 背景帯で読みやすく → ④セーフマージンの内側に置く。</strong>
+        この4ステップで、どんな背景でも読めるテロップが作れます。
+      </div>
+
+      <h2>ステップ① 文字を打つ</h2>
+      <p>
+        ツールパネルの<strong>横書き文字ツール（T）</strong>を選び、プログラムモニター（映像画面）の<strong>置きたい場所をクリック</strong>して、そのまま文字を入力します。
+        入力が終わったら<strong>選択ツール(V)</strong>に戻すと、文字を動かせます。タイムラインには文字クリップ（グラフィック）が自動で追加されます。
+      </p>
+      <p>
+        文字クリップは、映像クリップの<strong>1つ上のトラック（V2など）</strong>に置くのが基本。長さは端をドラッグして、表示したい時間ぶんに合わせます。
+      </p>
+
+      <h2>ステップ② エッセンシャルグラフィックスで整える</h2>
+      <p>
+        文字を選んだ状態で<strong>エッセンシャルグラフィックス</strong>パネルを開くと、見た目をまとめて調整できます。まず触るのはこの3つ。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>項目</th><th>役割</th><th>初心者の目安</th></tr></thead>
+        <tbody>
+          <tr><th>フォント</th><td>書体を選ぶ</td><td>細すぎない<strong>太めのゴシック</strong>が読みやすい</td></tr>
+          <tr><th>サイズ</th><td>文字の大きさ</td><td>スマホでも読める<strong>大きめ</strong>に。小さすぎ注意</td></tr>
+          <tr><th>整列（中央揃え）</th><td>位置をそろえる</td><td>画面の<strong>水平・垂直センター</strong>ボタンで一発</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>ステップ③ 「読める」ようにする——ここが一番大事</h2>
+      <p>
+        白い文字を明るい背景に置くと、<strong>溶けて読めません</strong>。背景がどんな色でも読めるように、文字の“ふち”を作ります。エッセンシャルグラフィックスの「アピアランス」で設定します。
+      </p>
+      <ul>
+        <li><strong>境界線（ストローク）</strong>：文字の<strong>縁取り</strong>。白文字に黒の縁を1〜数px入れるだけで激変します。まずこれ。</li>
+        <li><strong>シャドウ（影）</strong>：文字の後ろに薄い影。背景から少し浮かせて見やすくします。</li>
+        <li><strong>背景（帯）</strong>：文字の後ろに<strong>半透明の帯</strong>を敷く。字幕でよく使う、確実に読める方法です。</li>
+      </ul>
+      <p>
+        <strong>縁取り＋影</strong>、または<strong>背景帯</strong>のどちらかを入れれば、まず読めなくなることはありません。「白文字＋黒縁」は鉄板の組み合わせです。
+      </p>
+
+      <h2>ステップ④ セーフマージンの内側に置く</h2>
+      <p>
+        文字を画面の端ギリギリに置くと、<strong>スマホやTVで見切れる</strong>ことがあります。プログラムモニターで右クリック→<strong>「セーフマージン」</strong>を表示すると、内側に枠が出ます。
+        文字は<strong>内側の枠の中</strong>に収めるのが安全。左右・下に少し余白を残すと、見た目も上品になります。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>背景に溶けて読めない</strong> → 縁取り（境界線）か背景帯を入れる。白文字＋黒縁が鉄板。<br>
+        ・<strong>文字が画面から見切れる</strong> → セーフマージンの内側に収める。<br>
+        ・<strong>毎回デザインし直すのが面倒</strong> → 気に入ったスタイルを「マスタースタイル」として保存し使い回す。テンプレ化は<a href="premiere-mogrt-essential-graphics.html">.mogrt（中級）</a>へ。<br>
+        ・<strong>他PCでフォントが変わる</strong> → 特殊フォントは環境依存。書き出し前提なら影響は小さいが、共有時は注意。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>「レガシータイトル」とどっちを使えばいい？</summary>
+          <p>今から始めるなら<strong>エッセンシャルグラフィックス（文字ツール）</strong>でOK。新しい標準で、後からの編集や使い回しもしやすいです。</p>
+        </details>
+        <details>
+          <summary>読みやすいフォントは？</summary>
+          <p>細いフォントより<strong>太めのゴシック系</strong>が読みやすいです。装飾フォントはタイトル用に留め、字幕は視認性重視で選びましょう。</p>
+        </details>
+        <details>
+          <summary>同じデザインを毎回使いたい</summary>
+          <p>スタイルを「マスタースタイル」として保存すると、他のテロップにワンクリックで適用できます。さらにテンプレ化したいなら<a href="premiere-mogrt-essential-graphics.html">.mogrt（中級）</a>が便利です。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>デザインを凝りたいなら<a href="premiere-telop-design.html">テロップデザイン（中級）</a>、音を整えるなら<a href="premiere-audio-basics.html">音の調整の基本</a>、カットを磨くなら<a href="premiere-cutting-basics.html">カット編集の基本</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        テロップは<strong>「文字ツール(T)で打つ → フォント・サイズを整える → 縁取り/背景帯で読めるようにする → セーフマージンに収める」</strong>。
+        デザインの前に、まず<strong>「どんな背景でも読める」</strong>を最優先に。読めるテロップが作れれば、動画の伝わり方が一段変わります。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/essential-graphics.html" target="_blank" rel="noopener">Adobe公式：エッセンシャルグラフィックスパネル →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/creating-titles-graphics.html" target="_blank" rel="noopener">Adobe公式：タイトルとグラフィックの作成 →</a>
+      </div>
+
+      <p class="article__foot">
+        メニュー名や画面はバージョンや言語設定により表記が異なる場合があります。まずは「読める字幕」を1つ作ってみましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
