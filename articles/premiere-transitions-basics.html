@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-transitions-basics.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="トランジションの基本：ディゾルブを“ここぞ”で使う">
+<meta property="og:description" content="初心者向けに、Premiere Proの場面転換（トランジション）の基本を解説。基本はカットつなぎ、定番のクロスディゾルブやディップトゥブラック、音のクロスフェードの入れ方と、使いすぎない加減までを噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-transitions-basics.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="トランジションの基本：ディゾルブを“ここぞ”で使う">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"トランジションの基本：ディゾルブを“ここぞ”で使う","description":"初心者向けに、Premiere Proの場面転換（トランジション）の基本を解説。基本はカットつなぎ、定番のクロスディゾルブやディップトゥブラック、音のクロスフェードの入れ方と、使いすぎない加減までを噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-transitions-basics.html"}}
+</script>
+<title>トランジションの基本：ディゾルブを“ここぞ”で使う | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere Proの場面転換（トランジション）の基本を解説。基本はカットつなぎ、定番のクロスディゾルブやディップトゥブラック、音のクロスフェードの入れ方と、使いすぎない加減までを噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--trans">トランジション</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-trans">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="46" width="64" height="42" rx="8" fill="#ffe6d2" stroke="#d67a2e" stroke-width="3"/>
+        <rect x="106" y="46" width="64" height="42" rx="8" fill="#fff" stroke="#d67a2e" stroke-width="3" opacity="0.55"/>
+        <path d="M84 67 h32" stroke="#d67a2e" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5"/>
+        <path d="M96 58 l10 9 -10 9" fill="none" stroke="#d67a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>トランジションの基本<br>ディゾルブを“ここぞ”で使う</h1>
+    <p class="article__lead">
+      場面転換の効果＝<strong>トランジション</strong>。実は、プロの動画ほど<strong>大半は「カット」でつないでいる</strong>もので、
+      派手な切り替えは“ここぞ”という所に絞って使います。この記事では初心者向けに、<strong>定番トランジションの入れ方と、使いすぎない加減</strong>を解説します。
+      基本のカットは<a href="premiere-cutting-basics.html">カット編集の基本</a>もどうぞ。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①基本はカットつなぎ → ②柔らかくつなぎたい所だけクロスディゾルブ → ③場面が大きく変わる所はディップトゥブラック → ④音は必ずクロスフェードでブツ切れ防止。</strong>
+        使うのは実質2〜3種類で十分です。
+      </div>
+
+      <h2>まず大前提：9割は「カット」でいい</h2>
+      <p>
+        初心者ほど、切り替えのたびに派手なトランジションを入れがちですが、これは<strong>逆効果</strong>。見づらく、素人っぽくなります。
+        テンポよく<strong>そのままつなぐ（カット）</strong>のが基本で、トランジションは<strong>「時間や場所が飛ぶ」「雰囲気を変える」</strong>ときの味付けと考えましょう。
+      </p>
+
+      <h2>覚えるのはこの3つだけ</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>トランジション</th><th>効果</th><th>使いどころ</th></tr></thead>
+        <tbody>
+          <tr><th>クロスディゾルブ</th><td>前の映像に次の映像が<strong>ふわっと重なる</strong></td><td>時間経過・柔らかい場面転換（映像の定番）</td></tr>
+          <tr><th>ディップトゥブラック</th><td>一度<strong>暗転</strong>してから次へ</td><td>章の区切り・大きく場面が変わるとき</td></tr>
+          <tr><th>コンスタントパワー（音）</th><td>音を<strong>なめらかにクロスフェード</strong></td><td>音のブツッという切れ目を消す（ほぼ毎回）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        映像はこの2つ、音は1つ。まずはこれだけで困りません。ワイプや回転などの派手な効果は、慣れて意図が持てるようになってからで十分です。
+      </p>
+
+      <h2>入れ方：境目にドラッグするだけ</h2>
+      <p>
+        <strong>エフェクト</strong>パネルで「ビデオトランジション」→「ディゾルブ」→<strong>クロスディゾルブ</strong>を選び、
+        タイムラインの<strong>クリップとクリップの境目にドラッグ</strong>します。これだけ。音は「オーディオトランジション」→「クロスフェード」→<strong>コンスタントパワー</strong>を音声の境目へ。
+      </p>
+      <p>
+        さらに便利なのが<strong>デフォルトトランジションの適用（Ctrl/Cmd + D）</strong>。境目を選んでこのキーを押すと、標準のクロスディゾルブが一発で入ります。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>長さ（デュレーション）を調整する</h2>
+      <p>
+        入れたトランジションは、<strong>端をドラッグ</strong>すれば長く・短くできます。ダブルクリックで秒数を直接入力も可能。
+        目安は<strong>0.3〜1秒</strong>。長すぎると眠く、短すぎると効果が分かりません。まずは短めから試しましょう。
+      </p>
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>「メディアの継ぎ足しがない」と警告</strong> → クロスディゾルブは前後に少し“のりしろ”（未使用フレーム）が必要。クリップを少しトリムして余白を残すと解消。<br>
+        ・<strong>切り替えがブツッと鳴る</strong> → 音にコンスタントパワーを入れる。<br>
+        ・<strong>全部の境目に入れたら見づらい</strong> → トランジションは絞る。基本はカット。<br>
+        ・<strong>長さを変えたい</strong> → トランジションの端をドラッグ、またはダブルクリックで秒数入力。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>結局どれを使えばいい？</summary>
+          <p>映像は「クロスディゾルブ」、章の区切りは「ディップトゥブラック」、音は毎回「コンスタントパワー」。この3つで初心者の用途はほぼカバーできます。</p>
+        </details>
+        <details>
+          <summary>派手なトランジション（ワイプ等）は使っちゃダメ？</summary>
+          <p>ダメではありませんが、多用は禁物。意図があるとき（バラエティ的な演出など）に絞ると効きます。まずはシンプルに。</p>
+        </details>
+        <details>
+          <summary>もっと“シームレス”な凝った切り替えをしたい</summary>
+          <p>マスクや動きを使った継ぎ目の見えない切り替えは中級テーマです。<a href="premiere-seamless-transitions.html">シームレストランジション（中級）</a>へどうぞ。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>色を整えるなら<a href="premiere-color-basics.html">色調整の入門</a>、書き出すなら<a href="premiere-export-basics.html">書き出しの超入門</a>、カットの質を上げるなら<a href="premiere-cutting-basics.html">カット編集の基本</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        トランジションは<strong>「基本はカット、味付けにクロスディゾルブとディップトゥブラック、音は必ずクロスフェード」</strong>。
+        数を絞って“ここぞ”で使うほど、逆に効果的で洗練されて見えます。まずは <strong>Ctrl/Cmd + D</strong> と音のクロスフェードから始めましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/transition-overview-applying-transitions.html" target="_blank" rel="noopener">Adobe公式：トランジションの適用 →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/audio-transitions.html" target="_blank" rel="noopener">Adobe公式：オーディオトランジション →</a>
+      </div>
+
+      <p class="article__foot">
+        メニュー名やショートカットはバージョンや言語設定により異なる場合があります。まずはクロスディゾルブと音のクロスフェードから試しましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

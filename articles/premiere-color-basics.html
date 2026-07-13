@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-color-basics.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="色調整の入門：Lumetriの基本補正で“見た目を整える”">
+<meta property="og:description" content="初心者向けに、Premiere ProのLumetriカラーで色を整える基本を解説。露出・ホワイトバランス・彩度の3つを触るだけで、素材が一段きれいに見える手順と、盛りすぎない加減までを噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-color-basics.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="色調整の入門：Lumetriの基本補正で“見た目を整える”">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"色調整の入門：Lumetriの基本補正で“見た目を整える”","description":"初心者向けに、Premiere ProのLumetriカラーで色を整える基本を解説。露出・ホワイトバランス・彩度の3つを触るだけで、素材が一段きれいに見える手順と、盛りすぎない加減までを噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-color-basics.html"}}
+</script>
+<title>色調整の入門：Lumetriの基本補正で“見た目を整える” | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere ProのLumetriカラーで色を整える基本を解説。露出・ホワイトバランス・彩度の3つを触るだけで、素材が一段きれいに見える手順と、盛りすぎない加減までを噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--color">カラー</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-color">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="48" y="40" width="104" height="60" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+        <circle cx="82" cy="70" r="17" fill="#ff6f7e" opacity="0.85"/>
+        <circle cx="104" cy="70" r="17" fill="#ffc94d" opacity="0.85"/>
+        <circle cx="126" cy="70" r="17" fill="#3fca9f" opacity="0.85"/>
+        <rect x="60" y="112" width="80" height="9" rx="4.5" fill="#fff" stroke="#ffd0bb" stroke-width="2"/>
+        <circle cx="96" cy="116.5" r="7" fill="#8b7cf0" stroke="#fff" stroke-width="2.4"/>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>色調整の入門<br>Lumetriの基本補正で“見た目を整える”</h1>
+    <p class="article__lead">
+      同じ素材でも、色を整えるだけで<strong>一段きれいに、伝わりやすく</strong>なります。難しそうに見えますが、初心者がまず触るのは
+      <strong>たった3つ（明るさ・色かぶり・鮮やかさ）</strong>だけ。この記事では<strong>Lumetriカラーの基本補正</strong>を、盛りすぎない加減とあわせて解説します。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約9分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①クリップを選んでLumetriカラーを開く → ②露光量で明るさ → ③ホワイトバランスで色かぶりを直す → ④彩度を少しだけ足す。</strong>
+        「派手にする」ではなく<strong>「自然に整える」</strong>が初心者の正解です。
+      </div>
+
+      <h2>「補正」と「グレーディング」は別もの</h2>
+      <p>
+        色の作業は2段階あります。まずやるべきは<strong>カラー補正</strong>——明るさや色かぶりを直して<strong>“ちゃんと見える normal な状態”</strong>にすること。
+        映画っぽい色を“足す”のは<strong>グレーディング</strong>で、こちらは応用。初心者はまず<strong>補正だけ</strong>できれば十分です。
+      </p>
+
+      <h2>Lumetriカラーの基本補正パネル</h2>
+      <p>
+        クリップを選び、<strong>Lumetriカラー</strong>パネルの<strong>「基本補正」</strong>を開きます。触るのはこの3ブロック。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>調整</th><th>役割</th><th>初心者の使い方</th></tr></thead>
+        <tbody>
+          <tr><th>露光量 / コントラスト</th><td>全体の<strong>明るさ・メリハリ</strong></td><td>暗ければ露光量を上げる。眠ければコントラストを少し</td></tr>
+          <tr><th>ホワイトバランス（色温度・色かぶり）</th><td>映像全体の<strong>色みのズレ</strong>を直す</td><td>青っぽい→温かく、黄色っぽい→涼しく。<strong>スポイト</strong>で白い部分をクリックすると自動</td></tr>
+          <tr><th>彩度</th><td>色の<strong>鮮やかさ</strong></td><td><strong>+5〜+15程度</strong>を少し。盛りすぎ厳禁</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        まず<strong>明るさ</strong>を適正に、次に<strong>色かぶり</strong>を直し、最後に<strong>彩度</strong>をほんの少し。この順番が失敗しにくいです。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>ホワイトバランスの直し方（いちばん効く）</h2>
+      <p>
+        「なんか色が変」の正体は、たいてい<strong>色かぶり</strong>（全体が青や黄色に寄っている）です。直し方は2通り。
+      </p>
+      <ul>
+        <li><strong>スポイトで自動</strong>：ホワイトバランスの<strong>スポイト</strong>を選び、映像内の<strong>白またはグレーの部分</strong>をクリック。基準ができて一発で整います。</li>
+        <li><strong>手動</strong>：<strong>色温度</strong>スライダーで青⇄黄、<strong>色かぶり補正</strong>で緑⇄マゼンタを微調整。肌が自然に見える所を狙います。</li>
+      </ul>
+
+      <h2>盛りすぎないのがプロっぽさ</h2>
+      <p>
+        初心者がやりがちなのが<strong>彩度・コントラストの盛りすぎ</strong>。ケバケバしく、肌が赤黒くなって逆に安っぽく見えます。
+        <strong>「やった感」が出ない程度が正解</strong>。エフェクトのオン・オフを切り替えて、<strong>“自然だけど、なんか良くなった”</strong>を目指しましょう。
+      </p>
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>色が寄っている</strong> → ホワイトバランスのスポイトで白い部分をクリック。<br>
+        ・<strong>肌が赤黒い/ケバい</strong> → 彩度・コントラストの盛りすぎ。控えめに戻す。<br>
+        ・<strong>白飛び・黒つぶれ</strong> → 露光量を上げ下げしすぎ。ハイライト/シャドウで戻す。<br>
+        ・<strong>クリップごとに色がバラバラ</strong> → 1つ整えてから、設定をコピー＆ペースト（属性をペースト）。素材の色管理は<a href="premiere-color-management.html">カラーマネジメント（中級）</a>へ。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>まず何をすればいい？</summary>
+          <p>①露光量で明るさ → ②ホワイトバランスのスポイトで色かぶりを直す → ③彩度を少しだけ。この3ステップで大半の素材は見違えます。</p>
+        </details>
+        <details>
+          <summary>LUTを当てれば楽じゃない？</summary>
+          <p>LUTは“味付け”で、素材が整っていないと汚く出ます。まず基本補正で整えるのが先。LUTの仕組みは<a href="premiere-lut-guide.html">LUT自作（中級）</a>や<a href="premiere-color-management.html">カラーマネジメント（中級）</a>で。</p>
+        </details>
+        <details>
+          <summary>スコープ（波形やベクトルスコープ）は見なきゃダメ？</summary>
+          <p>初心者のうちは目視でOK。正確に追い込みたくなったらスコープの出番です。詳しくは<a href="premiere-lumetri-color-grading.html">Lumetri徹底（中級）</a>で解説しています。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>音を整えるなら<a href="premiere-audio-basics.html">音の調整の基本</a>、書き出すなら<a href="premiere-export-basics.html">書き出しの超入門</a>、色を極めるなら<a href="premiere-lumetri-color-grading.html">Lumetri徹底（中級）</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        色調整の入門は<strong>「Lumetriの基本補正で、明るさ → 色かぶり → 彩度の順に、自然に整える」</strong>。
+        派手にするより<strong>“ちゃんと見える”</strong>を最優先に。まずは1クリップ、明るさとホワイトバランスを直すだけでも、動画の印象は確実に変わります。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/color-workflows.html" target="_blank" rel="noopener">Adobe公式：カラー補正とグレーディング →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/lumetri-color-panel-adjustments.html" target="_blank" rel="noopener">Adobe公式：Lumetriカラーパネルでの調整 →</a>
+      </div>
+
+      <p class="article__foot">
+        画面や項目名はバージョンや言語設定により異なる場合があります。まずは明るさとホワイトバランスから整えてみましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-export-basics.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="書き出しの超入門：迷わずYouTube用のMP4にする">
+<meta property="og:description" content="初心者向けに、Premiere Proの書き出し（エクスポート）の最短手順を解説。H.264とYouTubeプリセットを選ぶだけで失敗しない方法、書き出し範囲の注意、真っ黒・無音などのつまずき対処までを噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-export-basics.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="書き出しの超入門：迷わずYouTube用のMP4にする">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"書き出しの超入門：迷わずYouTube用のMP4にする","description":"初心者向けに、Premiere Proの書き出し（エクスポート）の最短手順を解説。H.264とYouTubeプリセットを選ぶだけで失敗しない方法、書き出し範囲の注意、真っ黒・無音などのつまずき対処までを噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-export-basics.html"}}
+</script>
+<title>書き出しの超入門：迷わずYouTube用のMP4にする | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere Proの書き出し（エクスポート）の最短手順を解説。H.264とYouTubeプリセットを選ぶだけで失敗しない方法、書き出し範囲の注意、真っ黒・無音などのつまずき対処までを噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--export">書き出し</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-export">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="42" y="40" width="70" height="58" rx="10" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
+        <rect x="42" y="40" width="70" height="14" rx="7" fill="#2b8a9a"/>
+        <circle cx="52" cy="47" r="2.2" fill="#fff"/><circle cx="60" cy="47" r="2.2" fill="#fff"/>
+        <path d="M77 62 v20 M69 74 l8 8 8 -8" fill="none" stroke="#2b8a9a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M120 70 h20 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="150" y="52" width="34" height="34" rx="9" fill="#fff" stroke="#2b8a9a" stroke-width="3"/>
+        <text x="167" y="74" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#2b8a9a">MP4</text>
+        <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>書き出しの超入門<br>迷わずYouTube用のMP4にする</h1>
+    <p class="article__lead">
+      編集した内容は、そのままではただの作業データ。<strong>1本の動画ファイルに変換</strong>して、はじめてYouTubeやSNSに上げられます。これが<strong>書き出し（エクスポート）</strong>。
+      設定項目は多くて不安になりますが、初心者は<strong>「H.264 ＋ YouTubeプリセット」</strong>を選ぶだけでOK。最短ルートだけ覚えましょう。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約7分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①ファイル &gt; 書き出し &gt; メディア → ②形式「H.264」→ ③プリセット「YouTube 1080p」系 → ④保存先を決めて書き出し。</strong>
+        たったこれだけで、どこにでもアップできるMP4ができます。
+      </div>
+
+      <h2>まず用語：プロジェクト ≠ 動画ファイル</h2>
+      <p>
+        Premiere で保存される<strong>プロジェクト（.prproj）</strong>は「編集の設計図」で、これ自体は動画ではありません。
+        YouTubeに上げたり友達に送ったりできる<strong>MP4などの動画ファイル</strong>を作る作業が「書き出し」です。ここを混同しないようにしましょう。
+      </p>
+
+      <h2>最短の手順</h2>
+      <ol>
+        <li>タイムラインを選んだ状態で <strong>ファイル &gt; 書き出し &gt; メディア</strong>（ショートカット <strong>Ctrl/Cmd + M</strong>）。</li>
+        <li><strong>形式</strong>で <strong>H.264</strong> を選ぶ（＝MP4になる、最も汎用的）。</li>
+        <li><strong>プリセット</strong>で <strong>「Match Source – 高速ビットレート」</strong> か <strong>「YouTube 1080p Full HD」</strong> を選ぶ。</li>
+        <li>出力<strong>ファイル名</strong>と<strong>保存先</strong>を決める。</li>
+        <li><strong>書き出し</strong>ボタンを押す。完了するとMP4ができ上がり。</li>
+      </ol>
+      <p>
+        <strong>「Match Source（ソースに合わせる）」</strong>を選ぶと、編集した解像度・フレームレートに自動で合わせてくれるので、初心者はまずこれが安全です。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>迷ったらこの設定（早見）</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>項目</th><th>初心者の選択</th></tr></thead>
+        <tbody>
+          <tr><th>形式</th><td><strong>H.264</strong>（＝MP4）</td></tr>
+          <tr><th>プリセット</th><td><strong>Match Source</strong> または <strong>YouTube 1080p</strong></td></tr>
+          <tr><th>解像度</th><td>編集どおり（1080p など）。基本いじらない</td></tr>
+          <tr><th>音声</th><td>プリセット任せでOK（AACになる）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        ビットレートやVBRなど<strong>細かい数値は当面いじらなくて大丈夫</strong>。画質を追い込みたくなったら、<a href="premiere-export-settings.html">書き出し設定の正解（中級）</a>に早見表があります。
+      </p>
+
+      <h2>「書き出し範囲」に注意</h2>
+      <p>
+        初心者のいちばんの事故が<strong>「一部しか書き出されていない」</strong>。タイムラインに<strong>イン点・アウト点（範囲指定）</strong>が残っていると、その区間だけが書き出されます。
+        書き出し画面の<strong>「範囲」</strong>が<strong>「シーケンス全体」</strong>になっているか、必ず確認しましょう。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>一部しか書き出されない/短い</strong> → 範囲が「イン/アウト」になっている。「シーケンス全体」に。<br>
+        ・<strong>映像が真っ黒</strong> → 調整レイヤーやフェードの黒が残っていないか、範囲がズレていないか確認。<br>
+        ・<strong>音が出ない</strong> → 音声トラックがミュート(M)になっていないか、書き出し設定で音声がオンか。<br>
+        ・<strong>ファイルが重すぎ/時間がかかる</strong> → プリセットが4Kや高ビットレートかも。1080pのYouTubeプリセットに。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>結局いちばん無難な設定は？</summary>
+          <p>形式「H.264」＋プリセット「Match Source」または「YouTube 1080p」。これでYouTube・Instagram・TikTokどこにでも上げられるMP4になります。</p>
+        </details>
+        <details>
+          <summary>「メディアエンコーダーで書き出し」って何？</summary>
+          <p>書き出しを別アプリ(Adobe Media Encoder)に渡して、その間もPremiereで作業を続けられる機能です。急がないなら普通の「書き出し」でOK。複数本まとめて出すときに便利です。</p>
+        </details>
+        <details>
+          <summary>H.265の方が軽いと聞いたけど？</summary>
+          <p>H.265は容量が小さい反面、古い環境で再生できないことがあります。不特定多数に配るなら<strong>H.264が安全</strong>。使い分けは<a href="premiere-export-settings.html">書き出し設定の正解（中級）</a>で。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>画質を詰めたいなら<a href="premiere-export-settings.html">書き出し設定の正解（中級）</a>、色を整えるなら<a href="premiere-color-basics.html">色調整の入門</a>、音は<a href="premiere-audio-basics.html">音の調整の基本</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        書き出しは<strong>「Cmd+M → H.264 → Match Source / YouTube 1080p → 範囲がシーケンス全体か確認 → 書き出し」</strong>。
+        細かい数値は後回しでかまいません。まずは<strong>「最後まで正しく1本のMP4にする」</strong>を確実に。これで、作った動画をやっと世に出せます。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/export-video.html" target="_blank" rel="noopener">Adobe公式：ビデオの書き出し →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/exporting-workflows-and-overview.html" target="_blank" rel="noopener">Adobe公式：書き出しワークフローの概要 →</a>
+      </div>
+
+      <p class="article__foot">
+        画面や項目名はバージョンや言語設定により異なる場合があります。まずは範囲を「シーケンス全体」にして、1本を書き出してみましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
