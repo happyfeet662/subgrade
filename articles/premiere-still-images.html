@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-still-images.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="写真・静止画の使い方：サイズ・表示時間・ゆっくり動かす（Ken Burns）">
+<meta property="og:description" content="初心者向けに、Premiere Proで写真やロゴなど静止画を使う基本を解説。読み込みとサイズ調整、表示時間の変え方、ゆっくり動かすKen Burns効果、黒帯や画質の注意点までを噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-still-images.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="写真・静止画の使い方：サイズ・表示時間・ゆっくり動かす（Ken Burns）">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"写真・静止画の使い方：サイズ・表示時間・ゆっくり動かす（Ken Burns）","description":"初心者向けに、Premiere Proで写真やロゴなど静止画を使う基本を解説。読み込みとサイズ調整、表示時間の変え方、ゆっくり動かすKen Burns効果、黒帯や画質の注意点までを噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-still-images.html"}}
+</script>
+<title>写真・静止画の使い方：サイズ・表示時間・ゆっくり動かす（Ken Burns） | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere Proで写真やロゴなど静止画を使う基本を解説。読み込みとサイズ調整、表示時間の変え方、ゆっくり動かすKen Burns効果、黒帯や画質の注意点までを噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--motion">モーション</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-motion">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <rect x="44" y="40" width="112" height="70" rx="10" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+        <circle cx="74" cy="66" r="10" fill="#ffc94d"/>
+        <path d="M52 100 l26 -28 18 16 20 -22 32 34z" fill="#d9cef9" stroke="#8b7cf0" stroke-width="2.5" stroke-linejoin="round"/>
+        <rect x="92" y="58" width="46" height="34" rx="4" fill="none" stroke="#ff6f7e" stroke-width="2.6" stroke-dasharray="5 4"/>
+        <path d="M138 58 l8 -8 m-8 42 l8 8" stroke="#ff6f7e" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>写真・静止画の使い方<br>サイズ・表示時間・ゆっくり動かす（Ken Burns）</h1>
+    <p class="article__lead">
+      写真・ロゴ・図解などの<strong>静止画</strong>は、動画に情報や彩りを足す強い味方。ただ、そのまま置くと<strong>大きすぎ・小さすぎ・黒帯</strong>になりがち。
+      この記事では初心者向けに、<strong>サイズ合わせ・表示時間・ゆっくり動かすKen Burns効果</strong>までをまとめます。動きの詳しい話は<a href="premiere-keyframe-easing.html">キーフレーム＆イージング（中級）</a>へ。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①写真を読み込んで並べる → ②「フレームサイズに合わせる」で画面にフィット → ③表示時間を整える → ④位置・スケールのキーフレームでゆっくり動かす（Ken Burns）。</strong>
+        止まった写真も、少し動かすだけで映像になじみます。
+      </div>
+
+      <h2>読み込みと配置</h2>
+      <p>
+        写真ファイル（JPG・PNGなど）は、動画素材と同じく<strong>プロジェクトパネルにドラッグ</strong>して読み込み、タイムラインに並べます。
+        1枚が長すぎ／短すぎると感じたら、クリップの端をドラッグして<strong>表示時間</strong>を調整します。
+      </p>
+      <p>
+        たくさんの写真を等間隔で並べたいときは、<strong>静止画のデフォルト表示時間</strong>（環境設定＞タイムライン）を先に決めておくと、読み込み時から一定の長さになって楽です。
+      </p>
+
+      <h2>サイズを画面に合わせる</h2>
+      <p>
+        写真は動画と<strong>解像度も縦横比も違う</strong>ことが多く、そのままだと画面より大きかったり、周りに黒い余白（黒帯）が出ます。合わせ方は2つ。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>操作（右クリック）</th><th>結果</th><th>使いどころ</th></tr></thead>
+        <tbody>
+          <tr><th>フレームサイズに合わせる</th><td>画面内に<strong>収まる</strong>ように調整（黒帯が出ることあり）</td><td>写真全体を見せたい</td></tr>
+          <tr><th>フレームサイズにスケール</th><td>画面を<strong>埋める</strong>ように拡大（端が切れることあり）</td><td>黒帯を出したくない</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        さらに微調整したいときは、クリップを選んで<strong>エフェクトコントロール</strong>の<strong>スケール・位置</strong>で手動調整します。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>ゆっくり動かす「Ken Burns」効果</h2>
+      <p>
+        止まった写真は、少し動かすだけで映像になじみます。定番が<strong>Ken Burns（ケン・バーンズ）効果</strong>——写真を<strong>ゆっくりズーム／パン（移動）</strong>させる手法です。作り方はかんたん。
+      </p>
+      <ol>
+        <li>写真クリップを選び、<strong>エフェクトコントロール</strong>を開く。</li>
+        <li>写真の<strong>始まり</strong>で<strong>スケール（と位置）にキーフレーム</strong>を打つ（例：スケール105）。</li>
+        <li>写真の<strong>終わり</strong>でスケールを少し変える（例：115）。これで<strong>ゆっくり寄る</strong>動きに。</li>
+        <li>キーフレームを右クリックして<strong>イーズイン／イーズアウト</strong>を付けると、動きが上品になる。</li>
+      </ol>
+      <p>
+        <strong>動きはごく控えめ</strong>が上品。大きく速く動かすと安っぽくなります。数秒かけて数%だけ寄る、くらいがちょうどいい塩梅です。
+        キーフレームやイーズの仕組みは<a href="premiere-keyframe-easing.html">キーフレーム＆イージング（中級）</a>で詳しく解説しています。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>写真が巨大／はみ出す</strong> → 右クリック「フレームサイズに合わせる」。<br>
+        ・<strong>周りに黒帯が出る</strong> → 「フレームサイズにスケール」で画面を埋める（端は切れる）。<br>
+        ・<strong>拡大したらボヤける</strong> → 元画像の解像度不足。動画の解像度以上の写真を使う。Ken Burnsは元が大きいほど安全。<br>
+        ・<strong>動きがカクつく／機械的</strong> → キーフレームにイーズを付ける。動きは控えめに。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>写真1枚は何秒くらい表示すればいい？</summary>
+          <p>内容にもよりますが、3〜5秒が目安。ナレーションや字幕に合わせて調整しましょう。等間隔にしたいならデフォルト表示時間を先に設定すると楽です。</p>
+        </details>
+        <details>
+          <summary>「合わせる」と「スケール」どっちを使う？</summary>
+          <p>全体を見せたいなら「フレームサイズに合わせる」、黒帯を出したくないなら「フレームサイズにスケール」。写真の縦横比と用途で選びます。</p>
+        </details>
+        <details>
+          <summary>ロゴを重ねたいときは？</summary>
+          <p>背景が透明なPNGを使い、映像の1つ上のトラックに置きます。位置・スケールで調整。テロップと同じ感覚で扱えます（<a href="premiere-titles-basics.html">テロップの入れ方</a>も参考に）。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>動きを極めるなら<a href="premiere-keyframe-easing.html">キーフレーム＆イージング（中級）</a>、SNS縦動画へは<a href="premiere-auto-reframe.html">オートリフレーム（中級）</a>、書き出しは<a href="premiere-export-basics.html">書き出しの超入門</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        写真・静止画は<strong>「読み込む → フレームに合わせる → 表示時間を整える → Ken Burnsで控えめに動かす」</strong>。
+        止まった1枚も、少しの動きと適切なサイズ合わせで、ぐっと映像らしくなります。まずは写真1枚を画面に合わせて、ゆっくり寄せる動きを付けてみましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/importing-still-images.html" target="_blank" rel="noopener">Adobe公式：静止画の読み込み →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/adding-tracks.html" target="_blank" rel="noopener">Adobe公式：クリップのサイズと位置の調整 →</a>
+      </div>
+
+      <p class="article__foot">
+        画面や項目名はバージョンや言語設定により異なる場合があります。まずは写真1枚をフレームに合わせて、控えめに動かしてみましょう。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>

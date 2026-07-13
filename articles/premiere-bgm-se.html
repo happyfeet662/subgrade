@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO / OGP -->
+<link rel="canonical" href="https://zeebraweb.com/articles/premiere-bgm-se.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ff6f7e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SUBGRADE">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="BGM・効果音の入れ方：音楽と効果音で一段“作品”に">
+<meta property="og:description" content="初心者向けに、Premiere ProでのBGM・効果音の入れ方を解説。トラックの分け方、フェードイン・アウト、声より小さくするバランス、効果音のタイミング合わせ、著作権フリー素材の使い方までを噛み砕いて紹介します。">
+<meta property="og:url" content="https://zeebraweb.com/articles/premiere-bgm-se.html">
+<meta property="og:image" content="https://zeebraweb.com/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-12">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BGM・効果音の入れ方：音楽と効果音で一段“作品”に">
+<meta name="twitter:image" content="https://zeebraweb.com/assets/ogp.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"BGM・効果音の入れ方：音楽と効果音で一段“作品”に","description":"初心者向けに、Premiere ProでのBGM・効果音の入れ方を解説。トラックの分け方、フェードイン・アウト、声より小さくするバランス、効果音のタイミング合わせ、著作権フリー素材の使い方までを噛み砕いて紹介します。","inLanguage":"ja","datePublished":"2026-07-12","dateModified":"2026-07-12","image":"https://zeebraweb.com/assets/ogp.png","author":{"@type":"Organization","name":"SUBGRADE編集部"},"publisher":{"@type":"Organization","name":"SUBGRADE","logo":{"@type":"ImageObject","url":"https://zeebraweb.com/assets/ogp.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://zeebraweb.com/articles/premiere-bgm-se.html"}}
+</script>
+<title>BGM・効果音の入れ方：音楽と効果音で一段“作品”に | SUBGRADE</title>
+<meta name="description" content="初心者向けに、Premiere ProでのBGM・効果音の入れ方を解説。トラックの分け方、フェードイン・アウト、声より小さくするバランス、効果音のタイミング合わせ、著作権フリー素材の使い方までを噛み砕いて紹介します。">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- ▼ Google AdSense：承認後にこの1行を有効化（ca-pub-XXXX を差し替え）
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746304162931871" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+      <span class="brand__mark">SUB<b>GRADE</b></span>
+    </a>
+    <nav class="nav">
+      <a href="../articles.html">記事一覧</a>
+      <a href="../index.html#topics">トピック</a>
+      <a href="../about.html">このサイトは？</a>
+      <a class="btn btn--primary btn--sm" href="../index.html#follow">フォローする</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <div class="wrap">
+    <a class="article__back" href="../articles.html">← 記事一覧へ もどる</a>
+    <div><span class="chip chip--audio">オーディオ</span><span class="lvl-tag lvl-tag--beginner">初心者向け</span></div>
+    <div class="article__banner th-audio">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <path d="M78 40 v44 a12 12 0 1 1 -8 -11 V52 l38 -9 v34 a12 12 0 1 1 -8 -11 V40z" fill="#dde8f7" stroke="#3d6bc4" stroke-width="3" stroke-linejoin="round"/>
+        <g stroke="#3d6bc4" stroke-width="3.4" stroke-linecap="round">
+          <path d="M126 66 v10"/><path d="M136 60 v22"/><path d="M146 66 v10"/>
+        </g>
+        <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+      </svg>
+    </div>
+    <h1>BGM・効果音の入れ方<br>音楽と効果音で一段“作品”に</h1>
+    <p class="article__lead">
+      BGMと効果音（SE）が入るだけで、動画は一気に<strong>“ちゃんと作った感”</strong>が出ます。とはいえ、ただ乗せるだけでは声を邪魔したり、うるさくなったり。
+      この記事では初心者向けに、<strong>音楽と効果音のきれいな入れ方とバランス、そして著作権の基本</strong>までまとめます。
+      音量そのものの整え方は<a href="premiere-audio-basics.html">音の調整の基本</a>もどうぞ。
+    </p>
+    <div class="article__meta">
+      <span>はじめての編集</span><span class="dot"></span>
+      <span>読了 約8分</span><span class="dot"></span>
+      <span>2026.07.12</span>
+    </div>
+
+    <div class="prose">
+
+      <div class="callout">
+        <strong class="label">この記事のゴール</strong>
+        <strong>①BGMは声とは別のトラックに置く → ②フェードイン・アウトで自然に始めて終える → ③声よりはっきり小さく → ④効果音は“動き”に合わせて置く。</strong>
+        素材は<strong>著作権フリー</strong>のものを使うのが大前提です。
+      </div>
+
+      <h2>まずトラックを分ける</h2>
+      <p>
+        音声にはいくつも<strong>トラック（層）</strong>があります。ごちゃ混ぜにせず、役割で分けると管理が楽になります。
+      </p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>トラック例</th><th>入れるもの</th></tr></thead>
+        <tbody>
+          <tr><th>A1</th><td>声・ナレーション（主役）</td></tr>
+          <tr><th>A2</th><td>BGM（音楽）</td></tr>
+          <tr><th>A3</th><td>効果音（SE）</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>
+        素材をタイムラインの<strong>空いている下のトラックにドラッグ</strong>するだけ。分けておくと、後で「BGMだけ音量を下げる」といった調整がすぐできます。
+      </p>
+
+      <h2>BGMを自然に始めて・終える（フェード）</h2>
+      <p>
+        BGMがいきなり最大音量で始まったり、ブツッと切れたりすると素人っぽく聞こえます。<strong>フェードイン・フェードアウト</strong>で滑らかにしましょう。方法は2つ。
+      </p>
+      <ul>
+        <li><strong>オーディオトランジション</strong>：エフェクト＞オーディオトランジション＞クロスフェード＞<strong>コンスタントパワー</strong>を、BGMの始め／終わりにドラッグ。手軽。</li>
+        <li><strong>音量キーフレーム</strong>：クリップの音量ラインに点（キーフレーム）を打ち、始まりを0から、終わりを0へ。細かく調整できる。</li>
+      </ul>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <!-- AdSense 承認後、下の <ins> を有効化してください
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-slot__box">広告スペース（記事内・レスポンシブ）</div>
+      </div>
+
+      <h2>声とBGMのバランス</h2>
+      <p>
+        鉄則は<strong>「声が主役、BGMは支え」</strong>。BGMは声よりはっきり小さくします。目安として、<strong>声が入る場面ではBGMをぐっと下げる</strong>と聞き取りやすくなります。
+        声のある所だけBGMを自動で下げる<strong>「ダッキング」</strong>という便利機能もあり、詳しくは<a href="premiere-essential-sound.html">エッセンシャルサウンド（中級）</a>で解説しています。
+      </p>
+
+      <h2>効果音（SE）はタイミングが命</h2>
+      <p>
+        効果音は<strong>“動きや変化のある瞬間”</strong>に合わせると効きます。テロップがポンと出る、場面が切り替わる、といったタイミングに、
+        <strong>再生ヘッドを合わせてから効果音クリップの頭を置く</strong>と気持ちよく決まります。入れすぎるとうるさいので、<strong>ここぞという所だけ</strong>に。
+      </p>
+
+      <h2>著作権：フリー素材を使う</h2>
+      <p>
+        <strong>市販の音楽やアーティストの曲を勝手に使うのはNG</strong>です。YouTubeなら動画が収益化できなかったり、削除・ブロックされることもあります。
+        初心者は<strong>「著作権フリー／ロイヤリティフリー」と明記された素材</strong>を使いましょう。無料〜定額のライブラリが多数あります。
+        利用範囲（商用可か、クレジット表記が必要か）は<strong>各素材の規約を必ず確認</strong>してください。
+      </p>
+
+      <div class="callout">
+        <strong class="label">つまずきポイント</strong>
+        ・<strong>BGMがうるさくて声が聞こえない</strong> → BGMを下げる／ダッキングを使う。<br>
+        ・<strong>BGMがブツッと切れる</strong> → 終わりにフェードアウト（コンスタントパワー）。<br>
+        ・<strong>効果音の位置がズレる</strong> → 再生ヘッドを合わせてからクリップの頭を置く。フレーム単位は矢印キー。<br>
+        ・<strong>アップしたら音楽が原因でブロックされた</strong> → 権利のある楽曲を使った可能性。著作権フリー素材に差し替える。
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>BGMはどのくらいの音量にすればいい？</summary>
+          <p>「声がはっきり主役に聞こえる」範囲で。声のある場面ではBGMを大きく下げ、声のない間奏部分だけ少し上げると、メリハリが出ます。</p>
+        </details>
+        <details>
+          <summary>フリー素材はどこで手に入る？</summary>
+          <p>YouTubeのオーディオライブラリなど、無料〜定額のサービスが多数あります。必ず「商用利用可」「クレジット要否」など各規約を確認して使いましょう。</p>
+        </details>
+        <details>
+          <summary>声だけ自動で目立たせたい</summary>
+          <p>エッセンシャルサウンドの「ダッキング」で、声が入る所だけBGMを自動で下げられます。<a href="premiere-essential-sound.html">エッセンシャルサウンド（中級）</a>で詳説しています。</p>
+        </details>
+        <details>
+          <summary>次に読むべき記事は？</summary>
+          <p>音量そのものは<a href="premiere-audio-basics.html">音の調整の基本</a>、写真を使うなら<a href="premiere-still-images.html">写真・静止画の使い方</a>、書き出しは<a href="premiere-export-basics.html">書き出しの超入門</a>へ。</p>
+        </details>
+      </div>
+
+      <h2>まとめ</h2>
+      <p>
+        BGM・効果音は<strong>「トラックを分ける → フェードで自然に → 声より小さく → 効果音は動きに合わせて → 素材は著作権フリー」</strong>。
+        音楽と効果音は、動画の“空気”を作る強力な武器です。声を邪魔しない範囲で上手に足して、一段上の仕上がりを目指しましょう。
+      </p>
+
+      <div class="ad-slot">
+        <span class="ad-slot__label">スポンサーリンク</span>
+        <div class="ad-slot__box">広告スペース（記事末・レスポンシブ）</div>
+      </div>
+
+      <div class="sources">
+        <h4>参考（公式）</h4>
+        <a href="https://helpx.adobe.com/premiere-pro/using/fade-audio.html" target="_blank" rel="noopener">Adobe公式：オーディオのフェードとゲイン →</a><br>
+        <a href="https://helpx.adobe.com/premiere-pro/using/essential-sound-panel.html" target="_blank" rel="noopener">Adobe公式：エッセンシャルサウンドパネル →</a>
+      </div>
+
+      <p class="article__foot">
+        画面や項目名はバージョンや言語設定により異なる場合があります。素材の利用条件は必ず各提供元の規約をご確認ください。
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html">
+        <span class="brand__logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7.5v9l7-4.5-7-4.5z" fill="#fff"/></svg></span>
+        <span class="brand__mark">SUB<b>GRADE</b></span>
+      </a>
+      <p class="copy">中級者のための Premiere Pro / Adobe 学習メディア</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>READ</h4>
+        <a href="../articles.html">記事一覧</a>
+        <a href="../index.html#topics">トピック</a>
+      </div>
+      <div class="foot-col">
+        <h4>INFO</h4>
+        <a href="../about.html">このサイトについて</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../about.html#contact">お問い合わせ</a>
+      </div>
+      <div class="foot-col">
+        <h4>FOLLOW</h4>
+        <a href="#">X（旧Twitter）</a>
+        <a href="#">note</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 SUBGRADE</p></div>
+</footer>
+
+</body>
+</html>
