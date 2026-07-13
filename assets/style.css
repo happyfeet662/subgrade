@@ -415,7 +415,8 @@ a.card:hover h3 { color: var(--coral); }
 .lvl-choose { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .lvl-pick { display: block; text-decoration: none; border-radius: 22px; padding: 26px 26px 24px; border: 1px solid; transition: transform .12s ease, box-shadow .12s ease; }
 .lvl-pick:hover { transform: translateY(-3px); }
-.lvl-pick__emoji { font-size: 30px; line-height: 1; display: block; margin-bottom: 10px; }
+.lvl-pick__icon { display: block; margin-bottom: 10px; }
+.lvl-pick__icon svg { width: 34px; height: 34px; display: block; }
 .lvl-pick__badge { display: inline-block; font-family: var(--maru); font-weight: 700; font-size: 12.5px; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
 .lvl-pick h3 { font-family: var(--maru); font-weight: 700; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
 .lvl-pick p { font-size: 14px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
