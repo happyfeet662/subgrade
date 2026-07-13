@@ -46,7 +46,25 @@
     <div class="section__head" style="margin-top:18px">
       <span class="kicker">ARTICLES</span>
       <h2>記事一覧</h2>
-      <p>カテゴリと検索で、読みたい解説をすぐに。</p>
+      <p>ジャンル別のまとめと検索で、読みたい解説をすぐに。</p>
+    </div>
+
+    <div class="roadmap">
+      <span class="roadmap__kicker">はじめての方へ</span>
+      <h3 class="roadmap__title">動画編集が初めてなら、この順番で。</h3>
+      <p class="roadmap__lead">まずは基礎の10本を上から順に。1本ずつ進めれば、起動から書き出し・公開までひと通りできるようになります。</p>
+      <div class="roadmap__steps">
+        <a class="roadmap__step" href="articles/premiere-first-edit.html"><span class="roadmap__num">1</span>最初の1本</a>
+        <a class="roadmap__step" href="articles/premiere-project-management.html"><span class="roadmap__num">2</span>保存・管理</a>
+        <a class="roadmap__step" href="articles/premiere-cutting-basics.html"><span class="roadmap__num">3</span>カット</a>
+        <a class="roadmap__step" href="articles/premiere-titles-basics.html"><span class="roadmap__num">4</span>テロップ</a>
+        <a class="roadmap__step" href="articles/premiere-audio-basics.html"><span class="roadmap__num">5</span>音の調整</a>
+        <a class="roadmap__step" href="articles/premiere-bgm-se.html"><span class="roadmap__num">6</span>BGM・効果音</a>
+        <a class="roadmap__step" href="articles/premiere-transitions-basics.html"><span class="roadmap__num">7</span>トランジション</a>
+        <a class="roadmap__step" href="articles/premiere-color-basics.html"><span class="roadmap__num">8</span>色調整</a>
+        <a class="roadmap__step" href="articles/premiere-still-images.html"><span class="roadmap__num">9</span>写真・静止画</a>
+        <a class="roadmap__step" href="articles/premiere-export-basics.html"><span class="roadmap__num">10</span>書き出し</a>
+      </div>
     </div>
 
     <div class="filters">
@@ -54,6 +72,7 @@
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#9aa5b1" stroke-width="2"/><path d="M20 20l-3.2-3.2" stroke="#9aa5b1" stroke-width="2" stroke-linecap="round"/></svg>
         <input type="search" id="articleSearch" placeholder="キーワードで探す（例：カラー、テロップ、書き出し）" aria-label="記事を検索">
       </div>
+      <p class="filters__hint">レベルとジャンルで絞り込めます</p>
       <div class="filter-levels" id="filterLevels">
         <button type="button" class="filter-cat filter-lvl is-active" data-level="all">すべて</button>
         <button type="button" class="filter-cat filter-lvl" data-level="beginner">初心者</button>
@@ -61,670 +80,676 @@
       </div>
       <div class="filter-cats" id="filterCats">
         <button type="button" class="filter-cat is-active" data-cat="all">すべて</button>
-        <button type="button" class="filter-cat" data-cat="color">カラー</button>
-        <button type="button" class="filter-cat" data-cat="export">書き出し</button>
+        <button type="button" class="filter-cat" data-cat="flow">ワークフロー</button>
+        <button type="button" class="filter-cat" data-cat="edit">編集</button>
+        <button type="button" class="filter-cat" data-cat="text">テロップ</button>
         <button type="button" class="filter-cat" data-cat="audio">オーディオ</button>
         <button type="button" class="filter-cat" data-cat="trans">トランジション</button>
-        <button type="button" class="filter-cat" data-cat="text">テロップ</button>
+        <button type="button" class="filter-cat" data-cat="color">カラー</button>
         <button type="button" class="filter-cat" data-cat="motion">モーション</button>
-        <button type="button" class="filter-cat" data-cat="eff">効率化</button>
-        <button type="button" class="filter-cat" data-cat="flow">ワークフロー</button>
-        <button type="button" class="filter-cat" data-cat="expr">エクスプレッション</button>
-        <button type="button" class="filter-cat" data-cat="edit">編集</button>
         <button type="button" class="filter-cat" data-cat="fx">エフェクト</button>
+        <button type="button" class="filter-cat" data-cat="export">書き出し</button>
+        <button type="button" class="filter-cat" data-cat="eff">効率化</button>
+        <button type="button" class="filter-cat" data-cat="expr">エクスプレッション</button>
         <button type="button" class="filter-cat" data-cat="ai">AI活用</button>
       </div>
     </div>
 
-    <div class="grid">
+    <section class="cat-group" data-cat="flow">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--flow"></span>基礎・ワークフロー<span class="cat-group__count">4本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-first-edit.html">
+                <div class="card__thumb th-flow">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="42" width="34" height="26" rx="5" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+                    <path d="M31 51 v8 l7 -4 z" fill="#1fa480"/>
+                    <path d="M58 55 h14 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="80" y="46" width="40" height="17" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
+                    <rect x="80" y="67" width="40" height="17" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
+                    <path d="M124 64 h14 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="146" y="50" width="32" height="32" rx="8" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+                    <text x="162" y="71" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="700" fill="#1fa480">MP4</text>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#22</span></div>
+                  <h3>Premiere 最初の1本：読み込み→カット→書き出し</h3>
+                  <p>まったくの初めてでもOK。5ステップで動画を完成させる、いちばん最初の一本道。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="beginner" href="articles/premiere-project-management.html">
+                <div class="card__thumb th-flow">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 48 h28 l8 9 h44 a6 6 0 0 1 6 6 v31 a6 6 0 0 1 -6 6 h-80 a6 6 0 0 1 -6 -6 v-40 a6 6 0 0 1 6 -6z" fill="#d9f5ec" stroke="#1fa480" stroke-width="3"/>
+                    <circle cx="150" cy="88" r="16" fill="#fff" stroke="#1fa480" stroke-width="3"/>
+                    <path d="M150 80 v8 l6 4" fill="none" stroke="#1fa480" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#29</span></div>
+                  <h3>プロジェクト管理・保存：データを失わない・見失わない</h3>
+                  <p>1案件1フォルダ・こまめ保存・素材を動かさない。メディアオフラインの直し方も。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-proxy-workflow.html">
+                <div class="card__thumb th-flow">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="34" y="38" width="72" height="64" rx="12" fill="#cfe9fb" stroke="#fff" stroke-width="3"/>
+                    <rect x="34" y="38" width="72" height="15" rx="7" fill="#56b4ef"/>
+                    <circle cx="45" cy="45.5" r="2.4" fill="#fff"/><circle cx="54" cy="45.5" r="2.4" fill="#fff"/>
+                    <path d="M58 82 l13 -13 8 8 12 -16" fill="none" stroke="#56b4ef" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M112 70 h20 m0 0 l-7 -6 m7 6 l-7 6" fill="none" stroke="#9aa5b1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="140" y="54" width="34" height="34" rx="9" fill="#fff" stroke="#56b4ef" stroke-width="3"/>
+                    <path d="M158 60 l-8 12 h6 l-2 9 9 -13 h-6 z" fill="#ffc94d" stroke="#fff" stroke-width="1.5"/>
+                    <path d="M150 26 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#56b4ef"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#03</span></div>
+                  <h3>プロキシ運用を正しく組む：SSDを圧迫しない設計</h3>
+                  <p>重い4K素材を軽く編集して、書き出しで実データに戻す。コーデック選びと保存場所の正解を海外の定番ガイドから。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-text-based-editing.html">
+                <div class="card__thumb th-flow">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="44" y="32" width="112" height="76" rx="12" fill="#fff" stroke="#a9cdef" stroke-width="3"/>
+                    <rect x="56" y="46" width="60" height="7" rx="3.5" fill="#56b4ef"/>
+                    <rect x="56" y="60" width="88" height="7" rx="3.5" fill="#d5e6f7"/>
+                    <rect x="56" y="74" width="52" height="7" rx="3.5" fill="#d5e6f7"/>
+                    <line x1="52" y1="77.5" x2="112" y2="77.5" stroke="#d9534f" stroke-width="2"/>
+                    <rect x="56" y="88" width="76" height="7" rx="3.5" fill="#d5e6f7"/>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#20</span></div>
+                  <h3>テキストベース編集：文字起こしを消すだけで切れる</h3>
+                  <p>原稿を消す感覚でカット。フィラーワード・無音の自動削除と、消しすぎない注意点。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #01 Color -->
-      <a class="card" data-level="intermediate" href="articles/premiere-color-management.html">
-        <div class="card__thumb th-color">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 62 L100 26 A36 36 0 0 1 136 62 Z" fill="#ff6f7e" stroke="#fff" stroke-width="3"/>
-            <path d="M100 62 L136 62 A36 36 0 0 1 100 98 Z" fill="#ffc94d" stroke="#fff" stroke-width="3"/>
-            <path d="M100 62 L100 98 A36 36 0 0 1 64 62 Z" fill="#3fca9f" stroke="#fff" stroke-width="3"/>
-            <path d="M100 62 L64 62 A36 36 0 0 1 100 26 Z" fill="#8b7cf0" stroke="#fff" stroke-width="3"/>
-            <circle cx="100" cy="62" r="11" fill="#fff"/>
-            <rect x="58" y="114" width="84" height="10" rx="5" fill="#fff" stroke="#ffd0bb" stroke-width="2"/>
-            <circle cx="120" cy="119" r="8" fill="#ff6f7e" stroke="#fff" stroke-width="2.5"/>
-            <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#01</span></div>
-          <h3>新カラーマネジメント完全解説「LUTが効かない」の正体</h3>
-          <p>2024年以降に刷新された仕組みを理解して、混在素材の色を揃える。日本語で最も薄い領域を根本から。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="edit">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--edit"></span>カット・編集<span class="cat-group__count">3本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-cutting-basics.html">
+                <div class="card__thumb th-edit">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="26" y="54" width="52" height="30" rx="5" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+                    <rect x="122" y="54" width="52" height="30" rx="5" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+                    <rect x="87" y="46" width="26" height="46" rx="4" fill="#fff" stroke="#d9534f" stroke-width="3" stroke-dasharray="5 4"/>
+                    <path d="M100 36 v66" stroke="#d9534f" stroke-width="2.4" stroke-linecap="round"/>
+                    <circle cx="100" cy="32" r="5" fill="#d9534f"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--edit">編集</span><span class="card__num">#23</span></div>
+                  <h3>カット編集の基本：切って・詰めて・テンポを作る</h3>
+                  <p>編集の8割はカット。リップル削除・トリム・Q/Wの時短で、見やすいテンポを作る。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-multicam.html">
+                <div class="card__thumb th-edit">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="44" y="36" width="52" height="32" rx="8" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+                    <path d="M62 46 v12 l10 -6 z" fill="#5a8a2e"/>
+                    <rect x="104" y="36" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
+                    <rect x="44" y="76" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
+                    <rect x="104" y="76" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
+                    <circle cx="88" cy="44" r="10" fill="#5a8a2e"/>
+                    <text x="88" y="48" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="12" font-weight="700" fill="#fff">1</text>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--edit">編集</span><span class="card__num">#14</span></div>
+                  <h3>マルチカム編集の基本：同期・アングル切り替え・仕上げ</h3>
+                  <p>音声波形で同期し、数字キーでスイッチング。対談やライブを“番組っぽく”速く編集する。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-jl-cut.html">
+                <div class="card__thumb th-edit">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="44" width="88" height="22" rx="6" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
+                    <path d="M52 55 v6 l8 -6 z" fill="#5a8a2e"/>
+                    <rect x="72" y="74" width="88" height="22" rx="6" fill="#fff" stroke="#5a8a2e" stroke-width="3"/>
+                    <rect x="80" y="82" width="4" height="6" rx="2" fill="#5a8a2e"/><rect x="88" y="79" width="4" height="12" rx="2" fill="#5a8a2e"/><rect x="96" y="82" width="4" height="6" rx="2" fill="#5a8a2e"/><rect x="104" y="78" width="4" height="14" rx="2" fill="#5a8a2e"/><rect x="112" y="82" width="4" height="6" rx="2" fill="#5a8a2e"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--edit">編集</span><span class="card__num">#15</span></div>
+                  <h3>J・Lカットで自然な会話編集：音を先に流す/後に残す</h3>
+                  <p>ブツ切れの原因は同時に切ること。音と映像を0.5〜2秒ずらすだけで“本物の会話”に。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #02 Expressions -->
-      <a class="card" data-level="intermediate" href="articles/expressions-basics.html">
-        <div class="card__thumb th-expr">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="34" width="120" height="74" rx="16" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
-            <path d="M62 64 q9 -16 18 0 t18 0 t18 0" fill="none" stroke="#8b7cf0" stroke-width="4" stroke-linecap="round"/>
-            <text x="70" y="98" font-family="monospace" font-size="20" fill="#8b7cf0" font-weight="700">{ }</text>
-            <circle cx="116" cy="90" r="4" fill="#ff6f7e"/>
-            <path d="M152 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#8b7cf0"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--expr">エクスプレッション</span><span class="card__num">#02</span></div>
-          <h3>コピペ卒業：エクスプレッションを“意味”から</h3>
-          <p><code>wiggle</code> や <code>loopOut</code> が、なぜそう動くのか。仕組みから理解して自分で書けるように。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="text">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--text"></span>テロップ<span class="cat-group__count">2本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-titles-basics.html">
+                <div class="card__thumb th-text">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="36" width="120" height="70" rx="12" fill="#fff" stroke="#e6c7e0" stroke-width="3"/>
+                    <rect x="52" y="82" width="96" height="15" rx="4" fill="#f3e2f0"/>
+                    <text x="100" y="94" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="11" font-weight="700" fill="#b3559f">テロップ</text>
+                    <text x="68" y="66" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="30" font-weight="700" fill="#b3559f">T</text>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--text">テロップ</span><span class="card__num">#24</span></div>
+                  <h3>テロップの入れ方：“読める字幕”を作る基本</h3>
+                  <p>文字ツールで打つ→整える→縁取り/背景帯で読みやすく→セーフマージンに収める。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-telop-design.html">
+                <div class="card__thumb th-text">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="34" width="120" height="72" rx="14" fill="#fff" stroke="#e2bcdb" stroke-width="3"/>
+                    <circle cx="100" cy="60" r="16" fill="#f3e2f0"/>
+                    <path d="M92 62 q8 -12 16 0" fill="none" stroke="#b3559f" stroke-width="2.5" stroke-linecap="round"/>
+                    <rect x="56" y="86" width="88" height="14" rx="7" fill="#f3e2f0" stroke="#e2bcdb" stroke-width="2"/>
+                    <rect x="64" y="90" width="34" height="6" rx="3" fill="#b3559f"/>
+                    <rect x="102" y="90" width="20" height="6" rx="3" fill="#b3559f"/>
+                    <text x="52" y="60" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="22" font-weight="700" fill="#b3559f">Aa</text>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--text">テロップ</span><span class="card__num">#11</span></div>
+                  <h3>読みやすいテロップデザインの基本：脱・素人感の10原則</h3>
+                  <p>フォント・縁取り・配置・表示時間。センスではなくルールで“ちゃんと見える”テロップに。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約12分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #03 Proxy -->
-      <a class="card" data-level="intermediate" href="articles/premiere-proxy-workflow.html">
-        <div class="card__thumb th-flow">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="34" y="38" width="72" height="64" rx="12" fill="#cfe9fb" stroke="#fff" stroke-width="3"/>
-            <rect x="34" y="38" width="72" height="15" rx="7" fill="#56b4ef"/>
-            <circle cx="45" cy="45.5" r="2.4" fill="#fff"/><circle cx="54" cy="45.5" r="2.4" fill="#fff"/>
-            <path d="M58 82 l13 -13 8 8 12 -16" fill="none" stroke="#56b4ef" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M112 70 h20 m0 0 l-7 -6 m7 6 l-7 6" fill="none" stroke="#9aa5b1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="140" y="54" width="34" height="34" rx="9" fill="#fff" stroke="#56b4ef" stroke-width="3"/>
-            <path d="M158 60 l-8 12 h6 l-2 9 9 -13 h-6 z" fill="#ffc94d" stroke="#fff" stroke-width="1.5"/>
-            <path d="M150 26 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#56b4ef"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#03</span></div>
-          <h3>プロキシ運用を正しく組む：SSDを圧迫しない設計</h3>
-          <p>重い4K素材を軽く編集して、書き出しで実データに戻す。コーデック選びと保存場所の正解を海外の定番ガイドから。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="audio">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--audio"></span>オーディオ<span class="cat-group__count">3本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-audio-basics.html">
+                <div class="card__thumb th-audio">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#3d6bc4" stroke-width="4" stroke-linecap="round">
+                      <path d="M60 72 v14"/><path d="M74 62 v34"/><path d="M88 48 v62"/><path d="M102 58 v38"/><path d="M116 42 v70"/><path d="M130 64 v30"/><path d="M144 70 v18"/>
+                    </g>
+                    <rect x="48" y="68" width="108" height="2.6" rx="1.3" fill="#9aa5b1"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--audio">オーディオ</span><span class="card__num">#25</span></div>
+                  <h3>音の調整の基本：声を聞き取りやすく、BGMをちょうどよく</h3>
+                  <p>音割れを防ぐ音量、エッセンシャルサウンドの半自動処理、声とBGMのバランス。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="beginner" href="articles/premiere-bgm-se.html">
+                <div class="card__thumb th-audio">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M82 42 v44 a12 12 0 1 1 -8 -11 V54 l38 -9 v34 a12 12 0 1 1 -8 -11 V42z" fill="#dde8f7" stroke="#3d6bc4" stroke-width="3" stroke-linejoin="round"/>
+                    <g stroke="#3d6bc4" stroke-width="3.4" stroke-linecap="round">
+                      <path d="M128 68 v10"/><path d="M138 62 v22"/><path d="M148 68 v10"/>
+                    </g>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--audio">オーディオ</span><span class="card__num">#30</span></div>
+                  <h3>BGM・効果音の入れ方：音楽と効果音で一段“作品”に</h3>
+                  <p>トラックを分け、フェードで自然に、声より小さく。効果音のタイミングと著作権の基本。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-essential-sound.html">
+                <div class="card__thumb th-audio">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="28" y1="70" x2="172" y2="70" stroke="#c7d8ef" stroke-width="2"/>
+                    <rect x="40" y="58" width="8" height="24" rx="4" fill="#3d6bc4"/>
+                    <rect x="56" y="46" width="8" height="48" rx="4" fill="#3d6bc4"/>
+                    <rect x="72" y="36" width="8" height="68" rx="4" fill="#3d6bc4"/>
+                    <rect x="88" y="52" width="8" height="36" rx="4" fill="#3d6bc4"/>
+                    <rect x="104" y="30" width="8" height="80" rx="4" fill="#56b4ef"/>
+                    <rect x="120" y="50" width="8" height="40" rx="4" fill="#3d6bc4"/>
+                    <rect x="136" y="42" width="8" height="56" rx="4" fill="#3d6bc4"/>
+                    <rect x="152" y="60" width="8" height="20" rx="4" fill="#3d6bc4"/>
+                    <path d="M176 26 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--audio">オーディオ</span><span class="card__num">#09</span></div>
+                  <h3>エッセンシャルサウンド完全ガイド：ノイズ除去と音量統一</h3>
+                  <p>音が悪いと即離脱。ノイズ除去・オートマッチ・BGMバランスで“聴きやすい音”に整える。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #04 Motion / mogrt -->
-      <a class="card" data-level="intermediate" href="articles/premiere-mogrt-essential-graphics.html">
-        <div class="card__thumb th-motion">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="42" y="34" width="116" height="74" rx="16" fill="#fff" stroke="#f0d692" stroke-width="3"/>
-            <rect x="66" y="52" width="40" height="9" rx="4" fill="#ffc94d"/>
-            <rect x="82" y="52" width="9" height="42" rx="4" fill="#ffc94d"/>
-            <path d="M112 86 q16 -20 34 -6" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-dasharray="4 5" stroke-linecap="round"/>
-            <rect x="108" y="81" width="10" height="10" rx="2.5" transform="rotate(45 113 86)" fill="#ff6f7e"/>
-            <rect x="141" y="74" width="10" height="10" rx="2.5" transform="rotate(45 146 79)" fill="#3fca9f"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#04</span></div>
-          <h3>.mogrt を自作して使い回す：Essential Graphics 入門</h3>
-          <p>テロップをテンプレート化して毎回の作業を圧縮。縦・横・正方形に自動対応するレスポンシブ設計まで。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="trans">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--trans"></span>トランジション<span class="cat-group__count">2本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-transitions-basics.html">
+                <div class="card__thumb th-trans">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="48" width="64" height="42" rx="8" fill="#ffe6d2" stroke="#d67a2e" stroke-width="3"/>
+                    <rect x="106" y="48" width="64" height="42" rx="8" fill="#fff" stroke="#d67a2e" stroke-width="3" opacity="0.55"/>
+                    <path d="M84 69 h32" stroke="#d67a2e" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5"/>
+                    <path d="M96 60 l10 9 -10 9" fill="none" stroke="#d67a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--trans">トランジション</span><span class="card__num">#26</span></div>
+                  <h3>トランジションの基本：ディゾルブを“ここぞ”で使う</h3>
+                  <p>基本はカット。クロスディゾルブ・暗転・音のクロスフェードの入れ方と、使いすぎない加減。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-seamless-transitions.html">
+                <div class="card__thumb th-trans">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="34" y="46" width="70" height="52" rx="12" fill="#fff" stroke="#f0c39a" stroke-width="3"/>
+                    <rect x="96" y="46" width="70" height="52" rx="12" fill="#ffe6d2" stroke="#d67a2e" stroke-width="3"/>
+                    <path d="M60 118 q40 -18 80 0" fill="none" stroke="#d67a2e" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M140 118 l-8 -3 m8 3 l-3 -8" fill="none" stroke="#d67a2e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="112" y1="60" x2="126" y2="60" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="112" y1="72" x2="132" y2="72" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="112" y1="84" x2="122" y2="84" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--trans">トランジション</span><span class="card__num">#10</span></div>
+                  <h3>シームレストランジションの作り方（ズーム・ホイップパン）</h3>
+                  <p>調整レイヤー＋ブラーで自作。狙った速さ・向きに調整でき、使いすぎない判断力まで。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #05 Efficiency -->
-      <a class="card" data-level="intermediate" href="articles/premiere-shortcuts-efficiency.html">
-        <div class="card__thumb th-eff">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="34" y="52" width="132" height="58" rx="12" fill="#fff" stroke="#a9e6d3" stroke-width="3"/>
-            <g fill="#d9f5ec" stroke="#3fca9f" stroke-width="2">
-              <rect x="44" y="62" width="14" height="14" rx="3"/><rect x="62" y="62" width="14" height="14" rx="3"/>
-              <rect x="80" y="62" width="14" height="14" rx="3"/><rect x="98" y="62" width="14" height="14" rx="3"/>
-              <rect x="116" y="62" width="14" height="14" rx="3"/><rect x="134" y="62" width="18" height="14" rx="3"/>
-            </g>
-            <rect x="60" y="86" width="80" height="12" rx="5" fill="#d9f5ec" stroke="#3fca9f" stroke-width="2"/>
-            <path d="M150 28 l-12 20 h9 l-3 16 14 -22 h-10 z" fill="#ffc94d" stroke="#fff" stroke-width="2"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--eff">効率化</span><span class="card__num">#05</span></div>
-          <h3>ショートカット＆スクリプトで単純作業を消す</h3>
-          <p>カット・書き出し・命名を自動化して、価値の出る仕事に時間を回す。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約7分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="color">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--color"></span>カラー<span class="cat-group__count">5本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-color-basics.html">
+                <div class="card__thumb th-color">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="48" y="42" width="104" height="58" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+                    <circle cx="82" cy="71" r="16" fill="#ff6f7e" opacity="0.85"/>
+                    <circle cx="104" cy="71" r="16" fill="#ffc94d" opacity="0.85"/>
+                    <circle cx="126" cy="71" r="16" fill="#3fca9f" opacity="0.85"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#27</span></div>
+                  <h3>色調整の入門：Lumetriの基本補正で整える</h3>
+                  <p>触るのは3つだけ。明るさ→ホワイトバランス→彩度の順で、盛りすぎず自然に整える。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-color-management.html">
+                <div class="card__thumb th-color">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 62 L100 26 A36 36 0 0 1 136 62 Z" fill="#ff6f7e" stroke="#fff" stroke-width="3"/>
+                    <path d="M100 62 L136 62 A36 36 0 0 1 100 98 Z" fill="#ffc94d" stroke="#fff" stroke-width="3"/>
+                    <path d="M100 62 L100 98 A36 36 0 0 1 64 62 Z" fill="#3fca9f" stroke="#fff" stroke-width="3"/>
+                    <path d="M100 62 L64 62 A36 36 0 0 1 100 26 Z" fill="#8b7cf0" stroke="#fff" stroke-width="3"/>
+                    <circle cx="100" cy="62" r="11" fill="#fff"/>
+                    <rect x="58" y="114" width="84" height="10" rx="5" fill="#fff" stroke="#ffd0bb" stroke-width="2"/>
+                    <circle cx="120" cy="119" r="8" fill="#ff6f7e" stroke="#fff" stroke-width="2.5"/>
+                    <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#01</span></div>
+                  <h3>新カラーマネジメント完全解説「LUTが効かない」の正体</h3>
+                  <p>2024年以降に刷新された仕組みを理解して、混在素材の色を揃える。日本語で最も薄い領域を根本から。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-lumetri-color-grading.html">
+                <div class="card__thumb th-color">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="80" cy="70" r="40" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+                    <line x1="80" y1="32" x2="80" y2="108" stroke="#f3d9cc" stroke-width="1.5"/>
+                    <line x1="42" y1="70" x2="118" y2="70" stroke="#f3d9cc" stroke-width="1.5"/>
+                    <line x1="58" y1="48" x2="102" y2="92" stroke="#ff6f7e" stroke-width="2.5" stroke-dasharray="3 3"/>
+                    <circle cx="96" cy="84" r="7" fill="#ffc94d" stroke="#fff" stroke-width="2"/>
+                    <circle cx="68" cy="56" r="5" fill="#8b7cf0" stroke="#fff" stroke-width="2"/>
+                    <rect x="128" y="42" width="48" height="58" rx="10" fill="#f2effc" stroke="#c9bef7" stroke-width="2.5"/>
+                    <path d="M135 92 C 148 92, 152 54, 170 50" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M150 22 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#07</span></div>
+                  <h3>Lumetri徹底解説：スコープ・カーブ・HSLセカンダリ</h3>
+                  <p>感覚ではなく数値で色を作る。スコープの読み方から部分補正・スキントーンまで、プロの手順を体系的に。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約14分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-lut-guide.html">
+                <div class="card__thumb th-color">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="42" y="34" width="66" height="72" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+                    <rect x="54" y="46" width="42" height="14" rx="4" fill="#ff6f7e"/>
+                    <rect x="54" y="66" width="42" height="14" rx="4" fill="#ffc94d"/>
+                    <rect x="54" y="86" width="42" height="14" rx="4" fill="#3fca9f"/>
+                    <path d="M114 70 h16 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="136" y="54" width="40" height="32" rx="8" fill="#f2effc" stroke="#8b7cf0" stroke-width="2.5"/>
+                    <text x="156" y="75" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#8b7cf0">.cube</text>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#13</span></div>
+                  <h3>LUTの正しい使い方と自作：.cubeで“自分の色”を再利用</h3>
+                  <p>濁る原因は場所と順番。入力/クリエイティブの違いを理解し、自分の色を.cubeで書き出して資産化。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-cinematic-grade.html">
+                <div class="card__thumb th-color">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="46" y="38" width="108" height="64" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
+                    <path d="M52 96 h96 v-52 a6 6 0 0 0 -6 -6 h-40 z" fill="#2b8a9a" opacity="0.85"/>
+                    <circle cx="76" cy="66" r="16" fill="#2b8a9a" stroke="#fff" stroke-width="3"/>
+                    <circle cx="124" cy="66" r="16" fill="#e8843b" stroke="#fff" stroke-width="3"/>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#17</span></div>
+                  <h3>シネマティックグレーディング：ティール＆オレンジ</h3>
+                  <p>補色のコントラストで映画の色を。シャドウに青、ハイライトと肌に橙。やりすぎない加減まで。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #06 AI -->
-      <a class="card" data-level="intermediate" href="articles/ai-captions-claude.html">
-        <div class="card__thumb th-ai">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <line x1="100" y1="26" x2="100" y2="40" stroke="#db5b93" stroke-width="3"/>
-            <circle cx="100" cy="24" r="5" fill="#ff6f7e"/>
-            <rect x="66" y="40" width="68" height="52" rx="16" fill="#fff" stroke="#f2b9d1" stroke-width="3"/>
-            <circle cx="86" cy="62" r="7" fill="#db5b93"/><circle cx="114" cy="62" r="7" fill="#db5b93"/>
-            <rect x="88" y="76" width="24" height="6" rx="3" fill="#f2b9d1"/>
-            <rect x="58" y="58" width="6" height="14" rx="3" fill="#f2b9d1"/><rect x="136" y="58" width="6" height="14" rx="3" fill="#f2b9d1"/>
-            <rect x="60" y="100" width="80" height="16" rx="6" fill="#ffe1ec" stroke="#f2b9d1" stroke-width="2"/>
-            <rect x="68" y="106" width="32" height="4" rx="2" fill="#db5b93"/><rect x="104" y="106" width="18" height="4" rx="2" fill="#db5b93"/>
-            <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--ai">AI活用</span><span class="card__num">#06</span></div>
-          <h3>Claude API × Premiere で字幕を自動生成</h3>
-          <p>文字起こしからキャプション化までを一気通貫。英語先行の実装ネタを日本語で。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="motion">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--motion"></span>モーション<span class="cat-group__count">4本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-still-images.html">
+                <div class="card__thumb th-motion">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="44" y="42" width="112" height="66" rx="10" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+                    <circle cx="74" cy="66" r="9" fill="#ffc94d"/>
+                    <path d="M52 100 l26 -26 18 15 20 -20 30 31z" fill="#d9cef9" stroke="#8b7cf0" stroke-width="2.5" stroke-linejoin="round"/>
+                    <rect x="94" y="58" width="44" height="32" rx="4" fill="none" stroke="#ff6f7e" stroke-width="2.6" stroke-dasharray="5 4"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#31</span></div>
+                  <h3>写真・静止画の使い方：サイズ・表示時間・Ken Burns</h3>
+                  <p>フレームに合わせる／埋める、表示時間、ゆっくり動かすKen Burnsで映像になじませる。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-mogrt-essential-graphics.html">
+                <div class="card__thumb th-motion">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="42" y="34" width="116" height="74" rx="16" fill="#fff" stroke="#f0d692" stroke-width="3"/>
+                    <rect x="66" y="52" width="40" height="9" rx="4" fill="#ffc94d"/>
+                    <rect x="82" y="52" width="9" height="42" rx="4" fill="#ffc94d"/>
+                    <path d="M112 86 q16 -20 34 -6" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-dasharray="4 5" stroke-linecap="round"/>
+                    <rect x="108" y="81" width="10" height="10" rx="2.5" transform="rotate(45 113 86)" fill="#ff6f7e"/>
+                    <rect x="141" y="74" width="10" height="10" rx="2.5" transform="rotate(45 146 79)" fill="#3fca9f"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#04</span></div>
+                  <h3>.mogrt を自作して使い回す：Essential Graphics 入門</h3>
+                  <p>テロップをテンプレート化して毎回の作業を圧縮。縦・横・正方形に自動対応するレスポンシブ設計まで。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-keyframe-easing.html">
+                <div class="card__thumb th-motion">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="34" y="30" width="132" height="80" rx="14" fill="#fff" stroke="#f0d692" stroke-width="3"/>
+                    <line x1="48" y1="96" x2="152" y2="96" stroke="#f0d692" stroke-width="2"/>
+                    <path d="M52 92 C 92 92, 100 46, 148 44" fill="none" stroke="#8b7cf0" stroke-width="3.5" stroke-linecap="round"/>
+                    <rect x="47" y="87" width="10" height="10" rx="2.5" transform="rotate(45 52 92)" fill="#ff6f7e"/>
+                    <rect x="143" y="39" width="10" height="10" rx="2.5" transform="rotate(45 148 44)" fill="#3fca9f"/>
+                    <path d="M150 20 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#12</span></div>
+                  <h3>キーフレームとイージング：グラフエディターでなめらかに</h3>
+                  <p>カクつく原因は等速。イーズと速度グラフで“ぬるっと気持ちいい”動きを自分で作る。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-auto-reframe.html">
+                <div class="card__thumb th-motion">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="48" width="86" height="48" rx="8" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+                    <circle cx="55" cy="72" r="10" fill="#ffd7b0" stroke="#8b7cf0" stroke-width="2.5"/>
+                    <rect x="122" y="38" width="44" height="66" rx="8" fill="#fff" stroke="#8b7cf0" stroke-width="3"/>
+                    <circle cx="144" cy="68" r="11" fill="#ffd7b0" stroke="#8b7cf0" stroke-width="3"/>
+                    <rect x="132" y="55" width="24" height="27" rx="4" fill="none" stroke="#ff6f7e" stroke-width="2.4" stroke-dasharray="4 3"/>
+                    <path d="M108 72 h10 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#21</span></div>
+                  <h3>オートリフレーム：横動画をワンクリックで縦(9:16)に</h3>
+                  <p>被写体を自動追跡してSNS縦動画へ。2つの使い方・追跡プリセット・自動後の手直しまで。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #07 Lumetri -->
-      <a class="card" data-level="intermediate" href="articles/premiere-lumetri-color-grading.html">
-        <div class="card__thumb th-color">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="80" cy="70" r="40" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
-            <line x1="80" y1="32" x2="80" y2="108" stroke="#f3d9cc" stroke-width="1.5"/>
-            <line x1="42" y1="70" x2="118" y2="70" stroke="#f3d9cc" stroke-width="1.5"/>
-            <line x1="58" y1="48" x2="102" y2="92" stroke="#ff6f7e" stroke-width="2.5" stroke-dasharray="3 3"/>
-            <circle cx="96" cy="84" r="7" fill="#ffc94d" stroke="#fff" stroke-width="2"/>
-            <circle cx="68" cy="56" r="5" fill="#8b7cf0" stroke="#fff" stroke-width="2"/>
-            <rect x="128" y="42" width="48" height="58" rx="10" fill="#f2effc" stroke="#c9bef7" stroke-width="2.5"/>
-            <path d="M135 92 C 148 92, 152 54, 170 50" fill="none" stroke="#8b7cf0" stroke-width="3" stroke-linecap="round"/>
-            <path d="M150 22 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#07</span></div>
-          <h3>Lumetri徹底解説：スコープ・カーブ・HSLセカンダリ</h3>
-          <p>感覚ではなく数値で色を作る。スコープの読み方から部分補正・スキントーンまで、プロの手順を体系的に。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約14分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="fx">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--fx"></span>エフェクト<span class="cat-group__count">3本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="intermediate" href="articles/premiere-warp-stabilizer.html">
+                <div class="card__thumb th-fx">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="52" y="40" width="96" height="60" rx="10" fill="none" stroke="#e6a6a2" stroke-width="3" stroke-dasharray="6 5"/>
+                    <rect x="64" y="50" width="72" height="44" rx="8" fill="#fff" stroke="#d9534f" stroke-width="3"/>
+                    <path d="M76 72 l12 -10 8 8 12 -14" fill="none" stroke="#d9534f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M40 54 h-8 M40 86 h-8 M160 54 h8 M160 86 h8" stroke="#e6a6a2" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="100" cy="72" r="4" fill="#d9534f"/>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--fx">エフェクト</span><span class="card__num">#16</span></div>
+                  <h3>ワープスタビライザー：手ブレを自然に消す設定</h3>
+                  <p>滑らかさは低めから。クロップとのトレードオフを管理して、“ぐにゃっ”と歪ませない。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-speed-ramp.html">
+                <div class="card__thumb th-fx">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="34" y1="96" x2="166" y2="96" stroke="#e6a6a2" stroke-width="2"/>
+                    <path d="M40 92 C 74 92, 78 46, 100 46 C 122 46, 126 92, 160 92" fill="none" stroke="#d9534f" stroke-width="3.5" stroke-linecap="round"/>
+                    <rect x="35" y="87" width="10" height="10" rx="2.5" transform="rotate(45 40 92)" fill="#d9534f"/>
+                    <rect x="95" y="41" width="10" height="10" rx="2.5" transform="rotate(45 100 46)" fill="#ffc94d"/>
+                    <rect x="155" y="87" width="10" height="10" rx="2.5" transform="rotate(45 160 92)" fill="#d9534f"/>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--fx">エフェクト</span><span class="card__num">#18</span></div>
+                  <h3>スピードランプの作り方：時間の緩急で見せる</h3>
+                  <p>速→遅→速で勢いを生む。キーフレーム・イーズ・オプティカルフロー・素材のfpsまで。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-mask-tracking.html">
+                <div class="card__thumb th-fx">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="34" width="120" height="72" rx="12" fill="#fff" stroke="#e6a6a2" stroke-width="3"/>
+                    <g fill="#f2c3c0">
+                      <rect x="86" y="52" width="9" height="9"/><rect x="96" y="52" width="9" height="9"/><rect x="106" y="52" width="9" height="9"/>
+                      <rect x="86" y="62" width="9" height="9"/><rect x="96" y="62" width="9" height="9"/><rect x="106" y="62" width="9" height="9"/>
+                      <rect x="86" y="72" width="9" height="9"/><rect x="96" y="72" width="9" height="9"/><rect x="106" y="72" width="9" height="9"/>
+                    </g>
+                    <rect x="82" y="48" width="37" height="37" rx="4" fill="none" stroke="#d9534f" stroke-width="2.5" stroke-dasharray="4 3"/>
+                    <path d="M82 48 h-8 M82 85 h-8 M119 48 h8 M119 85 h8" stroke="#d9534f" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--fx">エフェクト</span><span class="card__num">#19</span></div>
+                  <h3>マスク＆トラッキング：モザイクを対象に追従させる</h3>
+                  <p>顔やナンバーにモザイクを自動追従。部分補正にも。失敗しないコツ（高コントラスト・シンプル）。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #08 Export -->
-      <a class="card" data-level="intermediate" href="articles/premiere-export-settings.html">
-        <div class="card__thumb th-export">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="36" width="76" height="66" rx="12" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
-            <rect x="40" y="36" width="76" height="15" rx="7" fill="#2b8a9a"/>
-            <circle cx="51" cy="43.5" r="2.4" fill="#fff"/><circle cx="60" cy="43.5" r="2.4" fill="#fff"/>
-            <circle cx="78" cy="76" r="16" fill="#d9eef2"/>
-            <path d="M78 67v18 M71 78l7 7 7-7" fill="none" stroke="#2b8a9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M124 70 h18 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="150" y="52" width="36" height="36" rx="9" fill="#fff" stroke="#2b8a9a" stroke-width="3"/>
-            <text x="168" y="74" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#2b8a9a">MP4</text>
-            <path d="M150 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--export">書き出し</span><span class="card__num">#08</span></div>
-          <h3>書き出し設定の正解：YouTube最適化・ビットレート早見表</h3>
-          <p>H.264/H.265の使い分け、解像度別ビットレート、VBR2パス、音声まで。もう迷わない“早見表”。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約12分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="export">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--export"></span>書き出し<span class="cat-group__count">2本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="beginner" href="articles/premiere-export-basics.html">
+                <div class="card__thumb th-export">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="42" y="42" width="70" height="56" rx="10" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
+                    <rect x="42" y="42" width="70" height="14" rx="7" fill="#2b8a9a"/>
+                    <path d="M77 64 v18 M69 75 l8 8 8 -8" fill="none" stroke="#2b8a9a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M120 71 h20 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="150" y="54" width="34" height="34" rx="9" fill="#fff" stroke="#2b8a9a" stroke-width="3"/>
+                    <text x="167" y="76" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#2b8a9a">MP4</text>
+                    <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--export">書き出し</span><span class="card__num">#28</span></div>
+                  <h3>書き出しの超入門：迷わずYouTube用のMP4に</h3>
+                  <p>H.264＋YouTubeプリセットを選ぶだけ。範囲の確認・真っ黒/無音などの事故も回避。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約7分</span></div>
+                </div>
+              </a>
+        <a class="card" data-level="intermediate" href="articles/premiere-export-settings.html">
+                <div class="card__thumb th-export">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="36" width="76" height="66" rx="12" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
+                    <rect x="40" y="36" width="76" height="15" rx="7" fill="#2b8a9a"/>
+                    <circle cx="51" cy="43.5" r="2.4" fill="#fff"/><circle cx="60" cy="43.5" r="2.4" fill="#fff"/>
+                    <circle cx="78" cy="76" r="16" fill="#d9eef2"/>
+                    <path d="M78 67v18 M71 78l7 7 7-7" fill="none" stroke="#2b8a9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M124 70 h18 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="150" y="52" width="36" height="36" rx="9" fill="#fff" stroke="#2b8a9a" stroke-width="3"/>
+                    <text x="168" y="74" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#2b8a9a">MP4</text>
+                    <path d="M150 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--export">書き出し</span><span class="card__num">#08</span></div>
+                  <h3>書き出し設定の正解：YouTube最適化・ビットレート早見表</h3>
+                  <p>H.264/H.265の使い分け、解像度別ビットレート、VBR2パス、音声まで。もう迷わない“早見表”。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約12分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #09 Audio -->
-      <a class="card" data-level="intermediate" href="articles/premiere-essential-sound.html">
-        <div class="card__thumb th-audio">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <line x1="28" y1="70" x2="172" y2="70" stroke="#c7d8ef" stroke-width="2"/>
-            <rect x="40" y="58" width="8" height="24" rx="4" fill="#3d6bc4"/>
-            <rect x="56" y="46" width="8" height="48" rx="4" fill="#3d6bc4"/>
-            <rect x="72" y="36" width="8" height="68" rx="4" fill="#3d6bc4"/>
-            <rect x="88" y="52" width="8" height="36" rx="4" fill="#3d6bc4"/>
-            <rect x="104" y="30" width="8" height="80" rx="4" fill="#56b4ef"/>
-            <rect x="120" y="50" width="8" height="40" rx="4" fill="#3d6bc4"/>
-            <rect x="136" y="42" width="8" height="56" rx="4" fill="#3d6bc4"/>
-            <rect x="152" y="60" width="8" height="20" rx="4" fill="#3d6bc4"/>
-            <path d="M176 26 l2 6 6 2 -6 2 -2 6 -2-6 -6-2 6-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--audio">オーディオ</span><span class="card__num">#09</span></div>
-          <h3>エッセンシャルサウンド完全ガイド：ノイズ除去と音量統一</h3>
-          <p>音が悪いと即離脱。ノイズ除去・オートマッチ・BGMバランスで“聴きやすい音”に整える。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="eff">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--eff"></span>効率化・自動化<span class="cat-group__count">1本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="intermediate" href="articles/premiere-shortcuts-efficiency.html">
+                <div class="card__thumb th-eff">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="34" y="52" width="132" height="58" rx="12" fill="#fff" stroke="#a9e6d3" stroke-width="3"/>
+                    <g fill="#d9f5ec" stroke="#3fca9f" stroke-width="2">
+                      <rect x="44" y="62" width="14" height="14" rx="3"/><rect x="62" y="62" width="14" height="14" rx="3"/>
+                      <rect x="80" y="62" width="14" height="14" rx="3"/><rect x="98" y="62" width="14" height="14" rx="3"/>
+                      <rect x="116" y="62" width="14" height="14" rx="3"/><rect x="134" y="62" width="18" height="14" rx="3"/>
+                    </g>
+                    <rect x="60" y="86" width="80" height="12" rx="5" fill="#d9f5ec" stroke="#3fca9f" stroke-width="2"/>
+                    <path d="M150 28 l-12 20 h9 l-3 16 14 -22 h-10 z" fill="#ffc94d" stroke="#fff" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--eff">効率化</span><span class="card__num">#05</span></div>
+                  <h3>ショートカット＆スクリプトで単純作業を消す</h3>
+                  <p>カット・書き出し・命名を自動化して、価値の出る仕事に時間を回す。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約7分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #10 Transition -->
-      <a class="card" data-level="intermediate" href="articles/premiere-seamless-transitions.html">
-        <div class="card__thumb th-trans">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="34" y="46" width="70" height="52" rx="12" fill="#fff" stroke="#f0c39a" stroke-width="3"/>
-            <rect x="96" y="46" width="70" height="52" rx="12" fill="#ffe6d2" stroke="#d67a2e" stroke-width="3"/>
-            <path d="M60 118 q40 -18 80 0" fill="none" stroke="#d67a2e" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M140 118 l-8 -3 m8 3 l-3 -8" fill="none" stroke="#d67a2e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="112" y1="60" x2="126" y2="60" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
-            <line x1="112" y1="72" x2="132" y2="72" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
-            <line x1="112" y1="84" x2="122" y2="84" stroke="#f0c39a" stroke-width="3" stroke-linecap="round"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--trans">トランジション</span><span class="card__num">#10</span></div>
-          <h3>シームレストランジションの作り方（ズーム・ホイップパン）</h3>
-          <p>調整レイヤー＋ブラーで自作。狙った速さ・向きに調整でき、使いすぎない判断力まで。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
+    <section class="cat-group" data-cat="expr">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--expr"></span>エクスプレッション<span class="cat-group__count">1本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="intermediate" href="articles/expressions-basics.html">
+                <div class="card__thumb th-expr">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="40" y="34" width="120" height="74" rx="16" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
+                    <path d="M62 64 q9 -16 18 0 t18 0 t18 0" fill="none" stroke="#8b7cf0" stroke-width="4" stroke-linecap="round"/>
+                    <text x="70" y="98" font-family="monospace" font-size="20" fill="#8b7cf0" font-weight="700">{ }</text>
+                    <circle cx="116" cy="90" r="4" fill="#ff6f7e"/>
+                    <path d="M152 26 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#8b7cf0"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--expr">エクスプレッション</span><span class="card__num">#02</span></div>
+                  <h3>コピペ卒業：エクスプレッションを“意味”から</h3>
+                  <p><code>wiggle</code> や <code>loopOut</code> が、なぜそう動くのか。仕組みから理解して自分で書けるように。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
-      <!-- #11 Telop -->
-      <a class="card" data-level="intermediate" href="articles/premiere-telop-design.html">
-        <div class="card__thumb th-text">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="34" width="120" height="72" rx="14" fill="#fff" stroke="#e2bcdb" stroke-width="3"/>
-            <circle cx="100" cy="60" r="16" fill="#f3e2f0"/>
-            <path d="M92 62 q8 -12 16 0" fill="none" stroke="#b3559f" stroke-width="2.5" stroke-linecap="round"/>
-            <rect x="56" y="86" width="88" height="14" rx="7" fill="#f3e2f0" stroke="#e2bcdb" stroke-width="2"/>
-            <rect x="64" y="90" width="34" height="6" rx="3" fill="#b3559f"/>
-            <rect x="102" y="90" width="20" height="6" rx="3" fill="#b3559f"/>
-            <text x="52" y="60" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="22" font-weight="700" fill="#b3559f">Aa</text>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--text">テロップ</span><span class="card__num">#11</span></div>
-          <h3>読みやすいテロップデザインの基本：脱・素人感の10原則</h3>
-          <p>フォント・縁取り・配置・表示時間。センスではなくルールで“ちゃんと見える”テロップに。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約12分</span></div>
-        </div>
-      </a>
-
-      <!-- #12 Keyframe -->
-      <a class="card" data-level="intermediate" href="articles/premiere-keyframe-easing.html">
-        <div class="card__thumb th-motion">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="34" y="30" width="132" height="80" rx="14" fill="#fff" stroke="#f0d692" stroke-width="3"/>
-            <line x1="48" y1="96" x2="152" y2="96" stroke="#f0d692" stroke-width="2"/>
-            <path d="M52 92 C 92 92, 100 46, 148 44" fill="none" stroke="#8b7cf0" stroke-width="3.5" stroke-linecap="round"/>
-            <rect x="47" y="87" width="10" height="10" rx="2.5" transform="rotate(45 52 92)" fill="#ff6f7e"/>
-            <rect x="143" y="39" width="10" height="10" rx="2.5" transform="rotate(45 148 44)" fill="#3fca9f"/>
-            <path d="M150 20 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#12</span></div>
-          <h3>キーフレームとイージング：グラフエディターでなめらかに</h3>
-          <p>カクつく原因は等速。イーズと速度グラフで“ぬるっと気持ちいい”動きを自分で作る。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
-
-      <!-- #13 LUT -->
-      <a class="card" data-level="intermediate" href="articles/premiere-lut-guide.html">
-        <div class="card__thumb th-color">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="42" y="34" width="66" height="72" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
-            <rect x="54" y="46" width="42" height="14" rx="4" fill="#ff6f7e"/>
-            <rect x="54" y="66" width="42" height="14" rx="4" fill="#ffc94d"/>
-            <rect x="54" y="86" width="42" height="14" rx="4" fill="#3fca9f"/>
-            <path d="M114 70 h16 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="136" y="54" width="40" height="32" rx="8" fill="#f2effc" stroke="#8b7cf0" stroke-width="2.5"/>
-            <text x="156" y="75" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#8b7cf0">.cube</text>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#13</span></div>
-          <h3>LUTの正しい使い方と自作：.cubeで“自分の色”を再利用</h3>
-          <p>濁る原因は場所と順番。入力/クリエイティブの違いを理解し、自分の色を.cubeで書き出して資産化。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
-
-      <!-- #14 Multicam -->
-      <a class="card" data-level="intermediate" href="articles/premiere-multicam.html">
-        <div class="card__thumb th-edit">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="44" y="36" width="52" height="32" rx="8" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
-            <path d="M62 46 v12 l10 -6 z" fill="#5a8a2e"/>
-            <rect x="104" y="36" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
-            <rect x="44" y="76" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
-            <rect x="104" y="76" width="52" height="32" rx="8" fill="#fff" stroke="#cfe0bf" stroke-width="3"/>
-            <circle cx="88" cy="44" r="10" fill="#5a8a2e"/>
-            <text x="88" y="48" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="12" font-weight="700" fill="#fff">1</text>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--edit">編集</span><span class="card__num">#14</span></div>
-          <h3>マルチカム編集の基本：同期・アングル切り替え・仕上げ</h3>
-          <p>音声波形で同期し、数字キーでスイッチング。対談やライブを“番組っぽく”速く編集する。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
-
-      <!-- #15 J/L cut -->
-      <a class="card" data-level="intermediate" href="articles/premiere-jl-cut.html">
-        <div class="card__thumb th-edit">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="44" width="88" height="22" rx="6" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
-            <path d="M52 55 v6 l8 -6 z" fill="#5a8a2e"/>
-            <rect x="72" y="74" width="88" height="22" rx="6" fill="#fff" stroke="#5a8a2e" stroke-width="3"/>
-            <rect x="80" y="82" width="4" height="6" rx="2" fill="#5a8a2e"/><rect x="88" y="79" width="4" height="12" rx="2" fill="#5a8a2e"/><rect x="96" y="82" width="4" height="6" rx="2" fill="#5a8a2e"/><rect x="104" y="78" width="4" height="14" rx="2" fill="#5a8a2e"/><rect x="112" y="82" width="4" height="6" rx="2" fill="#5a8a2e"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--edit">編集</span><span class="card__num">#15</span></div>
-          <h3>J・Lカットで自然な会話編集：音を先に流す/後に残す</h3>
-          <p>ブツ切れの原因は同時に切ること。音と映像を0.5〜2秒ずらすだけで“本物の会話”に。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
-        </div>
-      </a>
-
-      <!-- #16 Warp Stabilizer -->
-      <a class="card" data-level="intermediate" href="articles/premiere-warp-stabilizer.html">
-        <div class="card__thumb th-fx">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="52" y="40" width="96" height="60" rx="10" fill="none" stroke="#e6a6a2" stroke-width="3" stroke-dasharray="6 5"/>
-            <rect x="64" y="50" width="72" height="44" rx="8" fill="#fff" stroke="#d9534f" stroke-width="3"/>
-            <path d="M76 72 l12 -10 8 8 12 -14" fill="none" stroke="#d9534f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M40 54 h-8 M40 86 h-8 M160 54 h8 M160 86 h8" stroke="#e6a6a2" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="100" cy="72" r="4" fill="#d9534f"/>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--fx">エフェクト</span><span class="card__num">#16</span></div>
-          <h3>ワープスタビライザー：手ブレを自然に消す設定</h3>
-          <p>滑らかさは低めから。クロップとのトレードオフを管理して、“ぐにゃっ”と歪ませない。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
-        </div>
-      </a>
-
-      <!-- #17 Cinematic grade -->
-      <a class="card" data-level="intermediate" href="articles/premiere-cinematic-grade.html">
-        <div class="card__thumb th-color">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="46" y="38" width="108" height="64" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
-            <path d="M52 96 h96 v-52 a6 6 0 0 0 -6 -6 h-40 z" fill="#2b8a9a" opacity="0.85"/>
-            <circle cx="76" cy="66" r="16" fill="#2b8a9a" stroke="#fff" stroke-width="3"/>
-            <circle cx="124" cy="66" r="16" fill="#e8843b" stroke="#fff" stroke-width="3"/>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#17</span></div>
-          <h3>シネマティックグレーディング：ティール＆オレンジ</h3>
-          <p>補色のコントラストで映画の色を。シャドウに青、ハイライトと肌に橙。やりすぎない加減まで。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
-
-      <!-- #18 Speed ramp -->
-      <a class="card" data-level="intermediate" href="articles/premiere-speed-ramp.html">
-        <div class="card__thumb th-fx">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <line x1="34" y1="96" x2="166" y2="96" stroke="#e6a6a2" stroke-width="2"/>
-            <path d="M40 92 C 74 92, 78 46, 100 46 C 122 46, 126 92, 160 92" fill="none" stroke="#d9534f" stroke-width="3.5" stroke-linecap="round"/>
-            <rect x="35" y="87" width="10" height="10" rx="2.5" transform="rotate(45 40 92)" fill="#d9534f"/>
-            <rect x="95" y="41" width="10" height="10" rx="2.5" transform="rotate(45 100 46)" fill="#ffc94d"/>
-            <rect x="155" y="87" width="10" height="10" rx="2.5" transform="rotate(45 160 92)" fill="#d9534f"/>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--fx">エフェクト</span><span class="card__num">#18</span></div>
-          <h3>スピードランプの作り方：時間の緩急で見せる</h3>
-          <p>速→遅→速で勢いを生む。キーフレーム・イーズ・オプティカルフロー・素材のfpsまで。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
-        </div>
-      </a>
-
-      <!-- #19 Mask & tracking -->
-      <a class="card" data-level="intermediate" href="articles/premiere-mask-tracking.html">
-        <div class="card__thumb th-fx">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="34" width="120" height="72" rx="12" fill="#fff" stroke="#e6a6a2" stroke-width="3"/>
-            <g fill="#f2c3c0">
-              <rect x="86" y="52" width="9" height="9"/><rect x="96" y="52" width="9" height="9"/><rect x="106" y="52" width="9" height="9"/>
-              <rect x="86" y="62" width="9" height="9"/><rect x="96" y="62" width="9" height="9"/><rect x="106" y="62" width="9" height="9"/>
-              <rect x="86" y="72" width="9" height="9"/><rect x="96" y="72" width="9" height="9"/><rect x="106" y="72" width="9" height="9"/>
-            </g>
-            <rect x="82" y="48" width="37" height="37" rx="4" fill="none" stroke="#d9534f" stroke-width="2.5" stroke-dasharray="4 3"/>
-            <path d="M82 48 h-8 M82 85 h-8 M119 48 h8 M119 85 h8" stroke="#d9534f" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--fx">エフェクト</span><span class="card__num">#19</span></div>
-          <h3>マスク＆トラッキング：モザイクを対象に追従させる</h3>
-          <p>顔やナンバーにモザイクを自動追従。部分補正にも。失敗しないコツ（高コントラスト・シンプル）。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
-        </div>
-      </a>
-
-      <!-- #20 Text-based editing -->
-      <a class="card" data-level="intermediate" href="articles/premiere-text-based-editing.html">
-        <div class="card__thumb th-flow">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="44" y="32" width="112" height="76" rx="12" fill="#fff" stroke="#a9cdef" stroke-width="3"/>
-            <rect x="56" y="46" width="60" height="7" rx="3.5" fill="#56b4ef"/>
-            <rect x="56" y="60" width="88" height="7" rx="3.5" fill="#d5e6f7"/>
-            <rect x="56" y="74" width="52" height="7" rx="3.5" fill="#d5e6f7"/>
-            <line x1="52" y1="77.5" x2="112" y2="77.5" stroke="#d9534f" stroke-width="2"/>
-            <rect x="56" y="88" width="76" height="7" rx="3.5" fill="#d5e6f7"/>
-            <path d="M150 22 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#20</span></div>
-          <h3>テキストベース編集：文字起こしを消すだけで切れる</h3>
-          <p>原稿を消す感覚でカット。フィラーワード・無音の自動削除と、消しすぎない注意点。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約10分</span></div>
-        </div>
-      </a>
-
-      <!-- #21 Auto Reframe -->
-      <a class="card" data-level="intermediate" href="articles/premiere-auto-reframe.html">
-        <div class="card__thumb th-motion">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="48" width="86" height="48" rx="8" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
-            <circle cx="55" cy="72" r="10" fill="#ffd7b0" stroke="#8b7cf0" stroke-width="2.5"/>
-            <rect x="122" y="38" width="44" height="66" rx="8" fill="#fff" stroke="#8b7cf0" stroke-width="3"/>
-            <circle cx="144" cy="68" r="11" fill="#ffd7b0" stroke="#8b7cf0" stroke-width="3"/>
-            <rect x="132" y="55" width="24" height="27" rx="4" fill="none" stroke="#ff6f7e" stroke-width="2.4" stroke-dasharray="4 3"/>
-            <path d="M108 72 h10 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#21</span></div>
-          <h3>オートリフレーム：横動画をワンクリックで縦(9:16)に</h3>
-          <p>被写体を自動追跡してSNS縦動画へ。2つの使い方・追跡プリセット・自動後の手直しまで。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約11分</span></div>
-        </div>
-      </a>
-
-      <!-- #22 First Edit (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-first-edit.html">
-        <div class="card__thumb th-flow">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="42" width="34" height="26" rx="5" fill="#fff" stroke="#1fa480" stroke-width="3"/>
-            <path d="M31 51 v8 l7 -4 z" fill="#1fa480"/>
-            <path d="M58 55 h14 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="80" y="46" width="40" height="17" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
-            <rect x="80" y="67" width="40" height="17" rx="4" fill="#d9f5ec" stroke="#1fa480" stroke-width="2.6"/>
-            <path d="M124 64 h14 m0 0 l-5 -4 m5 4 l-5 4" fill="none" stroke="#9aa5b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="146" y="50" width="32" height="32" rx="8" fill="#fff" stroke="#1fa480" stroke-width="3"/>
-            <text x="162" y="71" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="700" fill="#1fa480">MP4</text>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#22</span></div>
-          <h3>Premiere 最初の1本：読み込み→カット→書き出し</h3>
-          <p>まったくの初めてでもOK。5ステップで動画を完成させる、いちばん最初の一本道。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-      <!-- #23 Cutting basics (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-cutting-basics.html">
-        <div class="card__thumb th-edit">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="26" y="54" width="52" height="30" rx="5" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
-            <rect x="122" y="54" width="52" height="30" rx="5" fill="#eef6e4" stroke="#5a8a2e" stroke-width="3"/>
-            <rect x="87" y="46" width="26" height="46" rx="4" fill="#fff" stroke="#d9534f" stroke-width="3" stroke-dasharray="5 4"/>
-            <path d="M100 36 v66" stroke="#d9534f" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="100" cy="32" r="5" fill="#d9534f"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--edit">編集</span><span class="card__num">#23</span></div>
-          <h3>カット編集の基本：切って・詰めて・テンポを作る</h3>
-          <p>編集の8割はカット。リップル削除・トリム・Q/Wの時短で、見やすいテンポを作る。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-      <!-- #24 Titles basics (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-titles-basics.html">
-        <div class="card__thumb th-text">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="40" y="36" width="120" height="70" rx="12" fill="#fff" stroke="#e6c7e0" stroke-width="3"/>
-            <rect x="52" y="82" width="96" height="15" rx="4" fill="#f3e2f0"/>
-            <text x="100" y="94" text-anchor="middle" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="11" font-weight="700" fill="#b3559f">テロップ</text>
-            <text x="68" y="66" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="30" font-weight="700" fill="#b3559f">T</text>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--text">テロップ</span><span class="card__num">#24</span></div>
-          <h3>テロップの入れ方：“読める字幕”を作る基本</h3>
-          <p>文字ツールで打つ→整える→縁取り/背景帯で読みやすく→セーフマージンに収める。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-      <!-- #25 Audio basics (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-audio-basics.html">
-        <div class="card__thumb th-audio">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#3d6bc4" stroke-width="4" stroke-linecap="round">
-              <path d="M60 72 v14"/><path d="M74 62 v34"/><path d="M88 48 v62"/><path d="M102 58 v38"/><path d="M116 42 v70"/><path d="M130 64 v30"/><path d="M144 70 v18"/>
-            </g>
-            <rect x="48" y="68" width="108" height="2.6" rx="1.3" fill="#9aa5b1"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--audio">オーディオ</span><span class="card__num">#25</span></div>
-          <h3>音の調整の基本：声を聞き取りやすく、BGMをちょうどよく</h3>
-          <p>音割れを防ぐ音量、エッセンシャルサウンドの半自動処理、声とBGMのバランス。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
-        </div>
-      </a>
-
-      <!-- #26 Transitions basics (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-transitions-basics.html">
-        <div class="card__thumb th-trans">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="30" y="48" width="64" height="42" rx="8" fill="#ffe6d2" stroke="#d67a2e" stroke-width="3"/>
-            <rect x="106" y="48" width="64" height="42" rx="8" fill="#fff" stroke="#d67a2e" stroke-width="3" opacity="0.55"/>
-            <path d="M84 69 h32" stroke="#d67a2e" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 5"/>
-            <path d="M96 60 l10 9 -10 9" fill="none" stroke="#d67a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--trans">トランジション</span><span class="card__num">#26</span></div>
-          <h3>トランジションの基本：ディゾルブを“ここぞ”で使う</h3>
-          <p>基本はカット。クロスディゾルブ・暗転・音のクロスフェードの入れ方と、使いすぎない加減。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-      <!-- #27 Color basics (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-color-basics.html">
-        <div class="card__thumb th-color">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="48" y="42" width="104" height="58" rx="12" fill="#fff" stroke="#ffd0bb" stroke-width="3"/>
-            <circle cx="82" cy="71" r="16" fill="#ff6f7e" opacity="0.85"/>
-            <circle cx="104" cy="71" r="16" fill="#ffc94d" opacity="0.85"/>
-            <circle cx="126" cy="71" r="16" fill="#3fca9f" opacity="0.85"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--color">カラー</span><span class="card__num">#27</span></div>
-          <h3>色調整の入門：Lumetriの基本補正で整える</h3>
-          <p>触るのは3つだけ。明るさ→ホワイトバランス→彩度の順で、盛りすぎず自然に整える。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
-        </div>
-      </a>
-
-      <!-- #28 Export basics (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-export-basics.html">
-        <div class="card__thumb th-export">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="42" y="42" width="70" height="56" rx="10" fill="#fff" stroke="#a9d9e0" stroke-width="3"/>
-            <rect x="42" y="42" width="70" height="14" rx="7" fill="#2b8a9a"/>
-            <path d="M77 64 v18 M69 75 l8 8 8 -8" fill="none" stroke="#2b8a9a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M120 71 h20 m0 0 l-6 -5 m6 5 l-6 5" fill="none" stroke="#9aa5b1" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="150" y="54" width="34" height="34" rx="9" fill="#fff" stroke="#2b8a9a" stroke-width="3"/>
-            <text x="167" y="76" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#2b8a9a">MP4</text>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--export">書き出し</span><span class="card__num">#28</span></div>
-          <h3>書き出しの超入門：迷わずYouTube用のMP4に</h3>
-          <p>H.264＋YouTubeプリセットを選ぶだけ。範囲の確認・真っ黒/無音などの事故も回避。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約7分</span></div>
-        </div>
-      </a>
-
-      <!-- #29 Project management (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-project-management.html">
-        <div class="card__thumb th-flow">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <path d="M40 48 h28 l8 9 h44 a6 6 0 0 1 6 6 v31 a6 6 0 0 1 -6 6 h-80 a6 6 0 0 1 -6 -6 v-40 a6 6 0 0 1 6 -6z" fill="#d9f5ec" stroke="#1fa480" stroke-width="3"/>
-            <circle cx="150" cy="88" r="16" fill="#fff" stroke="#1fa480" stroke-width="3"/>
-            <path d="M150 80 v8 l6 4" fill="none" stroke="#1fa480" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--flow">ワークフロー</span><span class="card__num">#29</span></div>
-          <h3>プロジェクト管理・保存：データを失わない・見失わない</h3>
-          <p>1案件1フォルダ・こまめ保存・素材を動かさない。メディアオフラインの直し方も。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-      <!-- #30 BGM & SE (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-bgm-se.html">
-        <div class="card__thumb th-audio">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <path d="M82 42 v44 a12 12 0 1 1 -8 -11 V54 l38 -9 v34 a12 12 0 1 1 -8 -11 V42z" fill="#dde8f7" stroke="#3d6bc4" stroke-width="3" stroke-linejoin="round"/>
-            <g stroke="#3d6bc4" stroke-width="3.4" stroke-linecap="round">
-              <path d="M128 68 v10"/><path d="M138 62 v22"/><path d="M148 68 v10"/>
-            </g>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--audio">オーディオ</span><span class="card__num">#30</span></div>
-          <h3>BGM・効果音の入れ方：音楽と効果音で一段“作品”に</h3>
-          <p>トラックを分け、フェードで自然に、声より小さく。効果音のタイミングと著作権の基本。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-      <!-- #31 Still images (beginner) -->
-      <a class="card" data-level="beginner" href="articles/premiere-still-images.html">
-        <div class="card__thumb th-motion">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="44" y="42" width="112" height="66" rx="10" fill="#fff" stroke="#c9bef7" stroke-width="3"/>
-            <circle cx="74" cy="66" r="9" fill="#ffc94d"/>
-            <path d="M52 100 l26 -26 18 15 20 -20 30 31z" fill="#d9cef9" stroke="#8b7cf0" stroke-width="2.5" stroke-linejoin="round"/>
-            <rect x="94" y="58" width="44" height="32" rx="4" fill="none" stroke="#ff6f7e" stroke-width="2.6" stroke-dasharray="5 4"/>
-            <path d="M150 24 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <div class="card__top"><span class="chip chip--motion">モーション</span><span class="card__num">#31</span></div>
-          <h3>写真・静止画の使い方：サイズ・表示時間・Ken Burns</h3>
-          <p>フレームに合わせる／埋める、表示時間、ゆっくり動かすKen Burnsで映像になじませる。</p>
-          <div class="card__foot"><span class="go">読む →</span><span>約8分</span></div>
-        </div>
-      </a>
-
-    </div>
+    <section class="cat-group" data-cat="ai">
+      <h3 class="cat-group__title"><span class="cat-group__bar cbar--ai"></span>AI活用<span class="cat-group__count">1本</span></h3>
+      <div class="grid">
+        <a class="card" data-level="intermediate" href="articles/ai-captions-claude.html">
+                <div class="card__thumb th-ai">
+                  <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="100" y1="26" x2="100" y2="40" stroke="#db5b93" stroke-width="3"/>
+                    <circle cx="100" cy="24" r="5" fill="#ff6f7e"/>
+                    <rect x="66" y="40" width="68" height="52" rx="16" fill="#fff" stroke="#f2b9d1" stroke-width="3"/>
+                    <circle cx="86" cy="62" r="7" fill="#db5b93"/><circle cx="114" cy="62" r="7" fill="#db5b93"/>
+                    <rect x="88" y="76" width="24" height="6" rx="3" fill="#f2b9d1"/>
+                    <rect x="58" y="58" width="6" height="14" rx="3" fill="#f2b9d1"/><rect x="136" y="58" width="6" height="14" rx="3" fill="#f2b9d1"/>
+                    <rect x="60" y="100" width="80" height="16" rx="6" fill="#ffe1ec" stroke="#f2b9d1" stroke-width="2"/>
+                    <rect x="68" y="106" width="32" height="4" rx="2" fill="#db5b93"/><rect x="104" y="106" width="18" height="4" rx="2" fill="#db5b93"/>
+                    <path d="M152 30 l2 7 7 2 -7 2 -2 7 -2-7 -7-2 7-2z" fill="#ffc94d"/>
+                  </svg>
+                </div>
+                <div class="card__body">
+                  <div class="card__top"><span class="chip chip--ai">AI活用</span><span class="card__num">#06</span></div>
+                  <h3>Claude API × Premiere で字幕を自動生成</h3>
+                  <p>文字起こしからキャプション化までを一気通貫。英語先行の実装ネタを日本語で。</p>
+                  <div class="card__foot"><span class="go">読む →</span><span>約9分</span></div>
+                </div>
+              </a>
+      </div>
+    </section>
 
     <p class="no-results" id="noResults">該当する記事が見つかりませんでした。別のキーワードやカテゴリでお試しください。</p>
   </div>
@@ -767,31 +792,28 @@
   var cats = document.getElementById('filterCats');
   var levels = document.getElementById('filterLevels');
   var noRes = document.getElementById('noResults');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('#articles .grid > .card'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('#articles .cat-group'));
   var activeCat = 'all';
   var activeLevel = 'all';
 
-  function catOf(card) {
-    var chip = card.querySelector('.chip');
-    if (!chip) return '';
-    var cls = Array.prototype.slice.call(chip.classList).find(function (c) {
-      return c.indexOf('chip--') === 0;
-    });
-    return cls ? cls.replace('chip--', '') : '';
-  }
-
   function apply() {
     var q = (search && search.value ? search.value : '').trim().toLowerCase();
-    var shown = 0;
-    cards.forEach(function (c) {
-      var okCat = activeCat === 'all' || catOf(c) === activeCat;
-      var okLevel = activeLevel === 'all' || c.getAttribute('data-level') === activeLevel;
-      var okQ = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
-      var show = okCat && okLevel && okQ;
-      c.style.display = show ? '' : 'none';
-      if (show) shown++;
+    var total = 0;
+    groups.forEach(function (g) {
+      var gcat = g.getAttribute('data-cat');
+      var catOK = activeCat === 'all' || activeCat === gcat;
+      var shown = 0;
+      Array.prototype.slice.call(g.querySelectorAll('.card')).forEach(function (c) {
+        var lvlOK = activeLevel === 'all' || c.getAttribute('data-level') === activeLevel;
+        var qOK = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
+        var show = catOK && lvlOK && qOK;
+        c.style.display = show ? '' : 'none';
+        if (show) shown++;
+      });
+      g.style.display = shown ? '' : 'none';
+      total += shown;
     });
-    if (noRes) noRes.style.display = shown ? 'none' : 'block';
+    if (noRes) noRes.style.display = total ? 'none' : 'block';
   }
 
   if (search) search.addEventListener('input', apply);
@@ -799,18 +821,14 @@
     var b = e.target.closest('.filter-cat');
     if (!b) return;
     activeCat = b.getAttribute('data-cat');
-    cats.querySelectorAll('.filter-cat').forEach(function (x) {
-      x.classList.toggle('is-active', x === b);
-    });
+    cats.querySelectorAll('.filter-cat').forEach(function (x) { x.classList.toggle('is-active', x === b); });
     apply();
   });
   if (levels) levels.addEventListener('click', function (e) {
     var b = e.target.closest('.filter-lvl');
     if (!b) return;
     activeLevel = b.getAttribute('data-level');
-    levels.querySelectorAll('.filter-lvl').forEach(function (x) {
-      x.classList.toggle('is-active', x === b);
-    });
+    levels.querySelectorAll('.filter-lvl').forEach(function (x) { x.classList.toggle('is-active', x === b); });
     apply();
   });
 })();
