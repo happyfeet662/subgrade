@@ -409,3 +409,23 @@ a.card:hover h3 { color: var(--coral); }
 .cbar--export { background: #2b8a9a; } .cbar--audio { background: #3d6bc4; } .cbar--trans { background: #d67a2e; }
 .cbar--text { background: #b3559f; } .cbar--edit { background: #5a8a2e; } .cbar--fx { background: #d9534f; }
 .filters__hint { text-align: center; font-family: var(--maru); font-weight: 700; font-size: 12.5px; color: var(--muted); margin: 0 0 10px; }
+.cat-group { scroll-margin-top: 24px; }
+
+/* トップ：レベルで選ぶ */
+.lvl-choose { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.lvl-pick { display: block; text-decoration: none; border-radius: 22px; padding: 26px 26px 24px; border: 1px solid; transition: transform .12s ease, box-shadow .12s ease; }
+.lvl-pick:hover { transform: translateY(-3px); }
+.lvl-pick__emoji { font-size: 30px; line-height: 1; display: block; margin-bottom: 10px; }
+.lvl-pick__badge { display: inline-block; font-family: var(--maru); font-weight: 700; font-size: 12.5px; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+.lvl-pick h3 { font-family: var(--maru); font-weight: 700; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+.lvl-pick p { font-size: 14px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
+.lvl-pick__go { font-family: var(--maru); font-weight: 700; font-size: 14.5px; }
+.lvl-pick--beg { background: #eef8ea; border-color: #cfe7c6; box-shadow: 0 4px 0 #d9edd1; }
+.lvl-pick--beg:hover { box-shadow: 0 6px 0 #d9edd1; }
+.lvl-pick--beg .lvl-pick__badge { background: #4a8a3d; color: #fff; }
+.lvl-pick--beg .lvl-pick__go { color: #4a8a3d; }
+.lvl-pick--int { background: #f1eefc; border-color: #d8cef7; box-shadow: 0 4px 0 #e3daf7; }
+.lvl-pick--int:hover { box-shadow: 0 6px 0 #e3daf7; }
+.lvl-pick--int .lvl-pick__badge { background: #6a5acd; color: #fff; }
+.lvl-pick--int .lvl-pick__go { color: #6a5acd; }
+@media (max-width: 640px) { .lvl-choose { grid-template-columns: 1fr; } }
